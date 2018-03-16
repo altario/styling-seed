@@ -1,0 +1,47 @@
+// ------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =anim
+//
+//  #EXAMPLES
+//    [+1] include anim with default params
+//    [+2] include anim with custom params
+//
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------
+
+// =anim
+@mixin anim($_transition...) {
+  @include on-event(true) {
+    transition:
+      background $transition__base--noprop,
+      color $transition__base--noprop,
+      border $transition__base--noprop,
+      transform $transition__base--noprop,
+      ;
+    @if length($_transition) > 0 {
+      transition-property: #{$_transition};
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] include anim with default params
+// @include anim;
+
+// [+2] include anim with custom params
+// @include anim(all);
+

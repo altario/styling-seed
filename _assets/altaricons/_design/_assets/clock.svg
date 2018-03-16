@@ -1,0 +1,14 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Canvas" transform="translate(10869 -3182)">
+    <g id="Vector">
+      <use xlink:href="#path0_fill" transform="translate(-10869 3182)" fill="#707D87" />
+    </g>
+    <g id="Vector">
+      <use xlink:href="#path1_fill" transform="translate(-10858.2 3188)" fill="#707D87" />
+    </g>
+  </g>
+  <defs>
+    <path id="path0_fill" d="M 12 0C 5.4 0 0 5.4 0 12C 0 18.6 5.4 24 12 24C 18.6 24 24 18.6 24 12C 24 5.4 18.72 0 12 0ZM 12 21.6C 6.72 21.6 2.4 17.28 2.4 12C 2.4 6.72 6.72 2.4 12 2.4C 17.28 2.4 21.6 6.72 21.6 12C 21.6 17.28 17.4 21.6 12 21.6Z" />
+    <path id="path1_fill" d="M 1.8 0L 0 0L 0 7.2L 6.36 11.04L 7.2 9.6L 1.8 6.36L 1.8 0Z" />
+  </defs>
+</svg>

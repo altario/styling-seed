@@ -1,0 +1,76 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//    (../base/_iconfont.scss)
+//    (../base/_variables.scss)
+//
+//  #VARS
+//    $defaults
+//
+//  #MIXINS
+//    =icon
+//
+//  #EXAMPLES
+//    [+1] include an icon by name
+//    [+2] include an icon by name giving specific position
+//    [+3] include an icon by name giving specific position and without styles
+//    [+4] include an icon by name giving specific position, specifying font-family and iconfont map
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../base/_iconfont.scss)
+// (../base/_variables.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =icon
+@mixin icon($_icon: false, $_position: before, $_styles: true, $_font-family: $font-family--icon, $_icon-map: $iconfont) {
+  @if $_position == both {
+    $_position: 'before, &:after';
+  }
+  &:#{$_position} {
+    @if $_icon {
+      content: "#{map-get($_icon-map, $_icon)}";
+    }
+    @if $_styles {
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-family: $_font-family;
+    }
+    @content;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] include an icon by name
+// @include icon(search);
+
+// [+2] include an icon by name giving specific position
+// @include icon(search, after);
+
+// [+3] include an icon by name giving specific position and without styles
+// @include icon(search, after, false);
+
+// [+4] include an icon by name giving specific position, specifying font-family and iconfont map
+// @include icon(search, after, true, 'Font Awesome', $iconfont);

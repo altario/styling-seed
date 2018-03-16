@@ -1,0 +1,22 @@
+<svg width="23" height="12" viewBox="0 0 23 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Canvas" transform="translate(11325 -3226)">
+    <g id="Vector">
+      <use xlink:href="#path0_fill" transform="translate(-11325 3231.2)" fill="#707D87" />
+    </g>
+    <g id="Vector">
+      <use xlink:href="#path1_fill" transform="translate(-11314.6 3226)" fill="#707D87" />
+    </g>
+    <g id="Vector">
+      <use xlink:href="#path2_fill" transform="translate(-11308.6 3229.27)" fill="#707D87" />
+    </g>
+    <g id="Vector">
+      <use xlink:href="#path3_fill" transform="translate(-11322.2 3229.3)" fill="#707D87" />
+    </g>
+  </g>
+  <defs>
+    <path id="path0_fill" d="M 21.6 5.1L 17 5.1C 16.5 2.2 14.1 -1.90735e-07 11.1 -1.90735e-07C 8.1 -1.90735e-07 5.6 2.2 5.2 5.1L 0.7 5.1C 0.3 5.1 0 5.4 0 5.8C 0 6.2 0.3 6.5 0.7 6.5L 21.7 6.5C 22.1 6.5 22.4 6.2 22.4 5.8C 22.3 5.4 22 5.1 21.6 5.1ZM 11.1 1.3C 13.4 1.3 15.2 2.9 15.7 5L 6.6 5C 7 2.9 8.9 1.3 11.1 1.3Z" />
+    <path id="path1_fill" d="M 0.7 4C 1.1 4 1.4 3.7 1.4 3.3L 1.4 0.7C 1.4 0.3 1.1 0 0.7 0C 0.3 0 -3.8147e-07 0.3 -3.8147e-07 0.7L -3.8147e-07 3.4C 0.0999996 3.7 0.4 4 0.7 4Z" />
+    <path id="path2_fill" d="M 0.625 3.225C 0.825 3.225 0.925 3.125 1.125 3.025L 3.025 1.125C 3.325 0.825 3.325 0.425 3.025 0.225C 2.725 -0.075 2.325 -0.075 2.125 0.225L 0.225 2.125C -0.0749996 2.425 -0.0749996 2.825 0.225 3.025C 0.225 3.225 0.425 3.225 0.625 3.225Z" />
+    <path id="path3_fill" d="M 2.125 3C 2.425 3.3 2.825 3.3 3.025 3C 3.325 2.7 3.325 2.3 3.025 2.1L 1.125 0.2C 1.025 0.1 0.825 -4.76837e-08 0.625 -4.76837e-08C 0.525 -4.76837e-08 0.325 0.1 0.225 0.2C -0.075 0.5 -0.075 0.9 0.225 1.1L 2.125 3Z" />
+  </defs>
+</svg>

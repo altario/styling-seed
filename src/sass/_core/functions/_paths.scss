@@ -1,0 +1,61 @@
+// -----------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//    (../config/variables.scss)
+//
+//  #FUNCTIONS
+//    @asset
+//    @image
+//
+//  #EXAMPLES
+//    [+1] use image asset by path
+//
+// -----------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../config/variables.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #FUNCTIONS
+// --------------------------------------------------
+
+// @asset
+@function asset($_base, $_type, $_path) {
+  @return $_base + $_type + $_path;
+}
+
+
+// @image
+@function image($_path, $base: $path__assets) {
+  @return asset($_base, 'images/', $_path);
+}
+
+
+// font
+@function font($_path, $_base: $path__assets) {
+  @return asset($_base, 'fonts/', $_path);
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] use image asset by path
+// background-image: image('photo.png');
+
+// [+2] use font asset by path
+// background-image: image('photo.png');

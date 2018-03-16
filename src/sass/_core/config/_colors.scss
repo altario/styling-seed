@@ -1,0 +1,90 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//    $brand
+//    $gray
+//    $color
+//    $state
+//    $gradients
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// $brand
+// --------------------
+$color__brand--1: #FA0D60;
+$color__brand--2: #5656E3;
+$color__brand--3: #1EA1FF;
+$color__brand--4: #A7BBC9;
+
+
+
+// $gray
+// --------------------
+
+// black
+$color__black--1: #000;
+$color__black--2: #4F4F4F;
+
+// white
+$color__white--1: #FFF;
+$color__white--2: #FBFCFD;
+$color__white--3: #F7F9FA;
+
+// dark-blue-gray
+$color__dark-blue-gray--1:#515A61;
+$color__dark-blue-gray--2:#707D87;
+$color__dark-blue-gray--3:#A1ACB5;
+$color__dark-blue-gray--4:#BCC6CF;
+$color__dark-blue-gray--5:#DCE1E5;
+$color__dark-blue-grey--6:#E6EAED;
+
+// light-yellow-gray
+$color__light-yellow-gray--1: #F5F5F0;
+$color__light-yellow-gray--2: #F0F0EE;
+$color__light-yellow-gray--3: #E3E3DE;
+$color__light-yellow-gray--4: #D9D9D2;
+
+
+// $color
+// --------------------
+
+// morning
+$color__morning: $color__brand--3;
+$color__morning-alt--1: #33AAFF;
+$color__morning-alt--2: #00B7FE;
+$color__morning-alt--3: #00C1FE;
+
+// afternoon
+$color__afternoon: #F8BD1B;
+$color__afternoon-alt--1: #F5B916;
+$color__afternoon-alt--2: #F8C332;
+$color__afternoon-alt--3: #FFCA4C;
+
+// night
+$color__night: #7F1EFF;
+$color__night-alt--1: #8B33FF;
+$color__night-alt--2: #9A4DFF;
+$color__night-alt--3: #A561FF;
+
+
+
+// $state
+// --------------------
+$color__state--success: #41CC7B;
+$color__state--info: $color__brand--3;
+$color__state--warning: #F8BD1B;
+$color__state--danger: #FA4141;
+
+
+
+// $gradients
+// --------------------
+$color__grad-morning-afternoon: #76ACA3 #D1CD66;
+$color__grad-afternoon-night: #DF9D4B #BF738A;

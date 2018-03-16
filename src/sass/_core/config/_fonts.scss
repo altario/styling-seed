@@ -1,0 +1,21 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #STYLES
+//    +font-face
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #STYLES
+// --------------------------------------------------
+
+// '../fonts/Font/FontRegular.eot'
+
+// +font-face
+@include font-face('Montserrat', 'MontserratLight', $font-weight--light);
+@include font-face('Montserrat', 'MontserratRegular');
+@include font-face('Montserrat', 'MontserratBold', $font-weight--bold);
+@include font-face('altaricons', 'altaricons');

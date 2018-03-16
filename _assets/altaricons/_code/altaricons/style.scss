@@ -1,0 +1,133 @@
+@import "variables";
+
+@font-face {
+  font-family: 'altaricons';
+  src:  url('#{$icomoon-font-path}/altaricons.eot?xp339t');
+  src:  url('#{$icomoon-font-path}/altaricons.eot?xp339t#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/altaricons.ttf?xp339t') format('truetype'),
+    url('#{$icomoon-font-path}/altaricons.woff?xp339t') format('woff'),
+    url('#{$icomoon-font-path}/altaricons.svg?xp339t#altaricons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'altaricons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+.icon-arrows-up-down {
+  &:before {
+    content: unicode($icon-arrows-up-down); 
+  }
+}
+.icon-avatar-alt {
+  &:before {
+    content: unicode($icon-avatar-alt); 
+  }
+}
+.icon-avatar {
+  &:before {
+    content: unicode($icon-avatar); 
+  }
+}
+.icon-calendar-full {
+  &:before {
+    content: unicode($icon-calendar-full); 
+  }
+}
+.icon-calendar {
+  &:before {
+    content: unicode($icon-calendar); 
+  }
+}
+.icon-chevron-down {
+  &:before {
+    content: unicode($icon-chevron-down); 
+  }
+}
+.icon-chevron-left {
+  &:before {
+    content: unicode($icon-chevron-left); 
+  }
+}
+.icon-chevron-right {
+  &:before {
+    content: unicode($icon-chevron-right); 
+  }
+}
+.icon-chevron-up {
+  &:before {
+    content: unicode($icon-chevron-up); 
+  }
+}
+.icon-clock {
+  &:before {
+    content: unicode($icon-clock); 
+  }
+}
+.icon-close {
+  &:before {
+    content: unicode($icon-close); 
+  }
+}
+.icon-img-big {
+  &:before {
+    content: unicode($icon-img-big); 
+  }
+}
+.icon-img {
+  &:before {
+    content: unicode($icon-img); 
+  }
+}
+.icon-info {
+  &:before {
+    content: unicode($icon-info); 
+  }
+}
+.icon-lock {
+  &:before {
+    content: unicode($icon-lock); 
+  }
+}
+.icon-search {
+  &:before {
+    content: unicode($icon-search); 
+  }
+}
+.icon-star-full {
+  &:before {
+    content: unicode($icon-star-full); 
+  }
+}
+.icon-star {
+  &:before {
+    content: unicode($icon-star); 
+  }
+}
+.icon-sun {
+  &:before {
+    content: unicode($icon-sun); 
+  }
+}
+.icon-loading {
+  &:before {
+    content: unicode($icon-loading); 
+  }
+}
+

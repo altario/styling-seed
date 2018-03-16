@@ -1,0 +1,136 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =align
+//
+//  #EXAMPLES
+//    [+1] align only with margin between alements
+//    [+2] align with margin and arguments (use with space)
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =align
+@mixin align-gutter($_gutter: 0px, $_args: 0) {
+  $_map: $_args;
+
+  $_gutter: ($_gutter / 1px) * 1px;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+
+  @if $_gutter != 0px {
+    > * {
+      margin-right: $_gutter;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  // align horizintal --------------------
+
+  // center
+  @if(index($_map, center)) {
+    justify-content: center;
+  }
+
+  // right
+  @if(index($_map, right)) {
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+
+  // align vertical --------------------
+
+  // top
+  @if(index($_map, top)) {
+    align-items: flex-start;
+  }
+
+  // middle
+  @if(index($_map, middle)) {
+    align-items: center;
+  }
+
+  // bottom
+  @if(index($_map, bottom)) {
+    align-items: flex-end;
+  }
+
+
+  // direction --------------------
+
+  // reverse
+  @if(index($_map, reverse)) {
+    flex-direction: row-reverse;
+  }
+
+  // column
+  @if(index($_map, column)) {
+    flex-direction: column;
+     > * {
+      flex-basis: auto;
+    }
+  }
+
+  // column-reverse
+  @if(index($_map, column-reverse)) {
+    flex-direction: column-reverse;
+  }
+
+
+  // space --------------------
+
+  // between
+  @if(index($_map, between)) {
+    justify-content: space-between;
+  }
+
+  // around
+  @if(index($_map, around)) {
+    justify-content: space-around;
+  }
+
+  > * {
+    // max-width: 100%;
+    // flex: 1 1 0%;
+    box-sizing: border-box;
+
+    // centered
+    @if(index($_map, centered)) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    @content;
+  }
+}
+
+@mixin align($_args) {
+  @include align-gutter(0, $_args);
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] align only with margin between alements
+// @include align(20px);
+
+// [+2] align with margin and arguments (use with space)
+// @include align(20px, center middle reverse); // center | right | top | middle | bottom | reverse | column | column-reverse | between | around | centered

@@ -1,0 +1,69 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+// $alt_components__grid--gutters
+$alt_components__grid--gutters: (
+  tiny:   8px,
+  small:  15px,
+  normal: 30px,
+  big:    60px,
+  huge:   120px,
+);
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// vertical-gutters
+$alt_components__grid--enable-vertival-gutters: true; // true or false
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// gerenate gutters
+@each $_gutter in $alt_components__grid--gutters {
+  $key: nth($_gutter, 1);
+  $value: nth($_gutter, 2);
+
+  [class*="row"] {
+    &[class*="gutter-#{$key}"] {
+      margin-left: -$value/2;
+      margin-right: -$value/2;
+      & > * {
+        padding-left: $value/2;
+        padding-right: $value/2;
+        @if $alt_components__grid--enable-vertival-gutters {
+          padding-bottom: $value;
+        }
+      }
+    }
+    @if $alt_components__grid--enable-vertival-gutters == false {
+      &[class*="gutter-vertical-#{$key}"] {
+        & > * {
+          padding-bottom: $value;
+        }
+      }
+    }
+  }
+}

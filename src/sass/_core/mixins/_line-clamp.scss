@@ -1,0 +1,43 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =line-clamp
+//
+//  #EXAMPLES
+//    [+1] multiple line clamp with custom line count
+//    [+2] multiple line clamp with custom line count and defined line-height
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =line-clamp
+@mixin line-clamp($_line-count: 1, $_line-height: $alt_global__line-height) {
+  overflow: hidden;
+  line-height: $_line-height;
+  max-height: $_line-height * $_line-count;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $_line-count;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] multiple line clamp with custom line count
+// @include line-clamp(3);
+
+// [+2] multiple line clamp with custom line count and defined line-height
+// @include line-clamp(3, 20px);

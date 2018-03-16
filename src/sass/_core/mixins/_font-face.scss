@@ -1,0 +1,58 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//    (../functions/paths.scss)
+//
+//  #MIXINS
+//    =font-face
+//
+//  #EXAMPLES
+//    [+1] import font (font-family, font-filename without extention)
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../functions/paths.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =font-face
+@mixin font-face($_font-family, $_font--filename, $_weight: normal, $_style: normal) {
+  $_font--path: $path__fonts + '/' + $_font--filename + '/' + $_font--filename;
+
+  @font-face {
+    font-family: $_font-family;
+    src: url($_font--path + '.eot');
+    src: url($_font--path + '.eot?#iefix') format('embedded-opentype'),
+         url($_font--path + '.woff') format('woff'),
+         url($_font--path + '.woff2') format('woff2'),
+         url($_font--path + '.ttf') format('truetype'),
+         url($_font--path + '.svg#' + $_font--filename + '') format('svg');
+    font-weight: $_weight;
+    font-style: $_style;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] import font (font-family, font-filename without extention)
+// @include font-face('Poppins', 'PoppinsRegular');
+// @include font-face('fonticons', 'fonticons');
