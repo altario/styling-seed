@@ -9,9 +9,9 @@
 //    =mq
 //
 //  #EXAMPLES
-//    [+1] example 1
-//    [+2] example 2
-//    [+3] example 3
+//    [+1] use with predefined variable
+//    [+2] use with predefined variable and custom parameter
+//    [+2] use with custom variable and parameter
 //
 // --------------------------------------------------
 
@@ -53,11 +53,11 @@
 // #EXAMPLES
 // --------------------------------------------------
 
-// [+1] example 1
-// @include example1;
+// [+1] use with predefined variable
+// @include mq(lg);
 
-// [+2] example 2
-// @include example2;
+// [+2] use with predefined variable and custom parameter
+// @include mq(lg, max-width);
 
-// [+3] example 3
-// @include example3;
+// [+2] use with custom variable and parameter
+// @include mq(500px, max-width);

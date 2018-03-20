@@ -18,6 +18,19 @@ $body__color__text:                   $color__black--2;
 $body__color__highlight--background:  $color__brand--1;
 $body__color__highlight--text:        $color__white--1;
 
+
+
+// $pabreakpointsths
+// --------------------
+$alt_breakpoints: (
+  sm: 568px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+) !default;
+
+
+
 // $paths
 // --------------------
 $path__assets:                        '/assets/';
