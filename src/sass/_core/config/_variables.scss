@@ -11,6 +11,12 @@
 // #VARS
 // --------------------------------------------------
 
+// $flags
+// --------------------
+$grid__vertical-gutters: false;
+
+
+
 // $body
 // --------------------
 $body__color__background:             $color__white--1;
@@ -20,7 +26,7 @@ $body__color__highlight--text:        $color__white--1;
 
 
 
-// $pabreakpointsths
+// $breakpoints
 // --------------------
 $alt_breakpoints: (
   sm: 568px,
@@ -28,6 +34,13 @@ $alt_breakpoints: (
   lg: 1024px,
   xl: 1280px
 ) !default;
+
+
+
+// $grid
+// --------------------
+$grid__default--columns:              12 !default;
+$grid__default--gutter-width:         30px !default;
 
 
 

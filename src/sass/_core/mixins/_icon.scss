@@ -37,19 +37,36 @@
 // --------------------------------------------------
 
 // =icon
-@mixin icon($_icon: false, $_position: before, $_styles: true, $_font-family: $font-family--icon, $_icon-map: $iconfont) {
-  @if $_position == both {
-    $_position: 'before, &:after';
-  }
+@mixin icon($_icon: false, $_position: before, $_styles: true) {
+  $font-family: $font-family--icon; // fonticon default
+
   &:#{$_position} {
     @if $_icon {
-      content: "#{map-get($_icon-map, $_icon)}";
+      @if map-has-key($iconfont, $_icon) {
+        content: "#{map-get($iconfont, $_icon)}";
+      }
+      @else if map-has-key($iconfont-fa, $_icon) {
+        content: "#{map-get($iconfont-fa, $_icon)}";
+        $font-family: 'FontAwesome'; // Font-Awesome fallback
+      }
+      @else {
+        @warn "The icon: `#{$_icon}` is not a valid fonticon or a `Font-Awesome` fallback.";
+      }
     }
     @if $_styles {
       speak: none;
       font-style: normal;
       font-weight: normal;
-      font-family: $_font-family;
+      font-family: $font-family;
+
+      @if $font-family == 'FontAwesome' {
+        display: inline-block;
+        // font: normal normal normal 14px/1 FontAwesome;
+        // font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
     }
     @content;
   }

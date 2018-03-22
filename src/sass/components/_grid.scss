@@ -27,11 +27,13 @@ $alt_components__grid--gutters: (
 
 
 // ------------------------------------------------------------------
-// #STYLES
+// #VARS
 // ------------------------------------------------------------------
 
-// vertical-gutters
-$alt_components__grid--enable-vertival-gutters: true; // true or false
+// $gutters
+$alt_components__grid--enable-vertival-gutters: $grid__vertical-gutters;
+$alt_components__grid--columns: $grid__default--columns;
+$alt_components__grid--gutter-width: $grid__default--gutter-width;
 
 
 
@@ -46,20 +48,46 @@ $alt_components__grid--enable-vertival-gutters: true; // true or false
   $key: nth($_gutter, 1);
   $value: nth($_gutter, 2);
 
-  [class*="row"] {
-    &[class*="gutter-#{$key}"] {
+  .row {
+
+    // default
+    & + .row {
+      margin-top: $alt_components__grid--gutter-width;
+    }
+
+    // no-gutters
+    &.no-gutters {
+      & + .row {
+        margin-top: 0;
+      }
+    }
+
+    &.gutter-#{$key} {
       margin-left: -$value/2;
       margin-right: -$value/2;
+      & + .row {
+        margin-top: $value;
+      }
       & > * {
         padding-left: $value/2;
         padding-right: $value/2;
         @if $alt_components__grid--enable-vertival-gutters {
           padding-bottom: $value;
+
+          // @for $i from 1 through $alt_components__grid--columns {
+          //   &[class*="-#{$i}"] {
+          //     &:nth-child(n+#{$i}) {
+          //       .cont {
+          //         margin-top: $value;
+          //       }
+          //     }
+          //   }
+          // }
         }
       }
     }
     @if $alt_components__grid--enable-vertival-gutters == false {
-      &[class*="gutter-vertical-#{$key}"] {
+      &.gutter-vertical-#{$key} {
         & > * {
           padding-bottom: $value;
         }

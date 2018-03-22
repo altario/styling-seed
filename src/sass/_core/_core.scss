@@ -3,6 +3,13 @@
 // INDEX
 //
 //  #IMPORTS
+//    +/functions
+//    +/mixins
+//    +/font-awesome
+//    +/config
+//    +/utils
+//    +/tools
+//    +/helpers
 //
 // --------------------------------------------------
 
@@ -12,7 +19,7 @@
 // --------------------------------------------------
 
 
-// functions
+// +/functions
 @import 'functions/is-direction';
 @import 'functions/opposite-direction';
 // @import 'functions/paths';
@@ -21,7 +28,7 @@
 // @import 'functions/tint';
 
 
-// mixins
+// +/mixins
 @import 'mixins/align';
 @import 'mixins/angle';
 @import 'mixins/animation';
@@ -46,7 +53,11 @@
 // @import 'mixins/visible';
 
 
-// config
+// +/font-awesome
+@import 'config/font-awesome/font-awesome';
+
+
+// +/config
 @import 'config/colors';
 @import 'config/variables';
 @import 'config/bootstrap/bootstrap';
@@ -57,13 +68,13 @@
 @import 'config/ui';
 
 
-// utils
+// +/utils
 @import 'utils/mq';
 
 
-// tools
+// +/tools
 @import 'tools/anim';
 
 
-// helpers
+// +/helpers
 @import 'helpers/animations';
