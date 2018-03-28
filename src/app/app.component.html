@@ -1792,13 +1792,78 @@
                   <button class="btn btn-primary" (click)="openModal(template)">Open Modal</button>
                   <ng-template #template>
                     <div class="modal-header">
-                      <h4 class="modal-title pull-left">Alerta</h4>
-                      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title ">This is H4 with "Head Size 4"</h4>
+                      <button type="button" class="close " aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                      Modal <strong>Opened</strong>.
+                      This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-ghost-primary btn-small">Cancel</button>
+                      <button type="button" class="btn btn-primary btn-info btn-small">Confirm</button>
                     </div>
                   </ng-template>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <button class="btn btn-primary" (click)="openModal(templateContext)">Open Contextual Modal</button>
+                  <ng-template #templateContext>
+                    <div class="modal-header">
+                      <h4 class="modal-title ">This is H4 with "Head Size 4"</h4>
+                      <button type="button" class="close " aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-ghost-primary btn-small">Cancel</button>
+                      <button type="button" class="btn btn-primary btn-info btn-small">Confirm</button>
+                    </div>
+                  </ng-template>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERTS -->
+      <div id="alerts" class="doc-content__block">
+        <h1>#Alerts</h1>
+        <a href="https://getbootstrap.com/docs/4.0/components/alerts/">Alerts</a>
+        <a href="https://valor-software.com/ngx-bootstrap/#/alerts">Alerts</a>
+
+        <h3>Default Bootstrap Alerts</h3>
+        <div class="doc-content__block__items">
+          <div class="row">
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <div class="alert-container" >
+                    <div *ngFor="let alert of alerts" class="alert-icon-info">
+                      <alert [type]="alert.type" [type]="icon-info" [dismissible]="dismissible">
+                        <div class="alert-body">{{ alert.msg }}</div>
+                        <div class="alert-cta"><button _ngcontent-c0="" class="btn btn-outline-primary btn-small" type="button">Rate now</button></div>
+                      </alert>
+                    </div>
+                  </div>
                 </div>
                 <div class="doc-code-block__inner doc-code-block__inner--code">
                   <pre>&lt;div class="<span>row</span>"&gt;</pre>

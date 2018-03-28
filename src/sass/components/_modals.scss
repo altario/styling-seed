@@ -1,0 +1,188 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+$alt_components__modals--icon-map: (
+  close: 'close',
+  info: 'info',
+);
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+$alt_components__alert__modal__backdrop-bg:                                     $color__black--2;
+$alt_components__alert__modal__backdrop-opacity:                                0.33;
+$alt_components__alert__modal__backdrop--blur:                                  20px;
+
+$alt_components__alert__modal__content--shadow:                                 $shadow--topdown--3;
+
+$alt_components__alert__modal__content__header--padding-x:                      26px;
+$alt_components__alert__modal__content__header--padding-y:                      18px;
+
+$alt_components__alert__modal__content__header__close--icon-size:               20px;
+
+$alt_components__alert__modal__content__header--background--color--message:     $color__light-yellow-gray--1;
+$alt_components__alert__modal__content__header--background--color--success:     $color__light-yellow-gray--1;
+$alt_components__alert__modal__content__header--background--color--danger:      $color__light-yellow-gray--1;
+$alt_components__alert__modal__content__header--background--color--info:        $color__light-yellow-gray--1;
+$alt_components__alert__modal__content__header--background--color--alert:       $color__light-yellow-gray--1;
+
+// $alt_components__alert__modal__content__header__title--padding-x:               $font-size--head-4;
+// $alt_components__alert__modal__content__header__title--padding-y:               $font-size--head-4;
+$alt_components__alert__modal__content__header__title--font-size:               $font-size--head-4;
+$alt_components__alert__modal__content__header__title--line-height:             $line-height--3;
+
+$alt_components__alert__modal__content__body--padding-x:                        26px;
+$alt_components__alert__modal__content__body--padding-y:                        26px;
+$alt_components__alert__modal__content__body--font-size:                        $font-size--small;
+$alt_components__alert__modal__content__body--line-height:                      $line-height--3;
+
+$alt_components__alert__modal__content__footer--padding:                        26px;
+
+$alt_components__alert__modal__breakpoints__sm:                                 map-get($alt_breakpoints, sm);
+$alt_components__alert__modal__breakpoints__md:                                 map-get($alt_breakpoints, md); 
+$alt_components__alert__modal__breakpoints__lg:                                 map-get($alt_breakpoints, lg);  
+$alt_components__alert__modal__breakpoints__xl:                                 map-get($alt_breakpoints, xl);
+
+
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@mixin padding-x($padding-x){
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+}
+
+@mixin padding-y($padding-y){
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+}
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+.modal-dialog{
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - (#{$modal-dialog-margin} * 2));
+}
+
+.modal-content{
+  -webkit-box-shadow: $alt_components__alert__modal__content--shadow;
+          box-shadow: $alt_components__alert__modal__content--shadow;
+  border: 0px;
+  -webkit-border-radius: 0px;
+          border-radius: 0px;
+
+  .modal-header{
+    border: 0;
+    vertical-align: middle;
+    @include padding-x($alt_components__alert__modal__content__header--padding-x);
+    @include padding-y($alt_components__alert__modal__content__header--padding-y);
+    background-color: $alt_components__alert__modal__content__header--background--color--message;
+    
+    .modal-title{
+      padding: 0;
+      margin: 0;
+      font-size: $alt_components__alert__modal__content__header__title--font-size;
+      line-height: $alt_components__alert__modal__content__header__title--line-height;
+    }
+  }
+  .modal-body{
+    @include padding-x($alt_components__alert__modal__content__body--padding-x);
+    @include padding-y($alt_components__alert__modal__content__body--padding-y);
+    font-size: $alt_components__alert__modal__content__body--font-size;
+    line-height: $alt_components__alert__modal__content__body--line-height;
+  }
+  .modal-footer{
+    border: 0px;
+  }
+  .close{
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+    font-size: 0px;
+    @include icon(close) {
+      font-size: $alt_components__alert__modal__content__header__close--icon-size;
+    }
+  }
+}
+
+.modal-backdrop.show{
+  background-color: $alt_components__alert__modal--backdrop-bg;
+  opacity: $alt_components__alert__modal--backdrop-opacity;
+}
+
+.modal-open{
+  .container-fluid{
+    -webkit-filter: blur($alt_components__alert__modal--backdrop--blur);
+       -moz-filter: blur($alt_components__alert__modal--backdrop--blur);
+            filter: blur($alt_components__alert__modal--backdrop--blur);
+  }
+  .container{
+    -webkit-filter: blur($alt_components__alert__modal--backdrop--blur);
+       -moz-filter: blur($alt_components__alert__modal--backdrop--blur);
+            filter: blur($alt_components__alert__modal--backdrop--blur);
+  }
+}
+
+@include media-breakpoint-up($alt_components__alert__modal__breakpoints__sm) {
+  .modal-dialog {
+    min-height: calc(100% - (#{$modal-dialog-margin-y-sm-up} * 2));
+  }
+}
+
+
+//ask if this should go to dropdown
+.contextual-modal{
+  @include media-breakpoint-down(sm) {
+    .modal-content{
+      min-width: 100vw;  
+    }
+    .modal-dialog{
+      align-items: flex-end;
+      
+      min-height: 100vh;
+      min-width: 100vw;
+      
+      padding: 0;
+      border: 0;
+      margin: 0;
+      
+      .modal.fade & {
+        @include transition($modal-transition);
+        transform: translate(0, 100%);
+      }
+      .modal.show & {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+
+
+
+
