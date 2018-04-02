@@ -10,6 +10,19 @@
 //
 // ------------------------------------------------------------------
 
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+$alt_components__alerts--icon-map: (
+  close: 'close',
+  info: 'info',
+);
+
+
+
+
 // ------------------------------------------------------------------
 // #VARS
 // ------------------------------------------------------------------
@@ -37,18 +50,6 @@ $alt_components__alert-container__alert__color__state--info:           $color__s
 $alt_components__alert-container__alert__color__state--warning:        $color__state--warning;
 $alt_components__alert-container__alert__color__state--danger:         $color__state--danger;
 
-
-
-
-
-// ------------------------------------------------------------------
-// #MAPS
-// ------------------------------------------------------------------
-
-$alt_components__alerts--icon-map: (
-  close: 'close',
-  info: 'info',
-);
 
 
 
@@ -179,6 +180,7 @@ $alt_components__alerts--icon-map: (
               flex-grow: 1;
       @include padding-x(10px);
       @include text-truncate();
+
     }
     .alert-cta{
     }
