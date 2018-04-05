@@ -1,0 +1,128 @@
+
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+$alt_components__nav-container__navbar__padding-x__default: 2em;
+$alt_components__nav-container__navbar__padding-y__default: 1em;
+$alt_components__nav-container__navbar__padding-right: 1.5em;
+$alt_components__nav-container__navbar__bg: $color__white--1;
+
+$alt_components__nav-container__breadcrumb__padding-x__default: 2em;
+$alt_components__nav-container__breadcrumb__padding-y__default: 0.75em;
+$alt_components__nav-container__breadcrumb__bg: $color__white--3;
+$alt_components__nav-container__breadcrumb__breadcrumb-item__font-size: $font-size--small;
+$alt_components__nav-container__breadcrumb__breadcrumb-item__font-color: $color__black--2;
+$alt_components__nav-container__breadcrumb__breadcrumb-item--active__font-color : $color__black--1;
+
+$alt_components__nav__shadow: $shadow--wide--2;
+$alt_components__nav__navbar-btns__button__font-weight: $font-weight--bold;
+
+$alt_components__nav-container__navbar__color__jobseeker: $color__brand--1;
+$alt_components__nav-container__navbar__color__agency: $color__brand--3;
+$alt_components__nav-container__navbar__navbar-mobile__height: 4em;
+
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@mixin padding-x($padding-x){
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+}
+
+@mixin padding-y($padding-y){
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+}
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+.nav-container{
+  -webkit-box-shadow: $alt_components__nav__shadow;
+          box-shadow: $alt_components__nav__shadow;
+  .navbar{
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    -webkit-align-items: center;
+            align-items: center;
+    // height: 100%;
+    @include padding-x($alt_components__nav-container__navbar__padding-x__default);
+    @include padding-y($alt_components__nav-container__navbar__padding-y__default);
+    padding-right: $alt_components__nav-container__navbar__padding-right;
+    margin: 0;
+    background: $alt_components__nav-container__navbar__bg;
+    .navbar-btns{
+      > button{
+        font-weight: $alt_components__nav__navbar-btns__button__font-weight;
+      }
+    }
+    &.navbar-mobile{
+      // display: none;
+      height: $alt_components__nav-container__navbar__navbar-mobile__height;
+      &.navbar-agency{
+        color: $alt_components__nav-container__navbar__color__agency;
+      }
+      &.navbar-jobseeker{
+        color: $alt_components__nav-container__navbar__color__jobseeker; 
+      }
+      .navbar-btns{
+        display: flex;
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
+        width: 100%;
+      }
+    }
+  }
+  .breadcrumb{
+    margin: 0;
+    @include padding-x($alt_components__nav-container__breadcrumb__padding-x__default);
+    @include padding-y($alt_components__nav-container__breadcrumb__padding-y__default);
+    background: $alt_components__nav-container__breadcrumb__bg;
+    .breadcrumb-item + .breadcrumb-item::before{
+      content: ">";
+    }
+    .breadcrumb-item{
+      font-size: $alt_components__nav-container__breadcrumb__breadcrumb-item__font-size;
+      color: $alt_components__nav-container__breadcrumb__breadcrumb-item__font-color;
+      &.active{
+        color: $alt_components__nav-container__breadcrumb__breadcrumb-item--active__font-color;
+      }
+    }
+  }
+  
+}
+
+
+
+
+
+
