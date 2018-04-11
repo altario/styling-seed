@@ -16,7 +16,9 @@
             <a href="#forms">Forms</a>
             <a href="#grid">Grid</a>
             <a href="#modals">Modals</a>
-            <a href="#modnavals">Nav</a>
+            <a href="#alerts">Alerts</a>
+            <a href="#nav">Nav</a>
+            <a href="#cards">Cards</a>
           </div>
         </div>
       </div>
@@ -1792,13 +1794,78 @@
                   <button class="btn btn-primary" (click)="openModal(template)">Open Modal</button>
                   <ng-template #template>
                     <div class="modal-header">
-                      <h4 class="modal-title pull-left">Alerta</h4>
-                      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title ">This is H4 with "Head Size 4"</h4>
+                      <button type="button" class="close " aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                      Modal <strong>Opened</strong>.
+                      This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-ghost-primary btn-small">Cancel</button>
+                      <button type="button" class="btn btn-primary btn-info btn-small">Confirm</button>
                     </div>
                   </ng-template>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <button class="btn btn-primary" (click)="openModal(templateContext)">Open Contextual Modal</button>
+                  <ng-template #templateContext>
+                    <div class="modal-header">
+                      <h4 class="modal-title ">This is H4 with "Head Size 4"</h4>
+                      <button type="button" class="close " aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-ghost-primary btn-small">Cancel</button>
+                      <button type="button" class="btn btn-primary btn-info btn-small">Confirm</button>
+                    </div>
+                  </ng-template>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERTS -->
+      <div id="alerts" class="doc-content__block">
+        <h1>#Alerts</h1>
+        <a href="https://getbootstrap.com/docs/4.0/components/alerts/">Alerts</a>
+        <a href="https://valor-software.com/ngx-bootstrap/#/alerts">Alerts</a>
+
+        <h3>Default Bootstrap Alerts</h3>
+        <div class="doc-content__block__items">
+          <div class="row">
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <div class="alert-container" >
+                    <div *ngFor="let alert of alerts" class="alert-icon-info">
+                      <alert [type]="alert.type" [type]="icon-info" [dismissible]="dismissible">
+                        <div class="alert-body">{{ alert.msg }}</div>
+                        <div class="alert-cta"><button _ngcontent-c0="" class="btn btn-outline-primary btn-small" type="button">Rate now</button></div>
+                      </alert>
+                    </div>
+                  </div>
                 </div>
                 <div class="doc-code-block__inner doc-code-block__inner--code">
                   <pre>&lt;div class="<span>row</span>"&gt;</pre>
@@ -1865,6 +1932,226 @@
         </div>
       </div>
 
+      <div id="cards" class="doc-content__block">
+        <h1>#Cards</h1>
+        <a href="https://getbootstrap.com/docs/4.0/components/card/">Cards</a>
+
+        <h3>Default Bootstrap Cards</h3>
+        <div class="doc-content__block__items">
+          <div class="row">
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                      <div class="card">
+                        <div class="card-header text-left">
+                          Job Description
+                        </div>
+                        <div class="card-body text-left">
+                          <h4 class="card-title">Special title treatment</h4>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                        </div>
+                        <div class="card-footer text-right">
+                          <a href="#" class="btn btn-ghost-primary">Read More </a>
+                        </div>
+                      </div>
+                    </div>                    
+                  </nav>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <div class="container-fluid">
+                    <div class="card">
+                      <div class="card-header text-left card-header-huge">
+                        Job Description
+                      </div>
+                      <div class="card-body text-left">
+                        <h4 class="card-title">Special title treatment</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                      </div>
+                      <div class="card-footer text-right">
+                        <a href="#" class="btn btn-ghost-primary">Read More </a>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <div class="row container-fluid">
+                    <div class="col-sm-12 col-md-4">
+                      <div class="card card-profile">
+                        <div class="card-header">
+                          <div class="card-header-title">
+                            Body & Visual
+                          </div>
+                          <button type="button" class="btn btn-outline-primary btn-tiny">Edit</button>
+                        </div>
+                        <div class="card-body">
+                          Something else
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                      <div class="card card-profile">
+                        <div class="card-header">
+                          <div class="card-header-title">
+                            Body & Visual
+                          </div>
+                          <button type="button" class="btn btn-outline-primary btn-tiny">Edit</button>
+                        </div>
+                        <div class="card-body">
+                          Something else
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                      <div class="card card-profile">
+                        <div class="card-header">
+                          <div class="card-header-title">
+                            Body & Visual
+                          </div>
+                          <button type="button" class="btn btn-outline-primary btn-tiny">Edit</button>
+                        </div>
+                        <div class="card-body">
+                          Something else
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <div class="container">
+                    <accordion>
+                      <accordion-group>
+                        <div accordion-heading style="width:100%;" class="accordion-heading accordion-icon-info">
+                          <i></i>
+                          <div class="panel-heading-container">
+                            <div class="panel-heading-title">
+                              MILKA CAMPANHA DE NATAL
+                            </div>
+                            <div class="panel-heading-aside">
+                              5 JOBS
+                            </div>
+                          </div>
+                          <button type="button" class="btn btn-primary">Edit</button>
+                        </div>
+                        <p>Some content</p>
+                      </accordion-group>
+                      <accordion-group>
+                        <div accordion-heading style="width:100%;" class="accordion-heading accordion-icon-info">
+                          <i></i>
+                          <div class="panel-heading-container">
+                            <div class="panel-heading-title">
+                              SOME OTHER CAMPAIGN
+                            </div>
+                            <div class="panel-heading-aside">
+                              5 JOBS
+                            </div>
+                          </div>
+                          <button type="button" class="btn btn-primary">Edit</button>
+                        </div>
+                        <p>Some content</p>
+                      </accordion-group>
+                    </accordion>
+                  </div>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="doc-code-block">
+                <div class="doc-code-block__inner doc-code-block__inner--center">
+                  <div class="container">
+                    <div class="nav-container nav--color--agency">
+                      <nav class="navbar">
+                        <a class="navbar-brand">SNAPJOB</a>
+                        <div class="navbar-btns">
+                          <button type="button" class="btn btn-ghost-primary btn-small">JobSeekers</button>
+                          <button type="button" class="btn btn-ghost-primary btn-small">+ New Campaign</button>
+                          <button type="button" class="btn btn-outline-primary btn-small">My Campaigns</button>
+                          <button type="button" class="btn btn-small btn-ghost-success">Get in</button>
+                        </div>
+                      </nav>
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item" aria-current="page"><a href="">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page"><a href="">Something</a></li>
+                        <li class="breadcrumb-item" aria-current="page"><a href="">Something Else</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="">And this is really something else</a></li>
+                      </ol>
+                    </div>
+                    <div class="nav-container nav--color--agency">
+                      <nav class="navbar navbar-mobile">
+                        <div class="navbar-btns">
+                          <button type="button" class="btn btn-ghost-primary btn-tiny"><div>IMG</div>My Jobs</button>
+                          <button type="button" class="btn btn-ghost-primary btn-tiny active"><div>IMG</div>Jobs</button>
+
+                          <button type="button" class="btn btn-ghost-primary btn-tiny"><div>IMG</div>More</button>
+                          <button type="button" class="btn btn-ghost-primary btn-tiny"><div>IMG</div>More</button>
+                        </div>
+                      </nav>  
+                    </div>
+                  </div>
+                </div>
+                <div class="doc-code-block__inner doc-code-block__inner--code">
+                  <pre>&lt;div class="<span>row</span>"&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+                  <pre>&lt;/div&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

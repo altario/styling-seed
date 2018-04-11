@@ -1,0 +1,195 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+$alt_components__alerts--icon-map: (
+  close: 'close',
+  info: 'info',
+);
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+//sizes
+$alt_components__alert-container__padding-x:                           32px;
+$alt_components__alert-container__padding-y:                           32px;
+
+$alt_components__alert-container__alert__height:                       40px;
+$alt_components__alert-container__alert__margin-x:                     0px;
+$alt_components__alert-container__alert__margin-y:                     15px;
+$alt_components__alert-container__alert__border-width:                 0px;
+$alt_components__alert-container__alert__padding-x:                    0px;
+$alt_components__alert-container__alert__padding-y:                    0px;
+$alt_components__alert-container__alert__line-height:                  $alt_components__alert-container__alert__height - ($alt_components__alert-container__alert__border-width*2);
+$alt_components__alert-container__alert__font-size:                    $font-size--small;
+$alt_components__alert-container__alert__icon-size:                    20px;
+$alt_components__alert-container__alert__icon-size__padding:           $alt_components__alert-container__alert__icon-size * 2;
+
+//colrs
+$alt_components__alert-container__alert__bg-color-default:             $color__state--info;
+$alt_components__alert-container__alert__font-color-default:           $color__white--1;
+$alt_components__alert-container__alert__color__state--success:        $color__state--success;
+$alt_components__alert-container__alert__color__state--info:           $color__state--info;
+$alt_components__alert-container__alert__color__state--warning:        $color__state--warning;
+$alt_components__alert-container__alert__color__state--danger:         $color__state--danger;
+
+
+
+
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@mixin btn-adjust-to-bg($color, $parent-bg){
+  color: $color;
+  background-color: transparent;
+  background-image: none;
+  border-color: $color;
+  &:hover {
+    color: lighten($parent-bg, 15%);
+    background: $color;
+  }
+  &:active {
+    color: darken($parent-bg, 15%);
+    border-color: $color;
+  }
+}
+
+@mixin bg-btn-color-match($bg-color, $font-color){
+  background-color: $bg-color;
+  color: $font-color;
+
+  > .alert-cta > .btn {
+    @include btn-adjust-to-bg($font-color, $bg-color)
+  }
+}
+
+@mixin padding-x($padding-x){
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+}
+
+@mixin padding-y($padding-y){
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+}
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+.alert-container{
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  
+  @include padding-x($alt_components__alert-container__padding-x);
+  @include padding-y($alt_components__alert-container__padding-y);
+  
+  //to get info icon when needed
+  .alert-icon-info {
+    .alert{
+      @include icon(info) {
+      min-width: $alt_components__alert-container__alert__icon-size__padding;
+      // min-width: $alt_components__alert-container__alert__icon-size*3;
+      line-height: $alt_components__alert-container__alert__height;
+      font-size: $alt_components__alert-container__alert__icon-size;
+
+      text-align: center;
+      vertical-align: middle;
+
+      background: rgba(white, .3);
+      } 
+    }
+  }
+  
+  //actual styling
+  .alert{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-bottom: $alt_components__alert-container__alert__margin-y;    
+    border-width: $alt_components__alert-container__alert__border-width;
+    @include padding-x($alt_components__alert-container__alert__padding-x);
+    @include padding-y($alt_components__alert-container__alert__padding-y);
+
+    &.alert-success {
+    @include bg-btn-color-match($alt_components__alert-container__alert__color__state--success, $alt_components__alert-container__alert__font-color-default); 
+    }
+    &.alert-info {
+    @include bg-btn-color-match($alt_components__alert-container__alert__color__state--info, $alt_components__alert-container__alert__font-color-default);  
+    }
+    &.alert-warning {
+    @include bg-btn-color-match($alt_components__alert-container__alert__color__state--warning, $alt_components__alert-container__alert__font-color-default); 
+    }
+    &.alert-danger {
+    @include bg-btn-color-match($alt_components__alert-container__alert__color__state--danger, $alt_components__alert-container__alert__font-color-default);  
+    }
+
+    &.alert-dismissible{
+      padding-right: $alt_components__alert-container__alert__icon-size__padding;
+      
+      .close{
+        display: flex;
+        justify-content: center;
+        
+        width: $alt_components__alert-container__alert__icon-size__padding;
+        min-height: 100%;
+        height: 100%;
+        padding: 0px;
+        font-size: 0px;
+        
+        background: none;
+        border: none;
+        color: inherit;
+        
+        @include icon(close) {
+          font-size: $alt_components__alert-container__alert__icon-size;
+          height: 100%;
+          vertical-align: middle;
+        }
+      }
+
+    }
+    
+    .alert-body{
+      text-align: center;
+      -webkit-flex-grow: 1;
+              flex-grow: 1;
+      @include padding-x(10px);
+      @include text-truncate();
+
+    }
+    .alert-cta{
+    }
+
+  }
+
+}
+
+
+
+
+
