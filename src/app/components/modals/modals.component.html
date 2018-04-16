@@ -1,0 +1,40 @@
+<!-- MODALS -->
+<div id="modals" class="doc-content__block">
+  <h1>#Modals</h1>
+  <a class="ext-doc ext-doc--bootstrap" href="https://getbootstrap.com/docs/4.0/components/modal/" target="_blank">Modals</a>
+  <a class="ext-doc ext-doc--ngx" href="https://valor-software.com/ngx-bootstrap/#/modals" target="_blank">Modals</a>
+
+  <h3>Default Bootstrap Modals</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--center">
+            <button class="btn btn-primary" (click)="openModal(template)">Open Modal</button>
+            <ng-template #template>
+              <div class="modal-header">
+                <h4 class="modal-title pull-left">Alerta</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                Modal <strong>Opened</strong>.
+              </div>
+            </ng-template>
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <pre>&lt;button class="<span>btn btn-primary</span>" (click)="<span>openModal(template)</span>">Open Modal&lt;/button&gt;</pre>
+            <pre>&lt;ng-template <span>#template</span>&gt;</pre>
+            <pre>  &lt;div class="<span>modal-header</span>"&gt;</pre>
+            <pre>    &lt;h4 class="<span>modal-title pull-left</span>"&gt;Alerta&lt;/h4&gt;</pre>
+            <pre>    &lt;button type="button" class="<span>close pull-right</span>" aria-label="<span>Close</span>" (click)="<span>modalRef.hide()</span>"&gt;&lt;span aria-hidden="<span>true</span>"&gt;&times;&lt;/span&gt;&lt;/button&gt;</pre>
+            <pre>  &lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>modal-body</span>"&gt;</pre>
+            <pre>    Modal &lt;strong&gt;Opened&lt;/strong&gt;.</pre>
+            <pre>  &lt;/div&gt;</pre>
+            <pre>&lt;/ng-template&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,6 +16,6 @@
 
 // +font-face
 @include font-face('Montserrat', 'MontserratLight', $font-weight--light);
-@include font-face('Montserrat', 'MontserratRegular');
+@include font-face('Montserrat', 'MontserratRegular', $font-weight--normal);
 @include font-face('Montserrat', 'MontserratBold', $font-weight--bold);
 @include font-face('altaricons', 'altaricons');

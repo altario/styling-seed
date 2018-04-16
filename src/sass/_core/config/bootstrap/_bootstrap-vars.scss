@@ -17,6 +17,7 @@ $body-bg:                            $body__color__background;
 $body-color:                         $body__color__text;
 
 
+
 // $grid
 // --------------------
 $grid-columns:                       $grid__default--columns;
@@ -38,13 +39,15 @@ $font-weight-normal:                 $font-weight--normal;
 $font-weight-bold:                   $font-weight--bold;
 
 
+
 // $fonts
 // --------------------
 $border-width:                       $border-width__default;
-$border-color:                       $border__color;
+$border-color:                       $input__border-color;
 $border-radius:                      $border-radius__default;
 $border-radius-sm:                   $border-width__default--sm;
 $border-radius-lg:                   $border-width__default--lg;
+
 
 
 // $buttons
@@ -81,6 +84,9 @@ $input-padding-y-lg:                 $input__padding-y-lg;
 $input-line-height-lg:               $input__line-height-lg;
 
 $input-bg:                           $input__bg;
+$input-placeholder-color:            $input__placeholder--color;
+
+$input-disabled-bg:                  $input__disabled__bg;
 
 $input-color:                        $input__color;
 $input-border-color:                 $input__border-color;
@@ -101,9 +107,16 @@ $input-border-radius-sm:             $input__border-radius-sm;
 $input-border-radius-lg:             $input__border-radius-lg;
 
 
+$form-check-input-gutter:            $input__checkbox__gutter;
+$form-check-input-margin-y:          $input__checkbox__margin--y;
+$form-check-input-margin-x:          $input__checkbox__margin--x;
+
+
+
 // $links
 // --------------------
 $link-color:                         $link__color;
+
 
 
 // $transition
@@ -111,9 +124,11 @@ $link-color:                         $link__color;
 $transition-base:                    $transition__base;
 
 
+
 // $flags
 // --------------------
 $enable-shadows:                     false;
+
 
 
 // $theme-colors
@@ -136,4 +151,4 @@ $theme-colors: (
 $yiq-text-dark:  $color__black--2 !default;
 $yiq-text-light: $color__white--1 !default;
 
-$yiq-contrasted-threshold: 300 !default;
+$yiq-contrasted-threshold: 190 !default;

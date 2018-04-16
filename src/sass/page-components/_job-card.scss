@@ -1,0 +1,153 @@
+
+
+$job-card__height: 200px;
+$job-card__actions__height: 60px;
+
+
+
+
+
+.job-card {
+  width: 100%;
+  height: $job-card__height;
+  background: $color__dark-blue-gray--6;
+  box-shadow: $shadow--wide--2;
+  .row {
+    height: 100%;
+  }
+  .job-card__sidebar {
+    max-width: 200px;
+    height: 100%;
+    background: $color__white--1;
+    @include align(center middle column);
+    .job-card__sidebar__price {
+      color: $color__night;
+      text-align: center;
+      .job-card__sidebar__price__flat {
+        font-weight: $font-weight--bold;
+        font-size: $font-size--head-2;
+        letter-spacing: $letter-spacing--1;
+        &:after {
+          content: '€';
+          font-weight: $font-weight--normal;
+          font-size: $font-size--tiny;
+          margin-left: 3px;
+        }
+      }
+      .job-card__sidebar__price__hour {
+        font-size: $font-size--tiny;
+        font-weight: $font-weight--normal;
+        text-transform: uppercase;
+        margin-top: 5px;
+      }
+    }
+    .job-card__sidebar__time {
+      font-size: $font-size--tiny;
+      color: $color__night;
+      margin-top: 20px;
+      padding-top: 34px;
+      font-weight: $font-weight--normal;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing--2;
+      @include icon(clock) {
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+        @include center(h);
+        top: 0;
+      }
+    }
+  }
+  .job-card__content {
+    .job-card__content__info {
+      height: calc(100% - #{$job-card__actions__height});
+      background: $color__night;
+      padding: 20px 60px;
+      color: $color__white--1;
+      .job-card__content__info__title {
+        font-size: $font-size--head-3;
+        text-transform: uppercase;
+        font-weight: $font-weight--bold;
+        letter-spacing: $letter-spacing--1;
+        margin-bottom: 5px;
+      }
+      .job-card__content__info__description {
+        font-size: $font-size--small;
+        margin-bottom: 10px;
+        @include line-clamp(2);
+      }
+      .job-card__content__info__origin {
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing--1;
+        font-size: $font-size--small;
+      }
+    }
+    .job-card__content__action-big {
+      height: calc(100% - #{$job-card__actions__height});
+      .btn {
+        height: 100%;
+      }
+    }
+    .job-card__content__type {
+      height: $job-card__actions__height;
+      .job-card__content__type__info {
+        color: $color__white--1;
+        line-height: 1.2;
+        text-align: center;
+        font-size: $font-size--nano;
+        padding: 10px;
+        padding-top: 30px;
+        font-weight: $font-weight--normal;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing--2;
+        &:before {
+          width: 22px;
+          height: 10px;
+          font-size: 22px;
+          @include center(h);
+          top: 8px;
+        }
+        &.job-card__content__type__info--date {
+          background: $color__night-alt--1;
+          @include icon(sun);
+        }
+        &.job-card__content__type__info--time {
+          background: $color__night-alt--2;
+          @include icon(sun);
+        }
+        &.job-card__content__type__info--gender {
+          background: $color__night-alt--3;
+          @include icon(sun);
+        }
+      }
+    }
+    .job-card__content__actions {
+      @include align(row center middle);
+      .job-card__content__actions__action {
+        height: $job-card__actions__height;
+        line-height: $job-card__actions__height;
+        text-align: center;
+        flex: 1;
+        background: $color__white--1;
+        color: $color__brand--1;
+        font-size: $font-size--tiny;
+        text-transform: uppercase;
+        &:before {
+          margin-right: 30px;
+          font-size: 16px;
+        }
+        &.job-card__content__actions__action--share {
+          @include icon(share-alt);
+        }
+        &.job-card__content__actions__action--like {
+          @include icon(heart-o);
+        }
+      }
+      .btn {
+        height: 100%;
+      }
+    }
+  }
+}

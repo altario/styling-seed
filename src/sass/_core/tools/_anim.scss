@@ -20,10 +20,10 @@
 @mixin anim($_transition...) {
   @include on-event(true) {
     transition:
-      background $transition__base--noprop,
-      color $transition__base--noprop,
-      border $transition__base--noprop,
-      transform $transition__base--noprop,
+      background $transition__base--noprop ease-in-out,
+      color $transition__base--noprop ease-in-out,
+      border $transition__base--noprop ease-in-out,
+      transform $transition__base--noprop ease-in-out,
       ;
     @if length($_transition) > 0 {
       transition-property: #{$_transition};

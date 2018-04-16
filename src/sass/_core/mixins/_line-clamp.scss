@@ -17,7 +17,7 @@
 // --------------------------------------------------
 
 // =line-clamp
-@mixin line-clamp($_line-count: 1, $_line-height: $alt_global__line-height) {
+@mixin line-clamp($_line-count: 1, $_line-height: $line-height__base) {
   overflow: hidden;
   line-height: $_line-height;
   max-height: $_line-height * $_line-count;

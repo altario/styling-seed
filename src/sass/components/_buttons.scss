@@ -18,6 +18,7 @@
 // $alt_components__buttons--icon-map (class: 'icon')
 $alt_components__buttons--icon-map: (
   calendar: 'calendar',
+  info: 'info',
 );
 
 
@@ -39,7 +40,7 @@ $alt_components__buttons--icon-map: (
 
   &.disabled,
   &:disabled {
-    color: #D6DDE1 !important;
+    color: $color__dark-blue-gray--5 !important;
     background-color: transparent !important;
     border-color: transparent !important;
   }
@@ -180,7 +181,7 @@ $alt_components__buttons--icon-map: (
     // opacity: $btn-disabled-opacity;
     background: $color__light-yellow-gray--2 !important;
     border-color: $color__light-yellow-gray--2 !important;
-    color: #D6DDE1 !important;
+    color: $color__dark-blue-gray--5 !important;
     @include box-shadow(none);
   }
 

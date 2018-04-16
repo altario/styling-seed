@@ -16,8 +16,7 @@
 // #VARS
 // --------------------------------------------------
 
-// $brand
-// --------------------
+// $brand --------------------
 $color__brand--1: #FA0D60;
 $color__brand--2: #5656E3;
 $color__brand--3: #1EA1FF;
@@ -25,8 +24,7 @@ $color__brand--4: #A7BBC9;
 
 
 
-// $gray
-// --------------------
+// $gray --------------------
 
 // black
 $color__black--1: #000;
@@ -38,12 +36,12 @@ $color__white--2: #FBFCFD;
 $color__white--3: #F7F9FA;
 
 // dark-blue-gray
-$color__dark-blue-gray--1:#515A61;
-$color__dark-blue-gray--2:#707D87;
-$color__dark-blue-gray--3:#A1ACB5;
-$color__dark-blue-gray--4:#BCC6CF;
-$color__dark-blue-gray--5:#DCE1E5;
-$color__dark-blue-grey--6:#E6EAED;
+$color__dark-blue-gray--1: #515A61;
+$color__dark-blue-gray--2: #707D87;
+$color__dark-blue-gray--3: #A1ACB5;
+$color__dark-blue-gray--4: #BCC6CF;
+$color__dark-blue-gray--5: #DCE1E5;
+$color__dark-blue-gray--6: #E6EAED;
 
 // light-yellow-gray
 $color__light-yellow-gray--1: #F5F5F0;
@@ -52,8 +50,8 @@ $color__light-yellow-gray--3: #E3E3DE;
 $color__light-yellow-gray--4: #D9D9D2;
 
 
-// $color
-// --------------------
+
+// $color --------------------
 
 // morning
 $color__morning: $color__brand--3;
@@ -75,8 +73,7 @@ $color__night-alt--3: #A561FF;
 
 
 
-// $state
-// --------------------
+// $state --------------------
 $color__state--success: #41CC7B;
 $color__state--info: $color__brand--3;
 $color__state--warning: #F8BD1B;
@@ -84,7 +81,6 @@ $color__state--danger: #FA4141;
 
 
 
-// $gradients
-// --------------------
+// $gradients --------------------
 $color__grad-morning-afternoon: #76ACA3, #D1CD66;
 $color__grad-afternoon-night: #DF9D4B, #BF738A;
