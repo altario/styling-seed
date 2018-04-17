@@ -25,6 +25,26 @@
 
 
 // --------------------------------------------------
+// #MAPS
+// --------------------------------------------------
+
+$doc__breakpoints__color-map: (
+  $color__brand--1,
+  $color__brand--2,
+  $color__brand--3,
+  $color__brand--4,
+  $color__afternoon,
+  $color__night,
+  $color__state--success,
+  $color__state--warning,
+  $color__state--danger,
+);
+
+
+
+
+
+// --------------------------------------------------
 // #VARS
 // --------------------------------------------------
 
@@ -45,6 +65,63 @@ $doc__sidebar__height: 80px;
 // #STYLES
 // --------------------------------------------------
 
+.mq-container {
+  &:before {
+    content: 'mq:';
+    width: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: $font-size--tiny;
+    padding: 5px 0;
+    text-align: center;
+    background: rgba($color__dark-blue-gray--4, .8);
+    color: white;
+    z-index: 10;
+  }
+  &:after {
+    content: 'desktop';
+    position: fixed;
+    top: 0;
+    left: 40px;
+    font-size: $font-size--tiny;
+    padding: 5px 10px;
+    background: rgba($color__brand--1, .8);
+    color: white;
+    z-index: 10;
+    @each $item in $alt_breakpoints {
+      $key: nth($item, 1);
+      $value: nth($item, 2);
+      $i: index($alt_breakpoints, $item);
+      $color: nth($doc__breakpoints__color-map, $i);
+
+      @include mq($value) {
+        content: '#{$key}';
+        background: $color;
+      }
+    }
+  }
+  padding: 80px;
+  @include mq(iphone8plus) {
+    padding: 0px;
+  }
+  @include mq(iphone8) {
+    padding: 30px;
+  }
+}
+
+.container-fluid {
+  padding: 0 !important;
+  & > .row {
+    width: 100% !important;
+    margin: 0 !important;
+    & > .doc-content {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+  }
+}
+
 .doc-sidebar {
   width: $doc__sidebar__width !important;
   max-width: $doc__sidebar__width !important;
@@ -59,6 +136,22 @@ $doc__sidebar__height: 80px;
   @include mq(iphone8plus) {
     display: none;
   }
+
+  & ~ .doc-content {
+    max-width: #{100% - $doc__sidebar__width} !important;
+    margin-left: $doc__sidebar__width !important;
+    flex: 0 0 #{100% - $doc__sidebar__width} !important;
+    box-sizing: border-box;
+    padding: 0 !important;
+    @include mq(iphone8) {
+    }
+    @include mq(iphone8plus) {
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      flex: 0 0 100% !important;
+    }
+  }
+
   .doc-sidebar__header {
     width: 100%;
     height: $doc__sidebar__height;
@@ -109,21 +202,24 @@ $doc__sidebar__height: 80px;
 }
 
 .doc-content {
-  max-width: #{100% - $doc__sidebar__width} !important;
-  margin-left: $doc__sidebar__width !important;
-  flex: 0 0 #{100% - $doc__sidebar__width} !important;
-  box-sizing: border-box;
-  padding: 0 !important;
-  @include mq(iphone8plus) {
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    flex: 0 0 100% !important;
-  }
   .doc-content__block {
     display: block;
     box-sizing: border-box;
     // margin-bottom: 120px;
     padding: 40px 60px !important;
+    &.doc-content__block--no-pad {
+      padding: 0 !important;
+      &:first-child {
+        & > h1 {
+          margin-top: 40px;
+        }
+      }
+      & > h1 {
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-top: 120px;
+      }
+    }
     &:nth-child(even) {
       background: $doc__block-color-alt;
     }
@@ -471,16 +567,6 @@ $doc__sidebar__height: 80px;
         }
       }
     }
-  }
-}
-
-.mq-container {
-  padding: 80px;
-  @include mq(iphone8plus) {
-    padding: 0px;
-  }
-  @include mq(iphone8) {
-    padding: 30px;
   }
 }
 

@@ -3,6 +3,7 @@
 // INDEX
 //
 //  #VARS
+//
 // --------------------------------------------------
 
 // --------------------------------------------------
@@ -30,14 +31,14 @@ $body__color__highlight--text:        $color__white--1;
 
 // $breakpoints: points
 $alt_breakpoints: (
-  sm: 568px,
-  md: 768px,
-  lg: 1024px,
   xl: 1280px,
+  lg: 1024px,
+  md: 768px,
+  sm: 568px,
 
   // ios
-  iphone8: 375px,
   iphone8plus: 414px,
+  iphone8: 375px,
 ) !default;
 
 
@@ -91,7 +92,7 @@ $font-size--tiny:                     0.69em;
 $font-size--nano:                     0.58em;
 
 // $fonts: line-height
-$line-height__base:                   1.5;
+$line-height__base:                   1.5em;
 $line-height--1:                      100%;
 $line-height--2:                      150%;
 $line-height--3:                      170%;
