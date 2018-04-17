@@ -5,10 +5,10 @@ import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
-  templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.scss']
+  templateUrl: './fields.component.html',
+  styleUrls: ['./fields.component.scss']
 })
-export class FormsComponent implements OnInit {
+export class FieldsComponent implements OnInit {
 
   constructor(router: Router) {
     router.events.subscribe(s => {

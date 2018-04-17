@@ -13,45 +13,113 @@ import { Daterangepicker } from 'ng2-daterangepicker';
 // app
 import { AppComponent } from './app.component';
 
-// page components
+
+
+// components --------------------
+
+// components: colors
+import { ColorsComponent } from './components/colors/colors.component';
+
+// components: typography
+import { TypographyComponent } from './components/typography/typography.component';
+
+// components: buttons
+import { ButtonsComponent } from './components/buttons/buttons.component';
+
+// components: forms
+import { FieldsComponent } from './components/forms/fields/fields.component';
+import { NgxSelectComponent } from './components/forms/ngx-select/ngx-select.component';
+import { Ng2DaterangepickerComponent } from './components/forms/ng2-daterangepicker/ng2-daterangepicker.component';
+import { NgxSearchComponent } from './components/forms/ngx-search/ngx-search.component';
+import { FormsTextareaComponent } from './components/forms/forms-textarea/forms-textarea.component';
+import { FormsCheckboxRadioToggleComponent } from './components/forms/forms-checkbox-radio-toggle/forms-checkbox-radio-toggle.component';
+
+// components: grid
+import { GridComponent } from './components/grid/grid.component';
+
+// components: modals
+import { ModalsComponent } from './components/modals/modals.component';
+
+// components: nav
+import { NavComponent } from './components/nav/nav.component';
+
+// components: sidebar
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+
+
+
+// page-components --------------------
+
+// page-components: job
 import { JobComponent } from './page-components/job/job.component';
+
+// page-components: avatar
 import { AvatarComponent } from './page-components/avatar/avatar.component';
 
-// components
-import { ColorsComponent } from './components/colors/colors.component';
-import { TypographyComponent } from './components/typography/typography.component';
-import { ButtonsComponent } from './components/buttons/buttons.component';
-import { FormsComponent } from './components/forms/forms.component';
-import { NgxSelectComponent } from './components/ngx-select/ngx-select.component';
-import { Ng2DaterangepickerComponent } from './components/ng2-daterangepicker/ng2-daterangepicker.component';
-import { NgxSearchComponent } from './components/ngx-search/ngx-search.component';
-import { FormsTextareaComponent } from './components/forms-textarea/forms-textarea.component';
-import { FormsCheckboxRadioToggleComponent } from './components/forms-checkbox-radio-toggle/forms-checkbox-radio-toggle.component';
-import { GridComponent } from './components/grid/grid.component';
-import { ModalsComponent } from './components/modals/modals.component';
-import { NavComponent } from './components/nav/nav.component';
+// page-components: cards
+import { CardsComponent } from './components/cards/cards.component';
+
+// page-components: footers
+import { FootersComponent } from './components/footers/footers.component';
+
+// page-components: filters
+import { FiltersComponent } from './components/filters/filters.component';
 
 
 // simple routes
 const appRoutes: Routes = [
   { path: '', redirectTo: 'colors', pathMatch: 'full' },
 
-  // components
+
+
+  // components --------------------
+
+  // components: colors
   { path: 'colors', component: ColorsComponent },
+
+  // components: typography
   { path: 'typography', component: TypographyComponent },
+
+  // components: typography
   { path: 'buttons', component: ButtonsComponent },
-  { path: 'forms', component: FormsComponent },
+
+  // components: forms
+  { path: 'forms', component: FieldsComponent },
   { path: 'ngx-select', component: NgxSelectComponent },
   { path: 'ng2-daterangepicker', component: Ng2DaterangepickerComponent },
   { path: 'ngx-search', component: NgxSearchComponent },
   { path: 'forms-textarea', component: FormsTextareaComponent },
   { path: 'forms-checkbox-radio-toggle', component: FormsCheckboxRadioToggleComponent },
+
+  // components: grid
   { path: 'grid', component: GridComponent },
+
+  // components: modals
   { path: 'modals', component: ModalsComponent },
+
+  // components: nav
   { path: 'nav', component: NavComponent },
 
-  // page components
+  // components: sidebar
+  { path: 'sidebar', component: SidebarComponent },
+
+  // components: cards
+  { path: 'cards', component: CardsComponent },
+
+  // components: footers
+  { path: 'footers', component: FootersComponent },
+
+  // components: filters
+  { path: 'filters', component: FiltersComponent },
+
+
+
+  // page-components --------------------
+
+  // page-components: job
   { path: 'job', component: JobComponent },
+
+  // page-components: avatar
   { path: 'avatar', component: AvatarComponent },
 ];
 
@@ -59,20 +127,62 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+
+
+
+    // page-components --------------------
+
+    // page-components: job
     JobComponent,
+
+    // page-components: avatar
     AvatarComponent,
+
+
+
+    // layout --------------------
+
+    // layout: modal
+    ModalsComponent,
+
+    // layout: nav
+    NavComponent,
+
+    // layout: sidebar
+    SidebarComponent,
+
+    // layout: cards
+    CardsComponent,
+
+    // layout: footers
+    FootersComponent,
+
+    // layout: filters
+    FiltersComponent,
+
+
+
+    // components --------------------
+
+    // components: colors
     ColorsComponent,
+
+    // components: typography
     TypographyComponent,
+
+    // components: buttons
     ButtonsComponent,
-    FormsComponent,
+
+    // components: forms
+    FieldsComponent,
     NgxSelectComponent,
     Ng2DaterangepickerComponent,
     NgxSearchComponent,
     FormsTextareaComponent,
     FormsCheckboxRadioToggleComponent,
+
+    // components: grid
     GridComponent,
-    ModalsComponent,
-    NavComponent
   ],
   imports: [
     BrowserModule,
