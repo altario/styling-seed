@@ -20,6 +20,7 @@
 // +/core
 @import '_core/core';
 
+
 // +/layout
 @import 'layout/app-wrapper';
 
@@ -33,6 +34,8 @@
 @import 'components/grid';
 @import 'components/alerts';
 @import 'components/modals';
+@import 'components/cards';
+@import 'components/chips';
 
 
 // +/page-components

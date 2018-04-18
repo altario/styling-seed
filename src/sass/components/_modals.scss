@@ -141,3 +141,33 @@
     filter: blur(20px);
   }
 }
+
+
+
+
+//ask if this should go to dropdown
+.contextual-modal{
+  @include mq(sm) {
+    .modal-content{
+      min-width: 100vw;
+    }
+    .modal-dialog{
+      align-items: flex-end;
+
+      min-height: 100vh;
+      min-width: 100vw;
+
+      padding: 0;
+      border: 0;
+      margin: 0;
+
+      .modal.fade & {
+        @include transition($modal-transition);
+        transform: translate(0, 100%);
+      }
+      .modal.show & {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
