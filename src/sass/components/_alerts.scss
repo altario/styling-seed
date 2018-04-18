@@ -154,10 +154,11 @@
       background-image: none;
       border-color: $color__white--1;
       &:hover {
-        background: rgba($color__white--1, .5);
+        background: rgba($color__white--1, .7);
       }
       &:active {
         background: $color__white--1;
+        border-color: $color__white--1;
       }
     }
   }
