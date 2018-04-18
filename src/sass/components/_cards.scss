@@ -1,0 +1,291 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+$alt_components__modals--icon-map: (
+  close: 'close',
+  info: 'info',
+);
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+$alt_components__card__border-width__default:               0;
+// $alt_components__card__padding-x__1:                        40px;
+// $alt_components__card__padding-x__2:                        64px;
+// $alt_components__card__padding-y__1:                        0px;
+// $alt_components__card__padding-y__2:                        26px;
+
+// // $alt_components__card__header:                            
+// $alt_components__card__header__height__default:             40px;
+// $alt_components__card__header__height__big:                 64px;
+// $alt_components__card__header__height__huge:                80px;
+
+// color variables
+// $color__dark-blue-gray--6
+
+// $alt_components__card__body:                              
+
+// sizes - default
+$alt_components__card__padding-x:                           64px;
+
+$alt_components__card__header__height:                      40px;
+$alt_components__card__header__height__big:                 60px;
+$alt_components__card__header__height__huge:                80px;
+$alt_components__card__header__border-width:                0px;
+$alt_components__card__header__font-size:                   $font-size--head-4;
+$alt_components__card__header__font-weight:                 $font-weight--bold;
+$alt_components__card__header__padding-x:                   $alt_components__card__padding-x;
+$alt_components__card__header__padding-y:                   0px;
+$alt_components__card__header__letter-spacing:              $letter-spacing--2;
+$alt_components__card__header__color:                       $color__brand--3;
+$alt_components__card__header__bg-color:                    $color__light-yellow-gray--2;
+//profile
+$alt_components__card__header__profile__border-width:       0px;
+$alt_components__card__header__profile__font-size:          $font-size--head-4;
+$alt_components__card__header__profile__font-weight:        $font-weight--normal;
+$alt_components__card__header__profile__btn__font-weight:   $font-weight--bold;
+$alt_components__card__header__profile__padding-x:          20px;
+$alt_components__card__header__profile__padding-y:          20px;
+$alt_components__card__header__profile__letter-spacing:     $letter-spacing--2;
+$alt_components__card__header__profile__color:              $color__dark-blue-gray--2;
+$alt_components__card__header__profile__btn__color:         $color__dark-blue-gray--1;
+$alt_components__card__header__profile__bg-color:           $color__dark-blue-gray--6;
+
+$alt_components__card__body__border-width:                  0px;
+$alt_components__card__body__font-size:                     $font-size--head-4;
+$alt_components__card__body__font-weight:                   $font-weight--light;
+$alt_components__card__body__padding-x:                     $alt_components__card__padding-x;
+$alt_components__card__body__padding-y:                     36px;
+$alt_components__card__body__letter-spacing:                $letter-spacing--2;
+$alt_components__card__body__color:                         $color__brand--3;
+$alt_components__card__body__bg-color:                      $color__white--1;
+//profile
+$alt_components__card__body__profile__border-width:         0px;
+$alt_components__card__body__profile__font-size:            $font-size--head-4;
+$alt_components__card__body__profile__font-weight:          $font-weight--light;
+$alt_components__card__body__profile__padding-x:            20px;
+$alt_components__card__body__profile__padding-y:            36px;
+$alt_components__card__body__profile__letter-spacing:       $letter-spacing--2;
+$alt_components__card__body__profile__color:                $color__brand--3;
+$alt_components__card__body__profile__bg-color:             $color__white--1;
+  
+$alt_components__card__footer__border-width:                0px;
+$alt_components__card__footer__font-size:                   $font-size--head-4;
+$alt_components__card__footer__font-weight:                 $font-weight--bold;
+$alt_components__card__footer__padding-x:                   $alt_components__card__padding-x;
+$alt_components__card__footer__padding-y:                   18px;
+//replace with height = 60px?
+$alt_components__card__footer__letter-spacing:              $letter-spacing--2;
+$alt_components__card__footer__color:                       $color__brand--3;
+$alt_components__card__footer__bg-color:                    $color__white--1;
+
+$alt_components__accordion__color:                    $color__dark-blue-gray--2;
+$alt_components__accordion__color--active:            $color__brand--3;
+$alt_components__accordion__shadow:                   $shadow--wide--2;
+$alt_components__accordion__background-color:         $color__dark-blue-gray--6;
+$alt_components__accordion__panel__heading__aside__font-weight:        $font-weight--normal;
+///////////////////
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@mixin padding-x($padding-x){
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+}
+
+@mixin padding-y($padding-y){
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+}
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+.card{
+  min-width: 100%;
+  border-width: $alt_components__card__border-width__default;
+  -webkit-box-shadow: $shadow--wide--2;
+          box-shadow: $shadow--wide--2;
+  .card-header{
+    display: flex;
+    -webkit-align-items: center;
+            align-items: center;
+    min-height: $alt_components__card__header__height;
+    border-width: $alt_components__card__header__border-width;
+    font-weight: $alt_components__card__header__font-weight;
+    @include padding-x($alt_components__card__header__padding-x);
+    @include padding-y($alt_components__card__header__padding-y);
+    letter-spacing: $alt_components__card__header__letter-spacing;
+    color: $alt_components__card__header__color;
+    
+    .card-header-title{
+      display: inline-block;
+    }
+
+    &.card-header-big{
+      min-height: $alt_components__card__header__height__big;
+    }
+    &.card-header-huge{
+      min-height: $alt_components__card__header__height__huge;
+    }
+  }
+  
+  .card-body{
+    border-width: $alt_components__card__body__border-width;
+    @include padding-x($alt_components__card__body__padding-x);
+    padding-top: $alt_components__card__body__padding-y;
+    letter-spacing: $alt_components__card__body__letter-spacing; 
+    background-color: $alt_components__card__body__bg-color;
+    
+    .card-title{
+      margin-top: 0;
+    }
+  }
+  
+  .card-footer{
+    border-width: $alt_components__card__footer__border-width;
+    letter-spacing: $alt_components__card__footer__letter-spacing; 
+    @include padding-x($alt_components__card__footer__padding-x);
+    padding-top: 0;
+    padding-bottom: $alt_components__card__footer__padding-y;
+    background-color: $alt_components__card__footer__bg-color;
+  }
+
+  &.card-profile{
+    .card-header{
+      display: flex;
+      -webkit-justify-content: space-between;
+              justify-content: space-between;
+      -webkit-align-items: center;
+              align-items: center;
+      min-height: $alt_components__card__header__height__big;
+      font-weight: $alt_components__card__header__profile__font-weight;
+      @include padding-x($alt_components__card__header__profile__padding-x);
+      @include padding-y($alt_components__card__header__profile__padding-y);
+      color: $alt_components__card__header__profile__color;
+      background-color: $alt_components__card__header__profile__bg-color;
+      .card-header-title{
+        vertical-align: middle;
+      }
+      > .btn{
+        color: $alt_components__card__header__profile__btn__color;
+        font-weight: $alt_components__card__header__profile__btn__font-weight;
+        width: 100px;
+      }
+    }
+    .card-body{
+      @include padding-x($alt_components__card__body__profile__padding-x);
+    }
+
+  }
+}
+
+.panel-group{
+
+  -webkit-box-shadow: $alt_components__accordion__shadow;
+          box-shadow: $alt_components__accordion__shadow;
+
+  .panel{
+    margin-bottom: 8px;
+    &.card{
+      @include transition();
+      -webkit-box-shadow: none;
+              box-shadow: none;
+    }
+    .panel-heading{
+      padding-left: 20px;
+      min-height: 60px;
+      background-color: $alt_components__accordion__background-color;
+      color: $alt_components__accordion__color;
+      padding-right: 0px;
+    }
+  }
+  .panel-open{
+    .panel-heading{
+      color: $alt_components__accordion__color--active;
+    }
+    .btn {
+      background: $alt_components__accordion__color--active!important;
+      border-color: $alt_components__accordion__color--active!important;
+      color: #fff !important;
+      pointer-events: auto!important;
+    }
+  }
+  .accordion-icon-info {
+    @include icon(info) {
+      min-width: 40px;
+      line-height: 60px;
+      font-size: 20px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  .panel-title{
+    width: 100%;
+    .accordion-toggle{
+      width: 100%;
+      .accordion-heading{
+        display: flex;
+        -webkit-justify-content: space-between;
+                justify-content: space-between;
+        -webkit-align-items: center;
+                align-items: center;
+        .panel-heading-container{
+          -webkit-flex-grow: 1;
+                  flex-grow: 1;
+          text-align: left;
+          display: flex;
+          -webkit-justify-content: space-between;
+                  justify-content: space-between;
+          -webkit-align-items: center;
+                  align-items: center;
+          font-size: 13px; 
+          .panel-heading-aside{
+            padding-right: 20px;
+            font-weight: $alt_components__accordion__panel__heading__aside__font-weight;
+            color: $alt_components__accordion__color;
+            @include mq(md){
+              display: none;
+            }
+          }
+        }
+        & > .btn {
+          min-height: 60px;
+          font-size: 13px;
+          background: $color__light-yellow-gray--1;
+          border: $color__light-yellow-gray--1;
+          color: $color__dark-blue-gray--4;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+
