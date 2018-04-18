@@ -3,8 +3,10 @@
 // INDEX
 //
 //  #MIXINS
+//    =chips__tag
 //
 //  #STYLES
+//    _chips
 //
 // ------------------------------------------------------------------
 
@@ -12,7 +14,92 @@
 // #MIXINS
 // ------------------------------------------------------------------
 
+// =chips__input
+@mixin chips__input {
+  tag-input-form {
+    width: 60px !important;
+    flex: 0 0 60px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    z-index: 10;
+    form {
+      width: 100%;
+      height: 100%;
+      input {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .ng2-tag-input__text-input {
+      background: rgba($color__white--1, .5);
+      &::placeholder {
+        color: $color__dark-blue-gray--4;
+      }
+    }
+  }
+}
 
+// =chips__tag
+@mixin chips__tag {
+  tag {
+    height: 30px;
+    line-height: 30px;
+    background: #F0F4F7;
+    padding: 0 12px;
+    border-radius: 0;
+    display: inline-block;
+    margin: 0 20px 0 0;
+    flex: 0 0 auto;
+    padding-right: 30px;
+    @include anim;
+    &:focus,
+    &:hover {
+      background: lighten(#F0F4F7, 15%) !important;
+      box-shadow: none !important;
+    }
+    &:active {
+      background: darken(#F0F4F7, 10%) !important;
+      box-shadow: none !important;
+    }
+    tag-ripple {
+      display: none;
+    }
+    .tag__text {
+      color: $color__dark-blue-gray--2;
+      font-size: $font-size--small;
+      padding: 0 15px;
+    }
+    delete-icon {
+      height: 30px;
+      padding: 0 15px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: scale(1) !important;
+      @include outline;
+      span {
+        width: 8px;
+        height: 30px;
+        position: relative;
+        color: $color__light-yellow-gray--1;
+        @include center;
+        @include icon(close) {
+          width: 8px;
+          height: 8px;
+          line-height: 8px;
+          @include center;
+          font-size: 8px;
+          color: $color__dark-blue-gray--2;
+        }
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+}
 
 
 
@@ -25,97 +112,21 @@
 // _chips
 .chips {
   background: $color__dark-blue-gray--6;
-  padding: 15px;
-  overflow-x: auto;
   .ng2-tag-input {
-    padding: 0 !important;
+    padding: 0 90px 0 15px !important;
     margin: 0 !important;
     border: none !important;
+    overflow: hidden;
     .ng2-tags-container {
       flex-wrap: nowrap !important;
-      tag {
-        height: 30px;
-        line-height: 30px;
-        background: #F0F4F7;
-        padding: 0 12px;
-        border-radius: 0;
-        display: inline-block;
-        margin: 0 20px 0 0;
-        flex: 0 0 auto;
-        padding-right: 30px;
-        @include anim;
-        &:hover {
-          background: lighten(#F0F4F7, 15%) !important;
-          box-shadow: none !important;
-        }
-        &:active {
-          background: darken(#F0F4F7, 10%) !important;
-          box-shadow: none !important;
-        }
-        tag-ripple {
-          display: none;
-        }
-        .tag__text {
-          color: $color__dark-blue-gray--2;
-          font-size: $font-size--small;
-          padding: 0 15px;
-        }
-        delete-icon {
-          height: 30px;
-          padding: 0 15px;
-          text-align: center;
-          position: absolute;
-          top: 0;
-          right: 0;
-          transform: scale(1) !important;
-          @include outline;
-          span {
-            width: 8px;
-            height: 30px;
-            position: relative;
-            color: $color__light-yellow-gray--1;
-            @include center;
-            @include icon(close) {
-              width: 8px;
-              height: 8px;
-              line-height: 8px;
-              @include center;
-              font-size: 8px;
-              color: $color__dark-blue-gray--2;
-            }
-            svg {
-              display: none;
-            }
-          }
-        }
-      }
-      tag-input-form {
-        width: 30px !important;
-        min-width: 30px !important;
-        height: 30px;
-        // position: absolute;
-        // right: 0;
-        // background: tomato;
-        // z-index: 10;
-        form {
-          width: 100%;
-          height: 100%;
-          input {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .ng2-tag-input__text-input {
-          padding: 0;
-          background: transparent;
-          &::placeholder {
-            color: transparent;
-          }
-        }
-      }
-      .tag-input-form {
-        display: none;
-      }
+      padding: 15px 0;
+      overflow-x: auto;
+
+      // +chips__tag
+      @include chips__tag;
+
+      // +chips__input
+      @include chips__input;
     }
   }
 }
