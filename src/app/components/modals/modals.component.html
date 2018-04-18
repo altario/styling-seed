@@ -10,16 +10,62 @@
       <div class="col">
         <div class="doc-code-block">
           <div class="doc-code-block__inner doc-code-block__inner--center">
+
             <button class="btn btn-primary" (click)="openModal(template)">Open Modal</button>
             <ng-template #template>
               <div class="modal-header">
-                <h4 class="modal-title pull-left">Alerta</h4>
-                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">This is H4 with "Head Size 4"</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
               </div>
               <div class="modal-body">
                 Modal <strong>Opened</strong>.
+                This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-ghost-primary btn-small action action-cancel">Cancel</button>
+                <button type="button" class="btn btn-primary btn-info btn-small action action-submit">Confirm</button>
               </div>
             </ng-template>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <pre>&lt;ng-template <span>#template</span>&gt;</pre>
+            <pre>  &lt;div class="<span>modal-header</span>"&gt;</pre>
+            <pre>    &lt;h4 class="<span>modal-title</span>"&gt;This is a title"&lt;/h4&gt;</pre>
+            <pre>    &lt;button type="button" class="<span>close</span>" <span>aria-label="Close" (click)="modalRef.hide()"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;/button</span>&gt;</pre>
+            <pre>  &lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>modal-body</span>"&gt;</pre>
+            <pre>    Modal &lt;strong&gt;Opened&lt;/strong&gt;.</pre>
+            <pre>    This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.</pre>
+            <pre>  &lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>modal-footer</span>"&gt;</pre>
+            <pre>    &lt;button type="button" class="<span>btn btn-ghost-primary btn-small</span>"&gt;Cancel&lt;/button&gt;</pre>
+            <pre>    &lt;button type="button" class="<span>btn btn-primary btn-info btn-small</span>"&gt;Confirm&lt;/button&gt;</pre>
+            <pre>  &lt;/div&gt;</pre>
+            <pre>&lt;/ng-template&gt;</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--center">
+
+            <button class="btn btn-primary" (click)="openModal(templateContext)">Open Contextual Modal</button>
+            <ng-template #templateContext>
+              <div class="modal-header">
+                <h4 class="modal-title">This is H4 with "Head Size 4"</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-ghost-primary btn-small">Cancel</button>
+                <button type="button" class="btn btn-primary btn-info btn-small">Confirm</button>
+              </div>
+            </ng-template>
+
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
             <pre>&lt;button class="<span>btn btn-primary</span>" (click)="<span>openModal(template)</span>">Open Modal&lt;/button&gt;</pre>
@@ -34,7 +80,7 @@
             <pre>&lt;/ng-template&gt;</pre>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

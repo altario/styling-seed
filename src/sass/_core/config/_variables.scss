@@ -42,13 +42,6 @@ $alt_breakpoints: (
 ) !default;
 
 
-// // iphone 7, 8
-// @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) { }
-// // iphone 6+, 6s+, 7+, 8+
-// @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) { }
-// // iphone X
-// @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) { }
-
 
 // $grid --------------------
 
@@ -80,16 +73,16 @@ $letter-spacing--2:                   1.5px;
 $letter-spacing--3:                   3px;
 
 // $fonts: sizes
-$font-size--default:                  1em;
-$font-size--jumbo:                    3.06em;
-$font-size--head-1:                   1.95em;
-$font-size--lead:                     1.75em;
-$font-size--head-2:                   1.56em;
-$font-size--head-3:                   1.25em;
-$font-size--small:                    0.83em;
-$font-size--head-4:                   0.8em;
-$font-size--tiny:                     0.69em;
-$font-size--nano:                     0.58em;
+$font-size--default:                  1em;    // 16px
+$font-size--jumbo:                    3.06em; // 48px
+$font-size--head-1:                   1.95em; // 31px
+$font-size--lead:                     1.75em; // 28px
+$font-size--head-2:                   1.56em; // 24px
+$font-size--head-3:                   1.25em; // 20px
+$font-size--small:                    0.83em; // 13px
+$font-size--head-4:                   0.8em;  // 12px
+$font-size--tiny:                     0.69em; // 11px
+$font-size--nano:                     0.58em; // 9px
 
 // $fonts: line-height
 $line-height__base:                   1.5em;

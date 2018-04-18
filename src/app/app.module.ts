@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 // ngx
 import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { AlertModule } from 'ngx-bootstrap/alert';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { Daterangepicker } from 'ng2-daterangepicker';
@@ -64,6 +66,7 @@ import { FootersComponent } from './components/footers/footers.component';
 
 // page-components: filters
 import { FiltersComponent } from './components/filters/filters.component';
+import { AlertsComponent } from './components/alerts/alerts.component';
 
 
 // simple routes
@@ -93,6 +96,9 @@ const appRoutes: Routes = [
 
   // components: grid
   { path: 'grid', component: GridComponent },
+
+  // components: modals
+  { path: 'alerts', component: AlertsComponent },
 
   // components: modals
   { path: 'modals', component: ModalsComponent },
@@ -127,8 +133,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-
-
 
     // page-components --------------------
 
@@ -183,12 +187,16 @@ const appRoutes: Routes = [
 
     // components: grid
     GridComponent,
+
+    AlertsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppBootstrapModule,
+    ModalModule.forRoot(),
+    AlertModule.forRoot(),
     PopoverModule.forRoot(),
     NgxSelectModule,
     Daterangepicker,

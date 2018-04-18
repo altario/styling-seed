@@ -1,0 +1,143 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    base --------------------
+//      =alt_modal__base
+//    content --------------------
+//      =alt_modal__content__header
+//      =alt_modal__content__body
+//      =alt_modal__content__footer
+//      =alt_modal__content
+//
+//  #STYLES
+//    _modal
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+// base --------------------
+
+// =alt_modal__base
+@mixin alt_modal__base {
+  .modal-dialog {
+    @include align(middle);
+    min-height: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+
+// content --------------------
+
+// =alt_modal__content__header
+@mixin alt_modal__content__header {
+  .modal-header {
+    height: 60px;
+    border: none;
+    padding: 0 26px;
+    background-color: $color__light-yellow-gray--1;
+    @include align(middle);
+
+    .modal-title {
+      padding: 0;
+      margin: 0;
+      font-size: $font-size--head-4;
+      color: $color__black--2;
+    }
+
+    .close {
+      opacity: 1;
+      @include outline;
+      span {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        color: $color__light-yellow-gray--1;
+        @include icon(close) {
+          width: 12px;
+          height: 12px;
+          line-height: 12px;
+          @include center;
+          font-size: 12px;
+          color: $color__dark-blue-gray--2;
+        }
+      }
+    }
+  }
+}
+
+// =alt_modal__content__body
+@mixin alt_modal__content__body {
+  .modal-body {
+    padding: 25px 30px;
+    font-size: $font-size--small;
+    line-height: 2;
+    color: $color__black--2;
+  }
+}
+
+// =alt_modal__content__footer
+@mixin alt_modal__content__footer {
+  .modal-footer {
+    padding: 0 30px 25px;
+    border: none;
+  }
+}
+
+// =alt_modal__content
+@mixin alt_modal__content {
+  .modal-content {
+    box-shadow: $shadow--topdown--3;
+    border: 0px;
+    border-radius: 0px;
+
+    // +alt_modal__content__header
+    @include alt_modal__content__header;
+
+    // +alt_modal__content__body
+    @include alt_modal__content__body;
+
+    // +alt_modal__content__footer
+    @include alt_modal__content__footer;
+  }
+}
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// _modal
+.modal {
+
+  // +alt_modal__base
+  @include alt_modal__base;
+
+  // +alt_modal__content
+  @include alt_modal__content;
+}
+
+// backgrop
+.modal-backdrop {
+  &.show {
+    background-color: $color__black--2;
+    opacity: 0.33;
+  }
+}
+
+// blur
+.modal-open {
+  .app-wrapper {
+    filter: blur(20px);
+  }
+}

@@ -6,7 +6,9 @@
 //
 //  #IMPORTS
 //    +/core
+//    +/layout
 //    +/components
+//    +/page-components
 //
 // --------------------------------------------------
 
@@ -18,6 +20,9 @@
 // +/core
 @import '_core/core';
 
+// +/layout
+@import 'layout/app-wrapper';
+
 
 // +/components
 @import 'components/buttons';
@@ -26,6 +31,8 @@
 @import 'components/daterangepicker';
 @import 'components/forms';
 @import 'components/grid';
+@import 'components/alerts';
+@import 'components/modals';
 
 
 // +/page-components
