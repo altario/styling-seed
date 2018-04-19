@@ -29,7 +29,7 @@
     "core-js": "^2.4.1",
     "ng2-daterangepicker": "^2.0.12",
     "ngx-bootstrap": "^2.0.3",
-    "ngx-chips": "^1.6.7",
+    "ngx-chips": "^1.8.0",
     "ngx-google-places-autocomplete": "^2.0.1",
     "ngx-select-ex": "^3.4.0-ng4",
     "ngx-stripe": "^0.3.1",

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // ngx
 import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
@@ -11,6 +12,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { Daterangepicker } from 'ng2-daterangepicker';
+import { TagInputModule } from 'ngx-chips';
 
 // app
 import { AppComponent } from './app.component';
@@ -35,6 +37,7 @@ import { Ng2DaterangepickerComponent } from './components/forms/ng2-daterangepic
 import { NgxSearchComponent } from './components/forms/ngx-search/ngx-search.component';
 import { FormsTextareaComponent } from './components/forms/forms-textarea/forms-textarea.component';
 import { FormsCheckboxRadioToggleComponent } from './components/forms/forms-checkbox-radio-toggle/forms-checkbox-radio-toggle.component';
+import { NgxChipsComponent } from './components/forms/ngx-chips/ngx-chips.component';
 
 // components: grid
 import { GridComponent } from './components/grid/grid.component';
@@ -93,6 +96,7 @@ const appRoutes: Routes = [
   { path: 'ngx-search', component: NgxSearchComponent },
   { path: 'forms-textarea', component: FormsTextareaComponent },
   { path: 'forms-checkbox-radio-toggle', component: FormsCheckboxRadioToggleComponent },
+  { path: 'ngx-chips', component: NgxChipsComponent },
 
   // components: grid
   { path: 'grid', component: GridComponent },
@@ -189,6 +193,8 @@ const appRoutes: Routes = [
     GridComponent,
 
     AlertsComponent,
+
+    NgxChipsComponent,
   ],
   imports: [
     BrowserModule,
@@ -198,6 +204,8 @@ const appRoutes: Routes = [
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     PopoverModule.forRoot(),
+    TagInputModule,
+    BrowserAnimationsModule,
     NgxSelectModule,
     Daterangepicker,
 
