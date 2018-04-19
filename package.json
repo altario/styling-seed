@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng serve --open --hmr",
+    "dev2": "ng serve -- --port 4220 --open --hmr",
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
