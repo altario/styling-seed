@@ -4,7 +4,7 @@
 //
 //  #MIXINS
 //    base --------------------
-//      =alt_modal__base
+//      =alt_modal
 //    content --------------------
 //      =alt_modal__content__header
 //      =alt_modal__content__body
@@ -21,19 +21,6 @@
 // #MIXINS
 // ------------------------------------------------------------------
 
-// base --------------------
-
-// =alt_modal__base
-@mixin alt_modal__base {
-  .modal-dialog {
-    @include align(middle);
-    min-height: 100%;
-    margin: 0 auto;
-  }
-}
-
-
-
 // content --------------------
 
 // =alt_modal__content__header
@@ -42,6 +29,7 @@
     height: 60px;
     border: none;
     padding: 0 26px;
+    border-radius: 0;
     background-color: $color__light-yellow-gray--1;
     @include align(middle);
 
@@ -55,19 +43,13 @@
     .close {
       opacity: 1;
       @include outline;
-      span {
+      text-shadow: none;
+      @include icon(close) {
         width: 12px;
         height: 12px;
-        position: relative;
-        color: $color__light-yellow-gray--1;
-        @include icon(close) {
-          width: 12px;
-          height: 12px;
-          line-height: 12px;
-          @include center;
-          font-size: 12px;
-          color: $color__dark-blue-gray--2;
-        }
+        line-height: 12px;
+        font-size: 12px;
+        color: $color__dark-blue-gray--2;
       }
     }
   }
@@ -111,6 +93,70 @@
 
 
 
+// type --------------------
+
+// =alt_modal__type--alert
+@mixin alt_modal__type--alert {
+  &.modal-dialog-alert {
+    .modal-header {
+      background-color: $color__state--warning;
+
+      .modal-title {
+        @include icon(info) {
+          font-size: 18px;
+          vertical-align: middle;
+          margin-right: 15px;
+        }
+      }
+
+      .close {
+        span {
+          &:before {
+            color: $color__black--2;
+          }
+        }
+      }
+    }
+
+    .modal-content {
+      font-weight: $font-weight--normal;
+      p {
+        margin: 0;
+      }
+    }
+
+    .modal-footer {
+      .action {
+        font-weight: $font-weight--normal;
+      }
+      .action-submit {
+        color: $color__black--2;
+      }
+    }
+  }
+}
+
+
+
+// base --------------------
+
+// =alt_modal
+@mixin alt_modal {
+  .modal-dialog {
+    @include align(middle);
+    min-height: 100%;
+    margin: 0 auto;
+
+    // +alt_modal__content
+    @include alt_modal__content;
+
+    // +alt_modal__type--alert
+    @include alt_modal__type--alert;
+  }
+}
+
+
+
 
 
 // ------------------------------------------------------------------
@@ -120,11 +166,8 @@
 // _modal
 .modal {
 
-  // +alt_modal__base
-  @include alt_modal__base;
-
-  // +alt_modal__content
-  @include alt_modal__content;
+  // +alt_modal
+  @include alt_modal;
 }
 
 // backgrop
@@ -139,35 +182,5 @@
 .modal-open {
   .app-wrapper {
     filter: blur(20px);
-  }
-}
-
-
-
-
-//ask if this should go to dropdown
-.contextual-modal{
-  @include mq(sm) {
-    .modal-content{
-      min-width: 100vw;
-    }
-    .modal-dialog{
-      align-items: flex-end;
-
-      min-height: 100vh;
-      min-width: 100vw;
-
-      padding: 0;
-      border: 0;
-      margin: 0;
-
-      .modal.fade & {
-        @include transition($modal-transition);
-        transform: translate(0, 100%);
-      }
-      .modal.show & {
-        transform: translate(0, 0);
-      }
-    }
   }
 }

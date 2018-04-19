@@ -4,45 +4,43 @@
   <a class="ext-doc ext-doc--bootstrap" href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank">Navbar</a>
   <a class="ext-doc ext-doc--ngx" href="https://valor-software.com/ngx-bootstrap/#/dropdowns" target="_blank">Dropdowns</a>
 
-  <h3>Default Bootstrap Modals</h3>
+  <h3>Nav</h3>
   <div class="doc-content__block__items">
     <div class="row">
       <div class="col">
         <div class="doc-code-block">
           <div class="doc-code-block__inner doc-code-block__inner--center">
-            <nav class="navbar navbar-default">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <a class="navbar-brand">
-                    <img src="assets/images/shared/favicon.png" class="logo">
-                  </a>
-                  <span class="navbar-brand">Angular + Bootstrap</span>
+
+            <div class="nav-container nav--color--agency">
+              <nav class="navbar">
+                <a class="navbar-brand">SNAPJOB</a>
+                <div class="navbar-btns">
+                  <button type="button" class="btn btn-ghost-primary btn-small">JobSeekers</button>
+                  <button type="button" class="btn btn-ghost-primary btn-small">+ New Campaign</button>
+                  <button type="button" class="btn btn-outline-primary btn-small">My Campaigns</button>
+                  <button type="button" class="btn btn-small btn-ghost-success">Get in</button>
                 </div>
-                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">Link</a></li>
-                  <li class="dropdown" dropdown>
-                    <a dropdownToggle role="button">Dropdown <span class="caret"></span></a>
-                    <ul *dropdownMenu class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">One more separated link</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+              </nav>
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item" aria-current="page"><a href="">Home</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="">Something</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="">Something Else</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="">And this is really something else</a></li>
+              </ul>
+            </div>
+            <div class="nav-container nav--color--agency">
+              <nav class="navbar navbar-mobile">
+                <div class="navbar-btns">
+                  <button type="button" class="btn btn-ghost-primary btn-tiny active"><div>IMG</div>Jobs</button>
+                  <button type="button" class="btn btn-ghost-primary btn-tiny"><div>IMG</div>Jobs</button>
+                  <button type="button" class="btn btn-ghost-primary btn-tiny"><div>IMG</div>More</button>
+                </div>
+              </nav>
+            </div>
+
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>row</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <pre>&lt;div class="<span>...</span>"&gt;</pre>
           </div>
         </div>
       </div>

@@ -4,83 +4,124 @@
   <a class="ext-doc ext-doc--bootstrap" href="https://getbootstrap.com/docs/4.0/components/modal/" target="_blank">Modals</a>
   <a class="ext-doc ext-doc--ngx" href="https://valor-software.com/ngx-bootstrap/#/modals" target="_blank">Modals</a>
 
-  <h3>Default Bootstrap Modals</h3>
+  <h3>Message with Confirmation</h3>
   <div class="doc-content__block__items">
     <div class="row">
       <div class="col">
         <div class="doc-code-block">
           <div class="doc-code-block__inner doc-code-block__inner--center">
 
-            <button class="btn btn-primary" (click)="openModal(template)">Open Modal</button>
-            <ng-template #template>
+            <button class="btn btn-primary btn-small" (click)="openModal(modMessageConf)">Open Message</button>
+
+            <ng-template #modMessageConf>
               <div class="modal-header">
-                <h4 class="modal-title">This is H4 with "Head Size 4"</h4>
-                <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">This is a title</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()"></button>
               </div>
               <div class="modal-body">
-                Modal <strong>Opened</strong>.
-                This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+                <p>This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-ghost-primary btn-small action action-cancel">Cancel</button>
-                <button type="button" class="btn btn-primary btn-info btn-small action action-submit">Confirm</button>
+                <button type="button" class="btn btn-ghost-primary btn-small action action-cancel" (click)="decline()">Cancel</button>
+                <button type="button" class="btn btn-primary btn-small action action-submit" (click)="confirm()">Confirm</button>
               </div>
             </ng-template>
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
             <pre>&lt;ng-template <span>#template</span>&gt;</pre>
-            <pre>  &lt;div class="<span>modal-header</span>"&gt;</pre>
-            <pre>    &lt;h4 class="<span>modal-title</span>"&gt;This is a title"&lt;/h4&gt;</pre>
-            <pre>    &lt;button type="button" class="<span>close</span>" <span>aria-label="Close" (click)="modalRef.hide()"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;/button</span>&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>modal-body</span>"&gt;</pre>
-            <pre>    Modal &lt;strong&gt;Opened&lt;/strong&gt;.</pre>
-            <pre>    This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>modal-footer</span>"&gt;</pre>
-            <pre>    &lt;button type="button" class="<span>btn btn-ghost-primary btn-small</span>"&gt;Cancel&lt;/button&gt;</pre>
-            <pre>    &lt;button type="button" class="<span>btn btn-primary btn-info btn-small</span>"&gt;Confirm&lt;/button&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/ng-template&gt;</pre>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- <div class="col">
+  <h3>Alert with Confirmation</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col">
         <div class="doc-code-block">
           <div class="doc-code-block__inner doc-code-block__inner--center">
 
-            <button class="btn btn-primary" (click)="openModal(templateContext)">Open Contextual Modal</button>
-            <ng-template #templateContext>
+            <button class="btn btn-primary btn-small" (click)="openModal(modCustomContent, 'modal-dialog-alert')">Open Alert</button>
+
+            <ng-template #modCustomContent>
               <div class="modal-header">
-                <h4 class="modal-title">This is H4 with "Head Size 4"</h4>
-                <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Warning!</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()"></button>
               </div>
               <div class="modal-body">
-                This is a Small Body text: But I must explain to you how all this mistaken idea of denouncing pleasure and praising  explorer of the truth, the master-builder of human happiness.
+                <p>This action is not reversible.</p>
+                <p>Are you sure you want to proceed?</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-ghost-primary btn-small">Cancel</button>
-                <button type="button" class="btn btn-primary btn-info btn-small">Confirm</button>
+                <button type="button" class="btn btn-ghost-primary btn-small action action-cancel" (click)="decline()">Cancel</button>
+                <button type="button" class="btn btn-warning btn-small action action-submit" (click)="confirm()">Confirm</button>
               </div>
             </ng-template>
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;button class="<span>btn btn-primary</span>" (click)="<span>openModal(template)</span>">Open Modal&lt;/button&gt;</pre>
             <pre>&lt;ng-template <span>#template</span>&gt;</pre>
-            <pre>  &lt;div class="<span>modal-header</span>"&gt;</pre>
-            <pre>    &lt;h4 class="<span>modal-title pull-left</span>"&gt;Alerta&lt;/h4&gt;</pre>
-            <pre>    &lt;button type="button" class="<span>close pull-right</span>" aria-label="<span>Close</span>" (click)="<span>modalRef.hide()</span>"&gt;&lt;span aria-hidden="<span>true</span>"&gt;&times;&lt;/span&gt;&lt;/button&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>modal-body</span>"&gt;</pre>
-            <pre>    Modal &lt;strong&gt;Opened&lt;/strong&gt;.</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/ng-template&gt;</pre>
           </div>
         </div>
-      </div> -->
+      </div>
+    </div>
+  </div>
+
+  <h3>Success Message</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--center">
+
+            <button class="btn btn-primary btn-small" (click)="openModal(modSuccess, 'modal-dialog-alert')">Open Alert</button>
+
+            <ng-template #modSuccess>
+              <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()"></button>
+              </div>
+              <div class="modal-body">
+                <p>This action is not reversible.</p>
+                <p>Are you sure you want to proceed?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-ghost-primary btn-small action action-cancel" (click)="decline()">Cancel</button>
+                <button type="button" class="btn btn-warning btn-small action action-submit" (click)="confirm()">Confirm</button>
+              </div>
+            </ng-template>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <pre>&lt;ng-template <span>#template</span>&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Custom Content</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--center">
+
+            <button class="btn btn-primary btn-small" (click)="openModal(modAlertConf)">Custom Content</button>
+
+            <ng-template #modAlertConf>
+              <div class="modal-body">
+                <h1 style="margin-top: 100px; margin-bottom: 100px; text-align: center;">Custom Content</h1>
+              </div>
+            </ng-template>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <pre>&lt;ng-template <span>#template</span>&gt;</pre>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

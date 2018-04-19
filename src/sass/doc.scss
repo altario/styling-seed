@@ -177,7 +177,7 @@ $doc__sidebar__height: 80px;
       }
       .doc-sidebar__content__block__content {
         .block {
-          margin-bottom: 20px;
+          margin-bottom: 40px;
           .block__item,
           .block__subitem {
             width: 100%;
@@ -187,13 +187,33 @@ $doc__sidebar__height: 80px;
             line-height: 20px;
           }
 
+          .block__item,
+          .block__subitem {
+            color: $color__dark-blue-gray--4;
+            border-radius: 4px;
+            text-decoration: none;
+            @include anim;
+
+            &:hover {
+              background: $color__dark-blue-gray--4;
+              color: white;
+            }
+            &.active {
+              background: $color__brand--1;
+              color: white;
+            }
+          }
+
           .block__item {
-            font-size: 16px;
+            font-size: 14px;
+            padding-left: 10px;
+            padding-right: 10px;
+
           }
 
           .block__subitem {
             font-size: 12px;
-            padding-left: 10px;
+            padding-left: 20px;
           }
         }
       }

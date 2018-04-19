@@ -7,11 +7,11 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 
 
 @Component({
-  selector: 'app-alerts',
-  templateUrl: './alerts.component.html',
-  styleUrls: ['./alerts.component.scss']
+  selector: 'app-notifications',
+  templateUrl: './notifications.component.html',
+  styleUrls: ['./notifications.component.scss']
 })
-export class AlertsComponent implements OnInit {
+export class NotificationsComponent implements OnInit {
 
   dismissible = true;
   defaultAlerts: any[] = [

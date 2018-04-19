@@ -1,0 +1,205 @@
+
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+$alt_components__nav-container__font-color__color--agency: $color__brand--1;
+$alt_components__nav-container__font-color__color--jobseeker: $color__brand--3;
+
+$alt_components__nav-container__navbar__padding-x__default: 2em;
+$alt_components__nav-container__navbar__padding-y__default: 1em;
+$alt_components__nav-container__navbar__bg: $color__white--1;
+
+$alt_components__nav-container__breadcrumb__padding-x__default: 2em;
+$alt_components__nav-container__breadcrumb__padding-y__default: 0.75em;
+$alt_components__nav-container__breadcrumb__bg: $color__white--3;
+$alt_components__nav-container__breadcrumb__breadcrumb-item__font-size: $font-size--small;
+$alt_components__nav-container__breadcrumb__breadcrumb-item__font-weight: $font-weight--normal;
+$alt_components__nav-container__breadcrumb__breadcrumb-item__mobile__font-weight: $font-weight--bold;
+$alt_components__nav-container__breadcrumb__breadcrumb-item__font-color: $color__black--2;
+$alt_components__nav-container__breadcrumb__breadcrumb-item--active__font-color : $color__black--1;
+$alt_components__nav-container__breadcrumbs__height: 4em;
+
+$alt_components__nav__shadow: $shadow--wide--2;
+$alt_components__nav__navbar-btns__button__font-weight: $font-weight--bold;
+
+$alt_components__nav-container__navbar__color__jobseeker: $color__brand--1;
+$alt_components__nav-container__navbar__color__agency: $color__brand--3;
+$alt_components__nav-container__navbar__navbar-mobile__height: 4em;
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@mixin padding-x($padding-x){
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+}
+
+@mixin padding-y($padding-y){
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+}
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+//Change shadow, maybe
+.nav-container{
+  display: block;
+  -webkit-box-shadow: $alt_components__nav__shadow;
+          box-shadow: $alt_components__nav__shadow;
+  .navbar{
+    background: $alt_components__nav-container__navbar__bg;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    @include padding-x($alt_components__nav-container__navbar__padding-x__default);
+    @include padding-y($alt_components__nav-container__navbar__padding-y__default);
+    &.navbar-mobile{
+      display: flex;
+      height: $alt_components__nav-container__navbar__navbar-mobile__height;
+      padding: 0;
+      .navbar-btns{
+        display: flex;
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        button {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+        }
+      }
+      @include mq(sm, min-width){
+        display: none;
+      }
+    }
+    @include mq(sm){
+      display: none;
+    }
+  }
+  .breadcrumb{
+    display: flex;
+    -webkit-align-items: center;
+            align-items: center;
+    margin: 0;
+    @include padding-x($alt_components__nav-container__breadcrumb__padding-x__default);
+    @include padding-y($alt_components__nav-container__breadcrumb__padding-y__default);
+    background: $alt_components__nav-container__breadcrumb__bg;
+    .breadcrumb-item{
+      a{
+        color: $alt_components__nav-container__breadcrumb__breadcrumb-item__font-color;
+        font-size: $alt_components__nav-container__breadcrumb__breadcrumb-item__font-size;
+        font-weight: $alt_components__nav-container__breadcrumb__breadcrumb-item__font-weight;
+        &:hover, &:active, &:visited, &:focus {
+            text-decoration:none;
+        }
+      }
+      &.active{
+        a{
+          color: $alt_components__nav-container__breadcrumb__breadcrumb-item--active__font-color;
+        }
+      }
+      &+.breadcrumb-item::before{
+        display: inline;
+        vertical-align: middle;
+        content: ">";
+        font-weight: $alt_components__nav-container__breadcrumb__breadcrumb-item__font-weight;
+        @include mq(sm){
+          font-weight: $alt_components__nav-container__breadcrumb__breadcrumb-item__mobile__font-weight;
+          content: "<";
+        }
+      }
+    }
+    @include mq(sm){
+      height: $alt_components__nav-container__breadcrumbs__height;
+      .breadcrumb-item{
+        display: none;
+      }
+      :nth-last-child(2){
+        display: block;
+        &+.breadcrumb-item::before{
+        }
+        > a {
+          font-weight: $alt_components__nav-container__breadcrumb__breadcrumb-item__mobile__font-weight;
+        }
+      }
+    }
+  }
+}
+
+.nav-container{
+  &.nav--color--agency{
+    @include mq(sm){
+      .breadcrumb{
+        :nth-last-child(2){
+          &::before{
+            color: $alt_components__nav-container__navbar__color__agency;
+          }
+          > a {
+            color: $alt_components__nav-container__navbar__color__agency;
+          }
+        }
+      }
+    }
+    .navbar-mobile{
+      .active{
+        color: $alt_components__nav-container__navbar__color__agency;
+      }
+    }
+  }
+  &.nav--color--jobseeker{
+    @include mq(sm){
+      .breadcrumb{
+        :nth-last-child(2){
+          &::before{
+            color: $alt_components__nav-container__navbar__color__jobseeker;
+          }
+          > a {
+            color: $alt_components__nav-container__navbar__color__jobseeker;
+          }
+        }
+      }
+    }
+    .navbar-mobile{
+      .active{
+        color: $alt_components__nav-container__navbar__color__jobseeker;
+      }
+    }
+  }
+}
+
+.navbar-btns{
+  > button{
+    font-weight: $alt_components__nav__navbar-btns__button__font-weight;
+  }
+}
+
+

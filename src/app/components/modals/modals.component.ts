@@ -15,6 +15,7 @@ import { BsModalRef } from 'ngx-bootstrap';
 export class ModalsComponent implements OnInit {
 
   modalRef: BsModalRef;
+  message: string;
 
   constructor(router: Router, private modalService: BsModalService) {
     router.events.subscribe(s => {
@@ -29,8 +30,22 @@ export class ModalsComponent implements OnInit {
   }
 
   // Modal
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  openModal(template: TemplateRef<any>, cls: '') {
+    // this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(
+      template,
+      Object.assign({}, { class: cls })
+    );
+  }
+
+  confirm(): void {
+    this.message = 'Confirmed!';
+    this.modalRef.hide();
+  }
+
+  decline(): void {
+    this.message = 'Canceled!';
+    this.modalRef.hide();
   }
 
   ngOnInit() {

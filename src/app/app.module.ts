@@ -7,12 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // ngx
 import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import { TagInputModule } from 'ngx-chips';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // app
 import { AppComponent } from './app.component';
@@ -51,6 +54,12 @@ import { NavComponent } from './components/nav/nav.component';
 // components: sidebar
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
+// components: notifications
+import { NotificationsComponent } from './components/notifications/notifications.component';
+
+// components: accordion
+import { AccordionComponent } from './components/accordion/accordion.component';
+
 
 
 // page-components --------------------
@@ -62,14 +71,13 @@ import { JobComponent } from './page-components/job/job.component';
 import { AvatarComponent } from './page-components/avatar/avatar.component';
 
 // page-components: cards
-import { CardsComponent } from './components/cards/cards.component';
+import { PanelsComponent } from './components/panels/panels.component';
 
 // page-components: footers
 import { FootersComponent } from './components/footers/footers.component';
 
 // page-components: filters
 import { FiltersComponent } from './components/filters/filters.component';
-import { AlertsComponent } from './components/alerts/alerts.component';
 
 
 // simple routes
@@ -101,8 +109,8 @@ const appRoutes: Routes = [
   // components: grid
   { path: 'grid', component: GridComponent },
 
-  // components: modals
-  { path: 'alerts', component: AlertsComponent },
+  // components: notifications
+  { path: 'notifications', component: NotificationsComponent },
 
   // components: modals
   { path: 'modals', component: ModalsComponent },
@@ -113,8 +121,8 @@ const appRoutes: Routes = [
   // components: sidebar
   { path: 'sidebar', component: SidebarComponent },
 
-  // components: cards
-  { path: 'cards', component: CardsComponent },
+  // components: panels
+  { path: 'panels', component: PanelsComponent },
 
   // components: footers
   { path: 'footers', component: FootersComponent },
@@ -159,8 +167,8 @@ const appRoutes: Routes = [
     // layout: sidebar
     SidebarComponent,
 
-    // layout: cards
-    CardsComponent,
+    // layout: panels
+    PanelsComponent,
 
     // layout: footers
     FootersComponent,
@@ -192,9 +200,14 @@ const appRoutes: Routes = [
     // components: grid
     GridComponent,
 
-    AlertsComponent,
+    // notifications
+    NotificationsComponent,
 
+    // ngx-chips
     NgxChipsComponent,
+
+    // accordion
+    AccordionComponent,
   ],
   imports: [
     BrowserModule,
@@ -204,6 +217,7 @@ const appRoutes: Routes = [
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     PopoverModule.forRoot(),
+    AccordionModule.forRoot(),
     TagInputModule,
     BrowserAnimationsModule,
     NgxSelectModule,
@@ -215,6 +229,13 @@ const appRoutes: Routes = [
       // { enableTracing: true }
     )
   ],
+  // exports: [
+  //   BsDropdownModule,
+  //   TooltipModule,
+  //   ModalModule,
+  //   AlertModule,
+  //   AccordionModule
+  // ],
   providers: [],
   bootstrap: [AppComponent]
 })
