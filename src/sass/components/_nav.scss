@@ -1,4 +1,3 @@
-
 // ------------------------------------------------------------------
 //
 // INDEX
@@ -103,7 +102,7 @@ $alt_components__nav-container__navbar__navbar-mobile__height: 4em;
     }
     @include mq(sm){
       display: none;
-    }
+    }  
   }
   .breadcrumb{
     display: flex;
@@ -201,5 +200,3 @@ $alt_components__nav-container__navbar__navbar-mobile__height: 4em;
     font-weight: $alt_components__nav__navbar-btns__button__font-weight;
   }
 }
-
-
