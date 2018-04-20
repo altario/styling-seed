@@ -2,24 +2,89 @@
 <div id="panels" class="doc-content__block">
   <h1>#Panels</h1>
 
-  <h3>Panel Default</h3>
+  <h3>Panel <span>(tiny header)</span></h3>
   <div class="doc-content__block__items">
     <div class="row">
       <div class="col">
         <div class="doc-code-block">
           <div class="doc-code-block__inner doc-code-block__inner--center">
 
-            <div class="container-fluid">
-              <div class="card">
-                <div class="card-header text-left card-header-huge">Job Description</div>
-              </div>
-              <div class="card-body text-left">
-                <h4 class="card-title">Special title treatment</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                <div class="card-footer text-right">
-                  <a href="#" class="btn btn-ghost-primary">Read More</a>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="card">
+                  <div class="card-header text-left">Job Description</div>
+                  <div class="card-body text-left">
+                    <h4 class="card-title">Special title treatment</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                  </div>
+                  <div class="card-footer text-right">
+                    <a href="#" class="btn btn-ghost-primary">Read More</a>
+                  </div>
                 </div>
               </div>
+            </nav>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <pre>&lt;div class="<span>row</span>"&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>&lt;/div&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Panel <span>(huge header)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--center">
+
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="card">
+                  <div class="card-header text-left card-header-huge">Job Description</div>
+                  <div class="card-body text-left">
+                    <h4 class="card-title">Special title treatment</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                  </div>
+                  <div class="card-footer text-right">
+                    <a href="#" class="btn btn-ghost-primary">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <pre>&lt;div class="<span>row</span>"&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>&lt;/div&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Panel <span>(profile)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--center">
+
+            <div class="card card-profile">
+              <div class="card-header">
+                <div class="card-header-title">Body &amp; Visual</div>
+                <button type="button" class="btn btn-outline-primary btn-tiny">Edit</button>
+              </div>
+              <div class="card-body">Something else</div>
             </div>
 
           </div>
@@ -34,4 +99,44 @@
       </div>
     </div>
   </div>
+
+  <h3>Accordion</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--center">
+
+            <nav class="navbar navbar-default">
+              <div class="container">
+                <accordion>
+                  <accordion-group heading="Static Header, initially expanded">
+                    This content is straight in the template.
+                  </accordion-group>
+                  <accordion-group heading="Another group">
+                    <p>Some content</p>
+                  </accordion-group>
+                  <accordion-group heading="Another group">
+                    <p>Some content</p>
+                  </accordion-group>
+                  <accordion-group heading="Another group">
+                    <p>Some content</p>
+                  </accordion-group>
+                </accordion>
+              </div>
+            </nav>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <pre>&lt;div class="<span>row</span>"&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>  &lt;div class="<span>col</span>"&gt;...&lt;/div&gt;</pre>
+            <pre>&lt;/div&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

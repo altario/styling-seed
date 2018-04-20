@@ -5,8 +5,6 @@
 //  #VARS
 //    $defaults
 //
-//  #FUNCTIONS
-//
 //  #STYLES
 //
 // --------------------------------------------------
@@ -20,26 +18,6 @@
 $job-card__height: 200px;
 $job-card__height--iphone8: 370px;
 $job-card__actions__height: 60px;
-
-
-
-
-
-// --------------------------------------------------
-// #FUNCTIONS
-// --------------------------------------------------
-
-// @calc-col
-@mixin calc-col($_size, $_gutter: false) {
-  @if $_gutter {
-    flex: 0 0 calc(#{percentage($_size / $grid__default--columns)} - #{$_gutter});
-    max-width: calc(#{percentage($_size / $grid__default--columns)} - #{$_gutter});
-  }
-  @else {
-    flex: 0 0 percentage($_size / $grid__default--columns);
-    max-width: percentage($_size / $grid__default--columns);
-  }
-}
 
 
 
@@ -304,6 +282,88 @@ $job-card__actions__height: 60px;
     }
   }
 
+  // themes: color-2
+  &.job-card--color-2 {
+    .job-card__sidebar {
+      .job-card__sidebar__price {
+        color: $color__afternoon;
+        background: $color__white--1;
+      }
+      .job-card__sidebar__time {
+        color: $color__afternoon;
+        background: $color__white--1;
+      }
+    }
+    .job-card__content {
+      .job-card__content__info {
+        background: $color__afternoon;
+        .job-card__content__info__title,
+        .job-card__content__info__description,
+        .job-card__content__info__origin {
+          color: $color__white--1;
+        }
+      }
+      .job-card__content__type {
+        background: $color__afternoon;
+      }
+      .job-card__content__type {
+        color: $color__white--1;
+        .job-card__content__type__info {
+          &.job-card__content__type__info--date {
+            background: $color__afternoon-alt--1;
+          }
+          &.job-card__content__type__info--time {
+            background: $color__afternoon-alt--2;
+          }
+          &.job-card__content__type__info--gender {
+            background: $color__afternoon-alt--3;
+          }
+        }
+      }
+    }
+  }
+
+  // themes: color-3
+  &.job-card--color-3 {
+    .job-card__sidebar {
+      .job-card__sidebar__price {
+        color: $color__morning;
+        background: $color__white--1;
+      }
+      .job-card__sidebar__time {
+        color: $color__morning;
+        background: $color__white--1;
+      }
+    }
+    .job-card__content {
+      .job-card__content__info {
+        background: $color__morning;
+        .job-card__content__info__title,
+        .job-card__content__info__description,
+        .job-card__content__info__origin {
+          color: $color__white--1;
+        }
+      }
+      .job-card__content__type {
+        background: $color__morning;
+      }
+      .job-card__content__type {
+        color: $color__white--1;
+        .job-card__content__type__info {
+          &.job-card__content__type__info--date {
+            background: $color__morning-alt--1;
+          }
+          &.job-card__content__type__info--time {
+            background: $color__morning-alt--2;
+          }
+          &.job-card__content__type__info--gender {
+            background: $color__morning-alt--3;
+          }
+        }
+      }
+    }
+  }
+
   // themes: white
   &.job-card--white {
     .job-card__sidebar {
@@ -332,6 +392,39 @@ $job-card__actions__height: 60px;
         .job-card__content__type__info {
           color: $color__dark-blue-gray--2;
           background: $color__white--1;
+        }
+      }
+    }
+  }
+
+  // themes: gray
+  &.job-card--gray {
+    .job-card__sidebar {
+      .job-card__sidebar__price {
+        color: $color__dark-blue-gray--2;
+        background: $color__light-yellow-gray--3;
+      }
+      .job-card__sidebar__time {
+        color: $color__dark-blue-gray--2;
+        background: $color__light-yellow-gray--2;
+      }
+    }
+    .job-card__content {
+      .job-card__content__info {
+        background: $color__white--3;
+        .job-card__content__info__title {
+          color: $color__dark-blue-gray--2;
+        }
+        .job-card__content__info__description,
+        .job-card__content__info__origin {
+          color: $color__dark-blue-gray--2;
+        }
+      }
+      .job-card__content__type {
+        background: $color__white--3;
+        .job-card__content__type__info {
+          color: $color__dark-blue-gray--2;
+          background: $color__white--3;
         }
       }
     }

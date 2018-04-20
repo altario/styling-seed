@@ -1,0 +1,246 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//    $defaults
+//
+//  #STYLES
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// --------------------------------------------------
+// #STYLES
+// --------------------------------------------------
+
+// _avatar
+.avatar {
+  height: 180px;
+  overflow: hidden;
+
+  // defaults
+  .row {
+    height: 100%;
+  }
+
+  // img primary
+  .avatar-img-primary {
+    @include calc-col(180px);
+    height: 100%;
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // img secondary
+  .avatar-img-secondary {
+    @include calc-col(120px);
+    height: 100%;
+    margin-left: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // info
+  .avatar-info {
+    width: 190px;
+    max-width: 190px;
+    flex: 0 0 190px;
+    padding: 0 20px;
+    @include align(column);
+
+    // name
+    .avatar-info__name {
+      line-height: 24px;
+      margin-bottom: 5px;
+      font-size: $font-size--head-3;
+      color: $color__dark-blue-gray--2;
+      text-transform: uppercase;
+    }
+
+    // rating
+    .rating {
+      height: 12px;
+      margin-bottom: 20px;
+    }
+
+    // where
+    .avatar-info__where {
+      font-size: $font-size--small;
+      font-weight: $font-weight--bold;
+      color: $color__dark-blue-gray--4;
+      margin-bottom: 5px;
+    }
+
+    // time
+    .avatar-info__time {
+      font-size: $font-size--tiny;
+      font-weight: $font-weight--normal;
+      color: $color__dark-blue-gray--2;
+    }
+
+    // button defaults
+    .unlock,
+    .invite,
+    .avatar-info__tel,
+    .avatar-info__email {
+      margin-top: auto;
+    }
+
+    // link defaults
+    .avatar-info__tel,
+    .avatar-info__email {
+      font-size: $font-size--tiny;
+      color: $color__state--success;
+      font-weight: $font-weight--normal;
+      letter-spacing: $letter-spacing--1;
+    }
+
+    // mobile icon
+    .avatar-info__tel {
+      @include icon(mobile) {
+        font-size: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  // type --------------------
+
+  // type: huge
+  &.avatar-huge {
+    height: 180px;
+
+    &.mobile {
+      // img secondary
+      .avatar-img-secondary {
+        display: none;
+      }
+    }
+  }
+
+  // type: big
+  &.avatar-big {
+    height: 100px;
+
+    &.mobile {
+      // img secondary
+      .avatar-img-secondary {
+        display: none;
+      }
+    }
+
+    .avatar-info {
+      // name
+      .avatar-info__name {
+        font-size: $font-size--small;
+      }
+
+      // rating
+      .rating {
+        margin-bottom: 10px;
+      }
+
+      // where
+      .avatar-info__where {
+        display: none;
+      }
+
+      // time
+      .avatar-info__time {
+        font-size: $font-size--tiny;
+      }
+    }
+
+    // img primary
+    .avatar-img-primary {
+      @include calc-col(100px);
+    }
+    // img secondary
+    .avatar-img-secondary {
+      @include calc-col(75px);
+    }
+  }
+
+  // type: small
+  &.avatar-small {
+    height: 60px;
+
+    // img primary
+    .avatar-img-primary {
+      @include calc-col(60px);
+      margin-bottom: 5px;
+    }
+
+    // img secondary
+    .avatar-img-secondary {
+      display: none;
+    }
+
+    .avatar-info {
+      // name
+      .avatar-info__name {
+        font-size: $font-size--small;
+      }
+
+      // rating
+      .rating {
+        margin-bottom: 5px;
+        .label-value {
+          display: none;
+        }
+      }
+
+      // time
+      .avatar-info__time {
+        font-size: $font-size--tiny;
+      }
+
+      // where
+      .avatar-info__where {
+        display: none;
+      }
+    }
+  }
+
+  // type: circle
+  &.circle {
+    height: 40px;
+    // img primary
+    .avatar-img-primary {
+      @include calc-col(40px);
+      margin-bottom: 0;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .avatar-info {
+      width: auto;
+      max-width: auto;
+      flex: 0 0 auto;
+      padding: 0 0 0 10px;
+
+      // name
+      .avatar-info__name {
+        line-height: 40px;
+        font-size: $font-size--small;
+      }
+    }
+  }
+}

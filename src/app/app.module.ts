@@ -16,6 +16,7 @@ import { NgxSelectModule } from 'ngx-select-ex';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import { TagInputModule } from 'ngx-chips';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { StarRatingModule } from 'angular-star-rating';
 
 // app
 import { AppComponent } from './app.component';
@@ -218,6 +219,7 @@ const appRoutes: Routes = [
     AlertModule.forRoot(),
     PopoverModule.forRoot(),
     AccordionModule.forRoot(),
+    StarRatingModule.forRoot(),
     TagInputModule,
     BrowserAnimationsModule,
     NgxSelectModule,

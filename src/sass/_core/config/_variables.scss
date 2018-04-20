@@ -54,9 +54,9 @@ $grid__default--gutter-width:         30px !default;
 // $paths --------------------
 
 // $paths: paths
-$path__assets:                        '/assets/';
-$path__images:                        $path__assets + 'images/';
-$path__fonts:                         $path__assets + 'fonts/';
+$path__assets:                        '/assets/' !default;
+$path__images:                        $path__assets + 'images/' !default;
+$path__fonts:                         $path__assets + 'fonts/' !default;
 
 
 

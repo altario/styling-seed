@@ -178,33 +178,36 @@ $alt_components__accordion__panel__heading__aside__font-weight:        $font-wei
   &.card-profile{
     .card-header{
       display: flex;
-      -webkit-justify-content: space-between;
-              justify-content: space-between;
-      -webkit-align-items: center;
-              align-items: center;
+      justify-content: space-between;
+      align-items: center;
       min-height: $alt_components__card__header__height__big;
       font-weight: $alt_components__card__header__profile__font-weight;
       @include padding-x($alt_components__card__header__profile__padding-x);
       @include padding-y($alt_components__card__header__profile__padding-y);
       color: $alt_components__card__header__profile__color;
       background-color: $alt_components__card__header__profile__bg-color;
-      .card-header-title{
+
+      .card-header-title {
         vertical-align: middle;
       }
-      > .btn{
+      & > .btn {
+        width: 100px;
         color: $alt_components__card__header__profile__btn__color;
         font-weight: $alt_components__card__header__profile__btn__font-weight;
-        width: 100px;
+        &:hover,
+        &:active {
+          color: $color__white--1;
+        }
       }
     }
-    .card-body{
+    .card-body {
       @include padding-x($alt_components__card__body__profile__padding-x);
     }
 
   }
 }
 
-.panel-group{
+.panel-group {
 
   -webkit-box-shadow: $alt_components__accordion__shadow;
           box-shadow: $alt_components__accordion__shadow;

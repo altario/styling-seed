@@ -1,0 +1,49 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    @calc-col
+//
+//  #EXAMPLES
+//    [+1] calculate width of columns
+//    [+2] calculate width of columns minus custom pixels
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// @calc-col
+@mixin calc-col($_size, $_gutter: false) {
+  @if unit($_size) == '%' {
+    @if $_gutter {
+      max-width: calc(#{percentage($_size / $grid__default--columns)} - #{$_gutter});
+      flex: 0 0 calc(#{percentage($_size / $grid__default--columns)} - #{$_gutter});
+    }
+    @else {
+      max-width: percentage($_size / $grid__default--columns);
+      flex: 0 0 percentage($_size / $grid__default--columns);
+    }
+  }
+  @else if unit($_size) == 'px' {
+    max-width: $_size;
+    flex: 0 0 $_size;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] calculate width of columns
+// @include calc-col(12);
+
+// [+2] calculate width of columns minus custom pixels
+// @include calc-col(12, 60px);
