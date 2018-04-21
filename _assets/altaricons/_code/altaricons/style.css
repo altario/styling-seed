@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'altaricons';
-  src:  url('fonts/altaricons.eot?q0xei4');
-  src:  url('fonts/altaricons.eot?q0xei4#iefix') format('embedded-opentype'),
-    url('fonts/altaricons.ttf?q0xei4') format('truetype'),
-    url('fonts/altaricons.woff?q0xei4') format('woff'),
-    url('fonts/altaricons.svg?q0xei4#altaricons') format('svg');
+  src:  url('fonts/altaricons.eot?q6squ');
+  src:  url('fonts/altaricons.eot?q6squ#iefix') format('embedded-opentype'),
+    url('fonts/altaricons.ttf?q6squ') format('truetype'),
+    url('fonts/altaricons.woff?q6squ') format('woff'),
+    url('fonts/altaricons.svg?q6squ#altaricons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -83,4 +83,13 @@
 }
 .icon-loading:before {
   content: "\e913";
+}
+.icon-state-info:before {
+  content: "\e914";
+}
+.icon-state-success:before {
+  content: "\e915";
+}
+.icon-settings:before {
+  content: "\e916";
 }

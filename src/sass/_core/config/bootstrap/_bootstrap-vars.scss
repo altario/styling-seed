@@ -133,22 +133,23 @@ $enable-shadows:                     false;
 
 // $theme-colors
 $theme-colors: (
-  "primary":    $color__dark-blue-gray--2,
-  "success":    $color__state--success,
-  "info":       $color__state--info,
-  "warning":    $color__state--warning,
-  "danger":     $color__state--danger,
-  "light":      #F0F4F7,
-  "dark":       $color__black--2,
+  "primary":      $color__dark-blue-gray--2,
+  "success":      $color__state--success,
+  "info":         $color__state--info,
+  "warning":      $color__state--warning,
+  "danger":       $color__state--danger,
+  "light":        #F0F4F7,
+  "dark":         $color__black--2,
 
-  "default":    $color__dark-blue-gray--2,
-  "js-cta":     $color__brand--1,
-  "ag-cta":     $color__brand--3,
-  "secondary":  $color__brand--2,
+  "default":      $color__dark-blue-gray--2,
+  "gray-medium":  $color__dark-blue-gray--4,
+  "js-cta":       $color__brand--1,
+  "ag-cta":       $color__brand--3,
+  "secondary":    $color__brand--2,
 );
 
 
 $yiq-text-dark:  $color__black--2 !default;
 $yiq-text-light: $color__white--1 !default;
 
-$yiq-contrasted-threshold: 190 !default;
+$yiq-contrasted-threshold: 198 !default;
