@@ -239,6 +239,9 @@
     min-height: 100%;
     margin: 0 auto;
     @include align(middle);
+    & > * {
+      width: 100%;
+    }
 
     // +alt_modal__content
     @include alt_modal__content;
