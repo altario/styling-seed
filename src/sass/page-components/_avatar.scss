@@ -2,33 +2,37 @@
 //
 // INDEX
 //
-//  #VARS
-//    $defaults
+//  #DEPENDENCIES
+//    +/angular-star-rating
 //
 //  #STYLES
+//    _avatar
+//
+//  #OVERRIDES
 //
 // --------------------------------------------------
 
 
 // --------------------------------------------------
-// #VARS
+// #DEPENDENCIES
 // --------------------------------------------------
+
+// +/angular-star-rating
+// @import '~angular-star-rating/assets/scss/star-rating';
+@import '~css-star-rating/scss/star-rating.scss';
+
+
+
+
 
 // --------------------------------------------------
 // #STYLES
 // --------------------------------------------------
 
-// _avatar
-.avatar {
-  height: 180px;
-  overflow: hidden;
+// image --------------------
 
-  // defaults
-  .row {
-    height: 100%;
-  }
-
-  // img primary
+// =alt_avatar__img--primary
+@mixin alt_avatar__img--primary {
   .avatar-img-primary {
     @include calc-col(180px);
     height: 100%;
@@ -43,8 +47,10 @@
       }
     }
   }
+}
 
-  // img secondary
+// =alt_avatar__img--secondary
+@mixin alt_avatar__img--secondary {
   .avatar-img-secondary {
     @include calc-col(120px);
     height: 100%;
@@ -55,7 +61,98 @@
       object-fit: cover;
     }
   }
+}
 
+
+
+// info --------------------
+
+// =alt_avatar__info__name
+@mixin alt_avatar__info__name {
+  .avatar-info__name {
+    line-height: 24px;
+    margin-bottom: 5px;
+    font-size: $font-size--head-3;
+    color: $color__dark-blue-gray--2;
+    text-transform: uppercase;
+  }
+}
+
+// =alt_avatar__info__rating
+@mixin alt_avatar__info__rating {
+  .rating {
+    height: 12px;
+    margin-bottom: 15px;
+    @include align(left);
+    .star-container {
+      height: 100%;
+      order: -1;
+      .label-value {
+        font-size: $font-size--tiny;
+        font-weight: $font-weight--normal;
+      }
+      .star {
+        width: 12px;
+        height: 11px;
+        margin-left: 4px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// =alt_avatar__info__where
+@mixin alt_avatar__info__where {
+  .avatar-info__where {
+    font-size: $font-size--small;
+    font-weight: $font-weight--bold;
+    color: $color__dark-blue-gray--4;
+    margin-bottom: 5px;
+  }
+}
+
+// =alt_avatar__info__time
+@mixin alt_avatar__info__time {
+  .avatar-info__time {
+    font-size: $font-size--tiny;
+    font-weight: $font-weight--normal;
+    color: $color__dark-blue-gray--2;
+  }
+}
+
+// =alt_avatar__info__actions
+@mixin alt_avatar__info__actions {
+  // button defaults
+  .unlock,
+  .invite,
+  .avatar-info__tel,
+  .avatar-info__email {
+    margin-top: auto;
+  }
+
+  // link defaults
+  .avatar-info__tel,
+  .avatar-info__email {
+    font-size: $font-size--tiny;
+    color: $color__state--success;
+    font-weight: $font-weight--normal;
+    letter-spacing: $letter-spacing--1;
+  }
+
+  // mobile icon
+  .avatar-info__tel {
+    @include icon(mobile) {
+      font-size: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+}
+
+// =alt_avatar__info
+@mixin alt_avatar__info {
   // info
   .avatar-info {
     width: 190px;
@@ -64,65 +161,29 @@
     padding: 0 20px;
     @include align(column);
 
-    // name
-    .avatar-info__name {
-      line-height: 24px;
-      margin-bottom: 5px;
-      font-size: $font-size--head-3;
-      color: $color__dark-blue-gray--2;
-      text-transform: uppercase;
-    }
+    // +alt_avatar__info__name
+    @include alt_avatar__info__name;
 
-    // rating
-    .rating {
-      height: 12px;
-      margin-bottom: 20px;
-    }
+    // +alt_avatar__info__rating
+    @include alt_avatar__info__rating;
 
-    // where
-    .avatar-info__where {
-      font-size: $font-size--small;
-      font-weight: $font-weight--bold;
-      color: $color__dark-blue-gray--4;
-      margin-bottom: 5px;
-    }
+    // +alt_avatar__info__where
+    @include alt_avatar__info__where;
 
-    // time
-    .avatar-info__time {
-      font-size: $font-size--tiny;
-      font-weight: $font-weight--normal;
-      color: $color__dark-blue-gray--2;
-    }
+    // +alt_avatar__info__time
+    @include alt_avatar__info__time;
 
-    // button defaults
-    .unlock,
-    .invite,
-    .avatar-info__tel,
-    .avatar-info__email {
-      margin-top: auto;
-    }
-
-    // link defaults
-    .avatar-info__tel,
-    .avatar-info__email {
-      font-size: $font-size--tiny;
-      color: $color__state--success;
-      font-weight: $font-weight--normal;
-      letter-spacing: $letter-spacing--1;
-    }
-
-    // mobile icon
-    .avatar-info__tel {
-      @include icon(mobile) {
-        font-size: 20px;
-        margin-right: 10px;
-        vertical-align: middle;
-      }
-    }
+    // +alt_avatar__info__actions
+    @include alt_avatar__info__actions;
   }
+}
 
-  // type --------------------
 
+
+// type --------------------
+
+// =alt_avatar--types
+@mixin alt_avatar--types {
   // type: huge
   &.avatar-huge {
     height: 180px;
@@ -242,5 +303,98 @@
         font-size: $font-size--small;
       }
     }
+  }
+}
+
+
+
+// defaults --------------------
+
+// =alt_avatar
+@mixin alt_avatar {
+  height: 180px;
+  overflow: hidden;
+
+  // defaults
+  .row {
+    height: 100%;
+  }
+
+  // +alt_avatar__img--primary
+  @include alt_avatar__img--primary;
+
+  // +alt_avatar__img--secondary
+  @include alt_avatar__img--secondary;
+
+  // +alt_avatar__info
+  @include alt_avatar__info;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #STYLES
+// --------------------------------------------------
+
+// _avatar
+.avatar {
+
+  // =alt_avatar
+  @include alt_avatar;
+
+  // =alt_avatar--types
+  @include alt_avatar--types;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #OVERRIDES
+// --------------------------------------------------
+
+// overrides
+.rating {
+  .color-negative {
+    .star-container {
+      .star {
+        svg {
+          fill: #0f0;
+        }
+        i {
+          color: #0f0;
+        }
+      }
+    }
+  }
+}
+
+.rating.color-ok .star-container .star {
+  svg {
+    fill: #f00;
+  }
+  i {
+    color: #f00;
+  }
+}
+
+.rating.color-positive .star-container .star {
+  svg {
+    fill: #00f;
+  }
+  i {
+    color: #00f;
+  }
+}
+
+.rating.color-default .star-container .star {
+  svg {
+    fill: #ff0;
+  }
+  i {
+    color: #ff0;
   }
 }

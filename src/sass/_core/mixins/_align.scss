@@ -38,6 +38,13 @@
 
   // align horizintal --------------------
 
+  // left
+  @if(index($_map, left)) {
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-right: auto;
+  }
+
   // center
   @if(index($_map, center)) {
     justify-content: center;

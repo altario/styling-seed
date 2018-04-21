@@ -27,18 +27,8 @@ $job-card__actions__height: 60px;
 // #STYLES
 // --------------------------------------------------
 
-// _job-card
-.job-card {
-  width: 100%;
-  height: $job-card__height;
-  background: $color__light-yellow-gray--1;
-  box-shadow: $shadow--wide--2;
-  overflow: hidden;
-  .row {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
+// =alt_job-card__sidebar
+@mixin alt_job-card__sidebar {
   .job-card__sidebar {
     max-width: 200px;
     height: 100%;
@@ -68,6 +58,7 @@ $job-card__actions__height: 60px;
         line-height: $font-size--tiny;
         font-size: $font-size--tiny;
         font-weight: $font-weight--normal;
+        letter-spacing: $letter-spacing--2;
         text-transform: uppercase;
         margin-top: 10px;
       }
@@ -95,10 +86,15 @@ $job-card__actions__height: 60px;
     }
     @include align(column center middle);
   }
+}
+
+// =alt_job-card__content
+@mixin alt_job-card__content {
   .job-card__content {
     .job-card__content__info {
       height: calc(100% - #{$job-card__actions__height});
       padding: 20px 60px;
+      @include align(column);
       .job-card__content__info__title {
         @include line-clamp(1);
         font-size: $font-size--head-3;
@@ -115,7 +111,8 @@ $job-card__actions__height: 60px;
       .job-card__content__info__origin {
         text-transform: uppercase;
         letter-spacing: $letter-spacing--1;
-        font-size: $font-size--small;
+        font-size: $font-size--tiny;
+        margin-top: auto;
         @include line-clamp(1);
       }
     }
@@ -192,12 +189,14 @@ $job-card__actions__height: 60px;
       }
     }
   }
+}
 
 
 
-  // type --------------------
+// type --------------------
 
-  // type: agency
+// +alt_job-card__type--agency
+@mixin alt_job-card__type--agency {
   &.job-card--agency {
     .job-card__content__type {
       @include calc-col(12);
@@ -212,8 +211,10 @@ $job-card__actions__height: 60px;
       display: none !important;
     }
   }
+}
 
-  // type: agency-job
+// +alt_job-card__type--agency-job
+@mixin alt_job-card__type--agency-job {
   &.job-card--agency-job {
     .job-card__content__type {
       @include calc-col(10);
@@ -236,134 +237,145 @@ $job-card__actions__height: 60px;
       }
     }
   }
+}
 
 
 
-  // themes --------------------
+// theme --------------------
+
+// =alt_job-card__theme--color
+@mixin alt_job-card__theme--color {
 
   // themes: color
   &.job-card--color {
-    .job-card__sidebar {
-      .job-card__sidebar__price {
-        color: $color__night;
-        background: $color__white--1;
-      }
-      .job-card__sidebar__time {
-        color: $color__night;
-        background: $color__white--1;
-      }
-    }
-    .job-card__content {
-      .job-card__content__info {
-        background: $color__night;
-        .job-card__content__info__title,
-        .job-card__content__info__description,
-        .job-card__content__info__origin {
-          color: $color__white--1;
+
+    // night
+    &.night {
+      .job-card__sidebar {
+        .job-card__sidebar__price {
+          color: $color__night;
+          background: $color__white--1;
+        }
+        .job-card__sidebar__time {
+          color: $color__night;
+          background: $color__white--1;
         }
       }
-      .job-card__content__type {
-        background: $color__night;
+      .job-card__content {
+        .job-card__content__info {
+          background: $color__night;
+          .job-card__content__info__title,
+          .job-card__content__info__description,
+          .job-card__content__info__origin {
+            color: $color__white--1;
+          }
+        }
+        .job-card__content__type {
+          background: $color__night;
+        }
+        .job-card__content__type {
+          color: $color__white--1;
+          .job-card__content__type__info {
+            &.job-card__content__type__info--date {
+              background: $color__night-alt--1;
+            }
+            &.job-card__content__type__info--time {
+              background: $color__night-alt--2;
+            }
+            &.job-card__content__type__info--gender {
+              background: $color__night-alt--3;
+            }
+          }
+        }
       }
-      .job-card__content__type {
-        color: $color__white--1;
-        .job-card__content__type__info {
-          &.job-card__content__type__info--date {
-            background: $color__night-alt--1;
+    }
+
+    // afternoon
+    &.afternoon {
+      .job-card__sidebar {
+        .job-card__sidebar__price {
+          color: $color__afternoon;
+          background: $color__white--1;
+        }
+        .job-card__sidebar__time {
+          color: $color__afternoon;
+          background: $color__white--1;
+        }
+      }
+      .job-card__content {
+        .job-card__content__info {
+          background: $color__afternoon;
+          .job-card__content__info__title,
+          .job-card__content__info__description,
+          .job-card__content__info__origin {
+            color: $color__white--1;
           }
-          &.job-card__content__type__info--time {
-            background: $color__night-alt--2;
+        }
+        .job-card__content__type {
+          background: $color__afternoon;
+        }
+        .job-card__content__type {
+          color: $color__white--1;
+          .job-card__content__type__info {
+            &.job-card__content__type__info--date {
+              background: $color__afternoon-alt--1;
+            }
+            &.job-card__content__type__info--time {
+              background: $color__afternoon-alt--2;
+            }
+            &.job-card__content__type__info--gender {
+              background: $color__afternoon-alt--3;
+            }
           }
-          &.job-card__content__type__info--gender {
-            background: $color__night-alt--3;
+        }
+      }
+    }
+
+    // morning
+    &.morning {
+      .job-card__sidebar {
+        .job-card__sidebar__price {
+          color: $color__morning;
+          background: $color__white--1;
+        }
+        .job-card__sidebar__time {
+          color: $color__morning;
+          background: $color__white--1;
+        }
+      }
+      .job-card__content {
+        .job-card__content__info {
+          background: $color__morning;
+          .job-card__content__info__title,
+          .job-card__content__info__description,
+          .job-card__content__info__origin {
+            color: $color__white--1;
+          }
+        }
+        .job-card__content__type {
+          background: $color__morning;
+        }
+        .job-card__content__type {
+          color: $color__white--1;
+          .job-card__content__type__info {
+            &.job-card__content__type__info--date {
+              background: $color__morning-alt--1;
+            }
+            &.job-card__content__type__info--time {
+              background: $color__morning-alt--2;
+            }
+            &.job-card__content__type__info--gender {
+              background: $color__morning-alt--3;
+            }
           }
         }
       }
     }
   }
+}
 
-  // themes: color-2
-  &.job-card--color-2 {
-    .job-card__sidebar {
-      .job-card__sidebar__price {
-        color: $color__afternoon;
-        background: $color__white--1;
-      }
-      .job-card__sidebar__time {
-        color: $color__afternoon;
-        background: $color__white--1;
-      }
-    }
-    .job-card__content {
-      .job-card__content__info {
-        background: $color__afternoon;
-        .job-card__content__info__title,
-        .job-card__content__info__description,
-        .job-card__content__info__origin {
-          color: $color__white--1;
-        }
-      }
-      .job-card__content__type {
-        background: $color__afternoon;
-      }
-      .job-card__content__type {
-        color: $color__white--1;
-        .job-card__content__type__info {
-          &.job-card__content__type__info--date {
-            background: $color__afternoon-alt--1;
-          }
-          &.job-card__content__type__info--time {
-            background: $color__afternoon-alt--2;
-          }
-          &.job-card__content__type__info--gender {
-            background: $color__afternoon-alt--3;
-          }
-        }
-      }
-    }
-  }
-
-  // themes: color-3
-  &.job-card--color-3 {
-    .job-card__sidebar {
-      .job-card__sidebar__price {
-        color: $color__morning;
-        background: $color__white--1;
-      }
-      .job-card__sidebar__time {
-        color: $color__morning;
-        background: $color__white--1;
-      }
-    }
-    .job-card__content {
-      .job-card__content__info {
-        background: $color__morning;
-        .job-card__content__info__title,
-        .job-card__content__info__description,
-        .job-card__content__info__origin {
-          color: $color__white--1;
-        }
-      }
-      .job-card__content__type {
-        background: $color__morning;
-      }
-      .job-card__content__type {
-        color: $color__white--1;
-        .job-card__content__type__info {
-          &.job-card__content__type__info--date {
-            background: $color__morning-alt--1;
-          }
-          &.job-card__content__type__info--time {
-            background: $color__morning-alt--2;
-          }
-          &.job-card__content__type__info--gender {
-            background: $color__morning-alt--3;
-          }
-        }
-      }
-    }
-  }
-
+// =alt_job-card__theme--white
+@mixin alt_job-card__theme--white {
   // themes: white
   &.job-card--white {
     .job-card__sidebar {
@@ -396,7 +408,10 @@ $job-card__actions__height: 60px;
       }
     }
   }
+}
 
+// =alt_job-card__theme--gray
+@mixin alt_job-card__theme--gray {
   // themes: gray
   &.job-card--gray {
     .job-card__sidebar {
@@ -429,10 +444,14 @@ $job-card__actions__height: 60px;
       }
     }
   }
+}
 
 
 
-  // mq --------------------
+// mq --------------------
+
+// =alt_job-card__mq
+@mixin alt_job-card__mq {
 
   // mq: lg
   @include mq(lg) {
@@ -577,4 +596,72 @@ $job-card__actions__height: 60px;
       }
     }
   }
+}
+
+
+
+// defaults --------------------
+
+// +alt_job-card
+@mixin alt_job-card {
+  width: 100%;
+  height: $job-card__height;
+  background: $color__light-yellow-gray--1;
+  box-shadow: $shadow--topdown--3;
+  overflow: hidden;
+  .row {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  // +alt_job-card__sidebar
+  @include alt_job-card__sidebar;
+
+  // +alt_job-card__content
+  @include alt_job-card__content;
+
+
+
+  // type --------------------
+
+  // +alt_job-card__type--agency
+  @include alt_job-card__type--agency;
+
+  // +alt_job-card__type--agency-job
+  @include alt_job-card__type--agency-job;
+
+
+
+  // themes --------------------
+
+  // +alt_job-card__theme--color
+  @include alt_job-card__theme--color;
+
+  // +alt_job-card__theme--white
+  @include alt_job-card__theme--white;
+
+  // +alt_job-card__theme--gray
+  @include alt_job-card__theme--gray;
+
+
+
+  // mq --------------------
+
+  // +alt_job-card__mq
+  @include alt_job-card__mq;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #STYLES
+// --------------------------------------------------
+
+// _job-card
+.job-card {
+  // +alt_job-card
+  @include alt_job-card;
 }

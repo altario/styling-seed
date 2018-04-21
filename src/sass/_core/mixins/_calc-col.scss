@@ -18,7 +18,11 @@
 
 // @calc-col
 @mixin calc-col($_size, $_gutter: false) {
-  @if unit($_size) == '%' {
+  @if unit($_size) == 'px' {
+    max-width: $_size;
+    flex: 0 0 $_size;
+  }
+  @else {
     @if $_gutter {
       max-width: calc(#{percentage($_size / $grid__default--columns)} - #{$_gutter});
       flex: 0 0 calc(#{percentage($_size / $grid__default--columns)} - #{$_gutter});
@@ -27,10 +31,6 @@
       max-width: percentage($_size / $grid__default--columns);
       flex: 0 0 percentage($_size / $grid__default--columns);
     }
-  }
-  @else if unit($_size) == 'px' {
-    max-width: $_size;
-    flex: 0 0 $_size;
   }
 }
 

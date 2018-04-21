@@ -58,9 +58,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 // components: notifications
 import { NotificationsComponent } from './components/notifications/notifications.component';
 
-// components: accordion
-import { AccordionComponent } from './components/accordion/accordion.component';
-
 
 
 // page-components --------------------
@@ -71,8 +68,11 @@ import { JobComponent } from './page-components/job/job.component';
 // page-components: avatar
 import { AvatarComponent } from './page-components/avatar/avatar.component';
 
-// page-components: cards
+// page-components: panels
 import { PanelsComponent } from './components/panels/panels.component';
+
+// components: accordion
+import { AccordionComponent } from './components/accordion/accordion.component';
 
 // page-components: footers
 import { FootersComponent } from './components/footers/footers.component';
@@ -125,6 +125,9 @@ const appRoutes: Routes = [
   // components: panels
   { path: 'panels', component: PanelsComponent },
 
+  // components: accordion
+  { path: 'accordion', component: AccordionComponent },
+
   // components: footers
   { path: 'footers', component: FootersComponent },
 
@@ -170,6 +173,9 @@ const appRoutes: Routes = [
 
     // layout: panels
     PanelsComponent,
+
+    // layout: accordion
+    AccordionComponent,
 
     // layout: footers
     FootersComponent,

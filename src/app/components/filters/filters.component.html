@@ -19,13 +19,11 @@
                   <button class="btn btn-small">test X</button>
                   <span class="filter__buttons__overflow">+3</span>
                 </div>
-                <div class="filter__dropdown dropdown" dropdown>
+                <div class="filter__dropdown dropdown" [autoClose]="false" dropdown>
                   <button aria-controls="dropdown-basic" class="btn dropdown-toggle" id="button-basic" dropdownToggle type="button">|||</button>
                   <ul *dropdownMenu class="dropdown-menu">
                   <div class="filter__body">
-                    <div class="filter__body__title">
-                      Filter jobs inside campaign
-                    </div>
+                    <div class="filter__body__title">Filter jobs inside campaign</div>
                     <form class="filter__body__content">
                       <div class="filter__content__sidebar">
                         <ul class="filter__sidebar__checkbox-list">
