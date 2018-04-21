@@ -243,6 +243,10 @@
       width: 100%;
     }
 
+    &.modal-sm {
+      mas-width: 400px;
+    }
+
     // +alt_modal__content
     @include alt_modal__content;
 
