@@ -107,6 +107,7 @@ $forms__margin__elements: 8px;
     .input-group-text {
       @include anim;
       i {
+        font-size: 14px;
         transition: color .1s ease-in-out;
       }
     }
