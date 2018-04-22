@@ -101,7 +101,9 @@ $doc__sidebar__height: 80px;
       }
     }
   }
-  padding: 80px;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 80px;
   @include mq(iphone8plus) {
     padding: 0px;
   }
