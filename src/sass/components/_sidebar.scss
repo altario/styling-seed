@@ -68,6 +68,12 @@ $alt_components__sidebar__link__divider__color: $color__light-yellow-gray--2;
 // #STYLES
 // ------------------------------------------------------------------
 
+.container-sidebar {
+  @include calc-col(300px);
+  background: $color__white--1;
+}
+// container-content
+
 .sidebar{
  //ONLY for TESTING purposes
  //width: 300px;
@@ -77,16 +83,29 @@ $alt_components__sidebar__link__divider__color: $color__light-yellow-gray--2;
  height: 100%;
  padding: 0;
  margin: 0;
- border: 1px solid;
+ border: none;
  padding: $alt_components__sidebar__paddding;
 
  //specificity issues due to *btn-icon* class, spec wayyy too high
- .sidebar__links{
-   .sidebar__link{
-     > button {
-       &.sidebar__btn{
-         padding: 0px!important;
-         padding-left: 16px!important;
+ .sidebar__links {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid $color__light-yellow-gray--2;
+  font-size: $font-size--tiny;
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+  }
+  .sidebar__link {
+    .sidebar__btn {
+      padding: 0 !important;
+      border: none;
+      @include align(row middle);
+      .btn__text {
+        padding-left: 26px !important;
+       }
+       .btn__badge {
        }
      }
    }
@@ -148,28 +167,30 @@ $alt_components__sidebar__link__divider__color: $color__light-yellow-gray--2;
  margin-top: 24px;
  padding-top: 24px;
 }
+.sidebar__links {
+  .sidebar__link--active,
+  .active {
+    .sidebar__btn {
+      position: relative;
+      left: -4px;
+      color: $alt_components__sidebar__btn__text--active__color;
+      font-weight: $alt_components__sidebar__btn--active__font-weight;
+    }
+    .btn__badge {
+      color: $alt_components__sidebar__btn__badge--active__color;
+      background: $alt_components__sidebar__btn__badge--active__bg-color;
+      position: relative;
+      right: -$alt_components__sidebar__btn__badge__paddding;
+    }
 
-.sidebar__link--active {
-  .sidebar__btn {
-    position: relative;
-    left: -4px;
-    color: $alt_components__sidebar__btn__text--active__color;
-    font-weight: $alt_components__sidebar__btn--active__font-weight;
-  }
-  .btn__badge {
-    color: $alt_components__sidebar__btn__badge--active__color;
-    background: $alt_components__sidebar__btn__badge--active__bg-color;
-    position: relative;
-    right: -$alt_components__sidebar__btn__badge__paddding;
-  }
-
-  &::before {
-    position: relative;
-    left: -12px;
-    content: "";
-    display: inline-block;
-    height: 24px;
-    background-color: $alt_components__sidebar__link--active__color;
-    padding-left: 4px;
+    &::before {
+      position: relative;
+      left: -12px;
+      content: "";
+      display: inline-block;
+      height: 24px;
+      background-color: $alt_components__sidebar__link--active__color;
+      padding-left: 4px;
+    }
   }
 }

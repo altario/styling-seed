@@ -17,6 +17,8 @@
 //  #STYLES
 //    _nav
 //
+//  #OVERRIDES
+//
 // ------------------------------------------------------------------
 
 
@@ -26,6 +28,9 @@
 
 // flags
 $alt_nav__mq: iphone8plus;
+
+// $sizes
+$alt_nav__navbar--height: 60px;
 
 
 
@@ -57,6 +62,9 @@ $alt_nav__mq: iphone8plus;
         font-weight: $font-weight--bold;
       }
     }
+    &:last-child {
+      font-weight: $font-weight--bold;
+    }
     & + .breadcrumb-item {
       @include icon(chevron-right) {
         font-size: 8px;
@@ -78,15 +86,15 @@ $alt_nav__mq: iphone8plus;
     height: 40px;
     padding: 0 30px;
     margin: 0;
-    @include align(row middle);
     background: $color__white--3;
+    @include align(row middle);
 
     // +alt_nav-container__breadcrumbs__item
     @include alt_nav-container__breadcrumbs__item;
 
-    // sm
+    // mq
     @include mq($alt_nav__mq) {
-      height: 60px;
+      height: $alt_nav__navbar--height;
       .breadcrumb-item {
         display: none;
         &:last-child {
@@ -119,7 +127,7 @@ $alt_nav__mq: iphone8plus;
 @mixin alt_nav-container__navbar-mobile {
   .navbar {
     &.navbar-mobile {
-      height: 60px;
+      height: $alt_nav__navbar--height;
       padding: 0;
       box-shadow: $shadow--downtop--2;
       @include align(row middle);
@@ -151,7 +159,7 @@ $alt_nav__mq: iphone8plus;
 // =alt_nav-container__navbar
 @mixin alt_nav-container__navbar {
   .navbar {
-    height: 60px;
+    height: $alt_nav__navbar--height;
     background: $color__white--1;
     padding: 0 30px;
     @include align(row between);
@@ -181,6 +189,9 @@ $alt_nav__mq: iphone8plus;
         &.btn-outline-primary {
           padding: 0 20px;
         }
+      }
+      app-credits-widget {
+        font-size: $font-size--small;
       }
     }
   }
@@ -288,4 +299,19 @@ $alt_nav__mq: iphone8plus;
 
   // +alt_nav-container__navbar__theme--jobseeker
   @include alt_nav-container__navbar__theme--jobseeker;
+}
+
+
+
+
+
+// ------------------------------------------------------------------
+// #OVERRIDES
+// ------------------------------------------------------------------
+
+.navbar-spacer {
+  height: 100px;
+  @include mq($alt_nav__mq) {
+    height: 60px;
+  }
 }
