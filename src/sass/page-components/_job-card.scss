@@ -133,26 +133,59 @@ $job-card__actions__height: 60px;
         text-align: center;
         font-size: $font-size--nano;
         padding: 10px;
-        padding-top: 30px;
         font-weight: $font-weight--normal;
         position: relative;
         text-transform: uppercase;
         letter-spacing: $letter-spacing--2;
-        &:before {
-          width: 22px;
-          height: 10px;
-          font-size: 22px;
-          @include center(h);
-          top: 8px;
+        @include align(row middle center);
+        span {
+          @include align(column middle center);
+          &:before {
+            width: 22px;
+            font-size: 22px;
+            position: relative;
+            margin-bottom: 5px;
+          }
         }
+
+        &.job-card__content__type__info--date,
+        &.job-card__content__type__info--time,
+        &.job-card__content__type__info--gender {
+          span {
+            margin-right: 10px;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
         &.job-card__content__type__info--date {
-          @include icon(sun);
+          span {
+            @include icon(calendar-check-o);
+          }
         }
         &.job-card__content__type__info--time {
-          @include icon(sun);
+          span {
+            &.morning {
+              @include icon(coffee);
+            }
+            &.afternoon {
+              @include icon(sun);
+            }
+            &.night {
+              @include icon(moon-o);
+            }
+          }
         }
         &.job-card__content__type__info--gender {
-          @include icon(sun);
+          span {
+            &.male {
+              @include icon(mars);
+            }
+            &.female {
+              @include icon(venus);
+            }
+          }
         }
       }
     }
