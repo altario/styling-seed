@@ -251,6 +251,9 @@ $shadow--topdown--1:                  0px 1px 6px rgba($color__black--1, .02);
 $shadow--topdown--2:                  0px 2px 6px rgba($color__black--1, .18);
 $shadow--topdown--3:                  0px 4px 12px rgba($color__black--1, .18);
 
+// $shadows: downtop
+$shadow--downtop--2:                  0px -2px 6px rgba($color__black--1, .18);
+
 // $shadows: wide
 $shadow--wide--1:                     0px 0px 160px rgba($color__light-yellow-gray--2, 1);
 $shadow--wide--2:                     0px 0px 160px rgba($color__light-yellow-gray--2, 1), 0px 4px 4px rgba($color--black--1, .05);

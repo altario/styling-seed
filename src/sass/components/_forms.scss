@@ -427,6 +427,13 @@ select.form-control {
     height: $input-height;
   }
 
+  appearance: none;
+  @include icon(search) {
+    margin-right: $input__padding-x;
+    font-size: 12px;
+    color: inherit;
+  }
+
   &:focus::-ms-value {
     // Suppress the nested default white text on blue background highlight given to
     // the selected option text when the (still closed) <select> receives focus
