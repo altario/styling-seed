@@ -42,7 +42,10 @@ $alt__components__filters__header__btn__color : $color__dark-blue-gray--2;
 //  #MIXINS
 // ------------------------------------------------------------------
 
+// =alt_filter
+@mixin alt_filter {
 
+}
 
 
 
@@ -52,7 +55,7 @@ $alt__components__filters__header__btn__color : $color__dark-blue-gray--2;
 
 // _filter
 .filter {
-  width: 800px;
+  width: 100%;
   // min-height: 100%;
 
   .filter__header {
