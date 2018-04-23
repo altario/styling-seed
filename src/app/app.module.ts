@@ -242,7 +242,8 @@ const appRoutes: Routes = [
   //   TooltipModule,
   //   ModalModule,
   //   AlertModule,
-  //   AccordionModule
+  //   AccordionModule,
+  //   StarRatingModule.forRoot()
   // ],
   providers: [],
   bootstrap: [AppComponent]
