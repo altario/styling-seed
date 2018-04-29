@@ -1,0 +1,166 @@
+//
+
+
+.credits{
+	display: flex;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	min-height: 100%;
+	> .panel__header{
+		padding: 25px;
+		
+		background-color: $color__light-yellow-gray--1;
+		color: $color__dark-blue-gray--2;
+		
+		font-style: normal;
+		font-weight: bold;
+		line-height: 25px;
+		font-size: 13px;
+		text-align: center;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+
+	}
+	> .panel__content{
+		display: flex;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-justify-content: space-between;
+		        justify-content: space-between;
+		-webkit-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		padding: 25px;
+		> p{
+			font-weight: normal;
+			line-height: 19px;
+			font-size: 13px;
+
+			color: #A1ACB5;
+		}
+		> h5{
+			line-height: 21px;
+			font-size: 11px;
+			text-align: justify;
+
+			color: #707D87;
+			margin-top: 15px;
+			margin-bottom: 45px;
+		}
+		> .price {
+			display: flex;
+			-webkit-flex: 1;
+			    -ms-flex: 1;
+			        flex: 1;
+			-webkit-flex-direction: column;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+			>h1 {
+				color: $color__brand--3;
+				margin-bottom: 10px;
+				font-size: 24px;	
+				font-weight: bold;
+			}
+			>h2 {
+				color: $color__brand--3;
+				margin-bottom: 5px;	
+				font-size: 18px;
+			}
+			>p {
+				line-height: 21px;
+				font-size: 11px;
+				color: #707D87;
+			}
+			>button {
+				margin-top: 40px;
+				width: 100%;
+				border: #FA0D60;
+				background: #FA0D60
+			}
+		}
+	}
+}
+
+.credits__most-sold{
+	> .panel__header{
+		display: flex;
+		-webkit-justify-content: center;
+		        justify-content: center;
+		background-color: $color__brand--3;
+		color: #FFF;
+	}
+}
+
+.credits__custom{
+	> .panel__header{
+		display: flex;
+		-webkit-justify-content: center;
+		        justify-content: center;
+		background-color: $color__brand--3;
+		color: #FFF;
+	}
+	> .panel__content{
+		.price{
+			> button {
+				background-color: $color__brand--3;
+				border-color: $color__brand--3;
+			}
+			.price__info{
+				display: flex;
+				-webkit-flex-direction: column;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
+				-webkit-justify-content: center;
+        				justify-content: center;
+				-webkit-flex: 1;
+				    -ms-flex: 1;
+				        flex: 1;
+				>span{
+					font-size: 24px;
+					font-weight: bold;
+					color: $color__dark-blue-gray--2;
+				}
+			}
+		}
+	}
+}
+
+//
+
+
+.credit-history__card {
+}
+.credit-history__table {
+	padding: 30px;
+	border-spacing:4px 0px; 
+	border-collapse: separate;
+	th, td {
+		background: #F5F5F0;
+    padding: 30px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border: 0px!important;
+	}
+	td{
+		font-style: Regular;
+		font-size: 13px;
+		line-height: 25px;
+		color: #4F4F4F;
+		font-weight: bold;
+	}
+	th{
+		border-bottom: 4px solid white!important;
+		padding: 30px;
+		background-color: #E6EAED;
+		color: #1EA1FF;
+		
+	}
+	tr:nth-child(even){
+		td{
+			background: #F0F0EE;
+		}
+	}
+	tr:nth-child(odd)
+}
