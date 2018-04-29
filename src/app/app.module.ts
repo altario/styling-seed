@@ -58,6 +58,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 // components: notifications
 import { NotificationsComponent } from './components/notifications/notifications.component';
 
+// page-components: footer
+import { FooterComponent } from './components/footer/footer.component';
+
 
 
 // page-components --------------------
@@ -74,10 +77,7 @@ import { PanelsComponent } from './components/panels/panels.component';
 // components: accordion
 import { AccordionComponent } from './components/accordion/accordion.component';
 
-// page-components: footers
-import { FootersComponent } from './components/footers/footers.component';
-
-// page-components: filters
+// components: filters
 import { FiltersComponent } from './components/filters/filters.component';
 
 
@@ -128,8 +128,8 @@ const appRoutes: Routes = [
   // components: accordion
   { path: 'accordion', component: AccordionComponent },
 
-  // components: footers
-  { path: 'footers', component: FootersComponent },
+  // components: footer
+  { path: 'footer', component: FooterComponent },
 
   // components: filters
   { path: 'filters', component: FiltersComponent },
@@ -177,8 +177,8 @@ const appRoutes: Routes = [
     // layout: accordion
     AccordionComponent,
 
-    // layout: footers
-    FootersComponent,
+    // layout: footer
+    FooterComponent,
 
     // layout: filters
     FiltersComponent,
