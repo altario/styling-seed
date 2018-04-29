@@ -70,11 +70,12 @@
 // =alt_avatar__info__name
 @mixin alt_avatar__info__name {
   .avatar-info__name {
-    line-height: 24px;
+    // line-height: 1.2em;
     margin-bottom: 5px;
     font-size: $font-size--head-3;
     color: $color__dark-blue-gray--2;
     text-transform: uppercase;
+    @include line-clamp(2, 1.2em);
   }
 }
 
@@ -147,6 +148,13 @@
       font-size: 20px;
       margin-right: 10px;
       vertical-align: middle;
+    }
+  }
+
+  // overrides
+  .btn-block {
+    & + .btn-block {
+      margin-top: 0 !important;
     }
   }
 }
@@ -246,7 +254,7 @@
     // img primary
     .avatar-img-primary {
       @include calc-col(60px);
-      margin-bottom: 5px;
+      // margin-bottom: 5px;
     }
 
     // img secondary
@@ -258,6 +266,7 @@
       // name
       .avatar-info__name {
         font-size: $font-size--small;
+        @include line-clamp(1);
       }
 
       // rating
