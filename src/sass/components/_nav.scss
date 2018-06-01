@@ -177,7 +177,10 @@ $alt_nav__navbar--height: 60px;
     }
 
     .navbar-btns {
+      @include align(row middle);
       & > .btn {
+        height: 30px;
+        line-height: 30px;
         margin-right: 30px;
         font-weight: $font-weight--bold;
         &:last-child {
@@ -206,36 +209,6 @@ $alt_nav__navbar--height: 60px;
   &.nav--color--agency {
     .navbar-brand {
       #logo_snap {
-        fill: $color__brand--1;
-      }
-    }
-    @include mq($alt_nav__mq) {
-      .breadcrumb {
-        li {
-          &:nth-last-child(2) {
-            &:before {
-              color: $color__brand--1;
-            }
-            & > a {
-              color: $color__brand--1;
-            }
-          }
-        }
-      }
-    }
-    .navbar-mobile {
-      .active {
-        color: $color__brand--1;
-      }
-    }
-  }
-}
-
-// =alt_nav-container__navbar__theme--jobseeker
-@mixin alt_nav-container__navbar__theme--jobseeker {
-  &.nav--color--jobseeker {
-    .navbar-brand {
-      #logo_snap {
         fill: $color__brand--3;
       }
     }
@@ -256,6 +229,36 @@ $alt_nav__navbar--height: 60px;
     .navbar-mobile {
       .active {
         color: $color__brand--3;
+      }
+    }
+  }
+}
+
+// =alt_nav-container__navbar__theme--jobseeker
+@mixin alt_nav-container__navbar__theme--jobseeker {
+  &.nav--color--jobseeker {
+    .navbar-brand {
+      #logo_snap {
+        fill: $color__brand--1;
+      }
+    }
+    @include mq($alt_nav__mq) {
+      .breadcrumb {
+        li {
+          &:nth-last-child(2) {
+            &:before {
+              color: $color__brand--1;
+            }
+            & > a {
+              color: $color__brand--1;
+            }
+          }
+        }
+      }
+    }
+    .navbar-mobile {
+      .active {
+        color: $color__brand--1;
       }
     }
   }

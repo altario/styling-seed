@@ -576,6 +576,10 @@ $job-card__actions__height: 60px;
 
         height: 320px;
         padding-top: 120px;
+
+        .job-card__content__info__title {
+          @include line-clamp(2);
+        }
       }
       .job-card__content__action-big {
         @include calc-col(12, 60px);
@@ -634,6 +638,10 @@ $job-card__actions__height: 60px;
       .job-card__content__info {
         height: 150px;
         padding-top: 20px;
+
+        .job-card__content__info__title {
+          line-height: 1 !important;
+        }
       }
       .job-card__content__action-big {
         @include calc-col(12);
