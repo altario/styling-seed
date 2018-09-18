@@ -1,0 +1,7 @@
+.app-wrapper {
+  // filter: blur(0px);
+  transition: filter .125s ease-in-out;
+  @include mq(iphone8plus) {
+    padding-top: $navbar__default--height !important;
+  }
+}

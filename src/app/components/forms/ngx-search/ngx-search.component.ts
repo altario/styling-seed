@@ -1,7 +1,7 @@
 // angular
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-ngx-search',
@@ -9,6 +9,24 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./ngx-search.component.scss']
 })
 export class NgxSearchComponent implements OnInit {
+
+  // search default
+  formSearchDefault = `
+<div class="form-group">
+  <div class="input-group">
+    <ngx-select class="form-control form-control-search" id="exampleInputEmail16" [placeholder]="'Please select'" [items]="ngxSelectItems" [allowClear]="true"></ngx-select>
+  </div>
+</div>
+  `;
+
+  // search default disabled
+  formSearchDefaultDisabled = `
+<div class="form-group">
+  <div class="input-group">
+    <ngx-select class="form-control form-control-search" id="exampleInputEmail16" [placeholder]="'Please select'" [items]="ngxSelectItems" [allowClear]="true" [disabled]="true"></ngx-select>
+  </div>
+</div>
+  `;
 
   selectControl = new FormControl();
 
@@ -20,19 +38,8 @@ export class NgxSearchComponent implements OnInit {
     'When She Loved Me',
   ];
 
-  constructor(router: Router) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector('#' + tree.fragment);
-          if (element) { element.scrollIntoView(true); }
-        }
-      }
-    });
-  }
+  constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

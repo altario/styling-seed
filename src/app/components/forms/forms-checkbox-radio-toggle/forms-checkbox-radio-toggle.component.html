@@ -29,24 +29,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>checkbox</span>" value="" id="defaultCheck1"&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultCheck1"&gt;Default checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>checkbox</span>" value="" id="defaultCheck2" checked&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultCheck2"&gt;Checked checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>checkbox</span>" value="" id="defaultCheck3" disabled&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultCheck3"&gt;Disabled checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>checkbox</span>" value="" id="defaultCheck4" disabled checked&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultCheck4"&gt;Disabled and checked checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formCheckbox }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -60,42 +46,28 @@
           <div class="doc-code-block__inner doc-code-block__inner--form">
 
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" checked>
               <label class="form-check-label" for="exampleRadios1">Default radio</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios2" value="option2">
               <label class="form-check-label" for="exampleRadios2">Second default radio</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+              <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios3" value="option3" disabled>
               <label class="form-check-label" for="exampleRadios3">Disabled radio</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option4" disabled checked>
-              <label class="form-check-label" for="exampleRadios3">Disabled radio</label>
+              <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios4" value="option4" disabled checked>
+              <label class="form-check-label" for="exampleRadios4">Disabled radio</label>
             </div>
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>radio</span>" name="exampleRadios" id="exampleRadios1" value="option1" checked&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="exampleRadios1"&gt;Default radio&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>radio</span>" name="exampleRadios" id="exampleRadios2" value="option2"&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="exampleRadios2"&gt;Second default radio&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>radio</span>" name="exampleRadios" id="exampleRadios3" value="option3" disabled&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="exampleRadios3"&gt;Disabled radio&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-input</span>" type="<span>radio</span>" name="exampleRadios" id="exampleRadios3" value="option4" disabled checked&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="exampleRadios3"&gt;Disabled radio&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formRadioButtons }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -127,24 +99,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-toggle</span>" type="<span>checkbox</span>" value="" id="defaultToggle1"&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultToggle1"&gt;Default checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-toggle</span>" type="<span>checkbox</span>" value="" id="defaultToggle2" checked&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultToggle2"&gt;Checked checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-toggle</span>" type="<span>checkbox</span>" value="" id="defaultToggle3" disabled&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultToggle3"&gt;Disabled checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
-            <pre>&lt;div class="<span>form-check</span>"&gt;</pre>
-            <pre>  &lt;input class="<span>form-check-toggle</span>" type="<span>checkbox</span>" value="" id="defaultToggle4" disabled checked&gt;</pre>
-            <pre>  &lt;label class="<span>form-check-label</span>" for="defaultToggle4"&gt;Disabled and checked checkbox&lt;/label&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formToggles }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>

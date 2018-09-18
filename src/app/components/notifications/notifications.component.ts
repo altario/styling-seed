@@ -1,6 +1,5 @@
 // angular
 import { Component, TemplateRef, OnInit, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 
 // ngx-bootstrap
 import { AlertModule } from 'ngx-bootstrap/alert';
@@ -12,6 +11,41 @@ import { AlertModule } from 'ngx-bootstrap/alert';
   styleUrls: ['./notifications.component.scss']
 })
 export class NotificationsComponent implements OnInit {
+
+  notifications = `
+<div class="alert-holder">
+  <alert type="info" [dismissible]="dismissible">
+    <div class="alert-body">
+      <strong>Well done!</strong> You successfully read this important alert message.
+    </div>
+    <div class="alert-button">
+      <button class="btn btn-outline-primary btn-tiny" type="button">Rate now</button>
+    </div>
+  </alert>
+
+  <alert type="info" [dismissible]="dismissible">
+    <div class="alert-body">
+      <strong>Well done!</strong> You successfully read this important alert message.
+    </div>
+  </alert>
+
+  <alert type="warning" [dismissible]="dismissible">
+    <div class="alert-body">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </div>
+    <div class="alert-button">
+      <button class="btn btn-outline-primary btn-tiny" type="button">Rate now</button>
+    </div>
+  </alert>
+
+  <alert type="danger" [dismissible]="dismissible">
+    <div class="alert-body">
+      <div class="title">job Creation failed!</div>
+      The Job creation failed because the filleds were not submited correctly. Please verify the fileds higlighted in red and try again. Thank you.
+    </div>
+  </alert>
+</div>
+  `;
 
   dismissible = true;
   defaultAlerts: any[] = [
@@ -25,7 +59,7 @@ export class NotificationsComponent implements OnInit {
     },
     {
       type: 'warning',
-      msg: `Warning! Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod. Lorem ipsum dolor sit amet, consectetur sed do eiusmod.`
+      msg: `Warning! Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod. Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod.Lorem ipsum dolor sit amet, consectetur sed do eiusmod. Lorem ipsum dolor sit amet, consectetur sed do eiusmod.`
     },
     {
       type: 'danger',
@@ -34,23 +68,12 @@ export class NotificationsComponent implements OnInit {
   ];
   alerts = this.defaultAlerts;
 
-  constructor(router: Router) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector('#' + tree.fragment);
-          if (element) { element.scrollIntoView(true); }
-        }
-      }
-    });
-  }
+  constructor() { }
+
+  ngOnInit() { }
 
   reset(): void {
     this.alerts = this.defaultAlerts;
-  }
-
-  ngOnInit() {
   }
 
 }

@@ -1,6 +1,5 @@
 // angular
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -10,19 +9,32 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class FormsTextareaComponent implements OnInit {
 
-  constructor(router: Router) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector('#' + tree.fragment);
-          if (element) { element.scrollIntoView(true); }
-        }
-      }
-    });
-  }
+  // textarea default
+  formTextareaDefault = `
+<div class="form-group">
+  <div class="label-group">
+    <label for="exampleInputEmail1">Input Name</label>
+  </div>
+  <div class="input-group">
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+  </div>
+</div>
+  `;
 
-  ngOnInit() {
-  }
+  // textarea default disabled
+  formTextareaDefaultDisabled = `
+<div class="form-group">
+  <div class="label-group">
+    <label for="exampleFormControlTextarea2">Input Name</label>
+  </div>
+  <div class="input-group">
+    <textarea class="form-control" id="exampleFormControlTextarea2" rows="5" disabled></textarea>
+  </div>
+</div>
+  `;
+
+  constructor() { }
+
+  ngOnInit() { }
 
 }

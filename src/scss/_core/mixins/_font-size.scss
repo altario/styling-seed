@@ -1,0 +1,77 @@
+// --------------------------------------------------
+//
+//  #DEPENDENCIES
+//    (../config/_variables.scss)
+//
+//  #MIXINS
+//    =font-size
+//
+//  #EXAMPLES
+//    [+1] font size calc with manual value
+//    [+2] font size calc with var value
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../config/_variables.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =font-size
+@mixin font-size($_font-size, $_line-height: auto, $_important: false) {
+
+  @if (type-of($_font-size) == number) {
+    @if (unit($_font-size) != "px") {
+      @error "`#{$_font-size}` needs to be a pixel value.";
+    }
+  } @else {
+    @error "`#{$_font-size}` needs to be a number.";
+  }
+
+  @if ($_important == true) {
+    $_important: !important;
+  } @else if ($_important == false) {
+    $_important: null;
+  } @else {
+    @error "`#{$_important}` needs to be `true` or `false`."
+  }
+
+  font-size: $_font-size $_important;
+  font-size: ($_font-size / $alt_global__font-size) * 1 + $alt_global__font-size--unit $_important;
+
+  @if ($_line-height == 'auto') {
+    line-height: ceil($_font-size / $alt_global__line-height) * ($alt_global__line-height / $_font-size) $_important;
+  }
+  @else {
+    @if (type-of($_line-height) == number or $_line-height == 'inherit' or $_line-height == 'normal') {
+      line-height: $_line-height $_important;
+    }
+    @else if ($_line-height != 'none' and $_line-height != false) {
+      @error "D’oh! `#{$_line-height}` is not a valid value for `$_line-height`."
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] font size calc with manual value
+// @include font-size(16px);
+
+// [+2] font size calc with var value
+// @include font-size($font__size--m);

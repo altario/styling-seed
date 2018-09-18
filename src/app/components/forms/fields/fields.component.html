@@ -23,16 +23,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail1"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail1"&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formDefaultEmptyWithLabel }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -55,13 +49,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail2" placeholder="<span>Please write here</span>"&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formDefaultEmptyWithPlaceholder }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -87,16 +78,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail2"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail3" placeholder="<span>Please write here</span>"&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formDefaultEmptywithLabelandPlaceholder }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -125,19 +110,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail3"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail4"&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>feedback-group</span>"&gt;</pre>
-            <pre>    &lt;div class="feedback"&gt;Please enter a valid URL.&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formLabeled1 }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -167,20 +143,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail4"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail5"&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>feedback-group</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>feedback</span>"&gt;Please enter a valid URL.&lt;/div&gt;</pre>
-            <pre>    &lt;button type="button" class="<span>button-info</span>" <span>[outsideClick]="true" popover="This button is disabled because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes." placement="bottom"</span>&gt;&lt;/button&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formLabeled2WithInfo }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -207,16 +173,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail5"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>    &lt;div class="<span>label-count</span>"&gt;10&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="form-control" id="exampleInputEmail6" <span>maxlength="10"</span>&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formLabeled3LimitedTo10Characters }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -242,16 +202,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group mandatory</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail6"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail7" <span>required</span>&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formMandatoryWithMandatoryClass }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -277,16 +231,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail7"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail7" value="<span>Please write here</span>"&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formFilledAndTyping }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -308,7 +256,9 @@
                 <div class="input-group">
                   <input type="email" class="form-control" id="exampleInputEmail8" value="23">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">€</span>
+                    <span class="input-group-text">
+                      <i class="air ai-calendar"></i>
+                    </span>
                   </div>
                 </div>
                 <div class="feedback-group">
@@ -320,24 +270,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group form-group-tn</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail8"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>    &lt;div class="<span>label-count</span>"&gt;2&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail8" value="<span>23</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-prepend</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;€&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>feedback-group</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>feedback</span>"&gt;Value cannot be 0.&lt;/div&gt;</pre>
-            <pre>    &lt;button type="button" class="<span>button-info</span>" <span>[outsideClick]="true" popover="This button is disabled because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes." placement="bottom"</span>&gt;&lt;/button&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formUnity1a }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
 
@@ -364,12 +300,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;label for="<span>exampleInputEmail1</span>"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;input class="<span>form-control</span>" id="<span>exampleInputEmail1</span>"&gt;...&lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formUnity1b }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -402,23 +336,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group selected mandatory</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail10"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>    &lt;div class="<span>label-count</span>"&gt;-2&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail10" value="This is some text"&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-prepend</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;@&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-append</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;days&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formSelectedWithSelectedAndMandatoryClass }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -454,26 +375,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group mandatory invalid</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail10"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>    &lt;div class="<span>label-count</span>"&gt;-2&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail10" value="This is some text"&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-prepend</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;@&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-append</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;days&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>feedback-group</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>feedback</span>"&gt;Please enter a valid URL.&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formErrorsWidthMandatoryAndInvalidClass }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -509,26 +414,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail10"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>    &lt;div class="<span>label-count</span>"&gt;-2&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="email" class="<span>form-control</span>" id="exampleInputEmail10" value="This is some text" <span>disabled</span>&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-prepend</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;@&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-append</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;days&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>feedback-group</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>feedback</span>"&gt;Please enter a valid URL.&lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formFieldDisabled }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>

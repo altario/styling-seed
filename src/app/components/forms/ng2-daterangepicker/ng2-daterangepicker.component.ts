@@ -1,6 +1,6 @@
 // angular
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+
 
 @Component({
   selector: 'app-ng2-daterangepicker',
@@ -8,6 +8,58 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./ng2-daterangepicker.component.scss']
 })
 export class Ng2DaterangepickerComponent implements OnInit {
+
+
+  // single picker
+  formSinglePicker = `
+<div class="form-group form-group-lg">
+  <div class="label-group">
+    <label for="exampleInputEmail14">Input Name</label>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control form-control-daterangepicker" id="exampleInputEmail14" name="daterangeInput" daterangepicker [options]="singlePickerOptions" (selected)="singleSelect($event)" readonly/>
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <i class="air ai-calendar"></i>
+      </span>
+    </div>
+  </div>
+</div>
+  `;
+
+  // dateranger picker
+  formDaterangePicker = `
+<div class="form-group form-group-lg">
+  <div class="label-group">
+    <label for="exampleInputEmail15">Input Name</label>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control form-control-daterangepicker" id="exampleInputEmail15" name="daterangeInput" daterangepicker [options]="datePickerOptions" (selected)="selectedDate($event, daterange)" readonly/>
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <i class="air ai-calendar"></i>
+      </span>
+    </div>
+  </div>
+</div>
+  `;
+
+  // dateranger picker disabled
+  formDaterangePickerDisabled = `
+<div class="form-group form-group-lg">
+  <div class="label-group">
+    <label for="exampleInputEmail15">Input Name</label>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control form-control-daterangepicker" id="exampleInputEmail15" name="daterangeInput" daterangepicker [options]="datePickerOptions" (selected)="selectedDate($event, daterange)" readonly disabled/>
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <i class="air ai-calendar"></i>
+      </span>
+    </div>
+  </div>
+</div>
+  `;
 
   singleDate: any;
   singlePickerOptions = {
@@ -25,20 +77,9 @@ export class Ng2DaterangepickerComponent implements OnInit {
     showDropdowns: true,
   };
 
-  constructor(router: Router) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector('#' + tree.fragment);
-          if (element) { element.scrollIntoView(true); }
-        }
-      }
-    });
-  }
+  constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   // Select: Single
   singleSelect(value: any) {

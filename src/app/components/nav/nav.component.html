@@ -35,17 +35,31 @@
             <div class="nav-container fixed-bottom nav--color--agency">
               <nav class="navbar navbar-mobile">
                 <div class="navbar-btns">
-                  <button type="button" class="btn btn-ghost-primary btn-tiny active"><i class="alt_icon-calendar"></i>Jobs</button>
-                  <button type="button" class="btn btn-ghost-primary btn-tiny"><i class="alt_icon-calendar"></i>My Jobs</button>
-                  <button type="button" class="btn btn-ghost-primary btn-tiny"><i class="alt_icon-calendar"></i>My Profile</button>
-                  <button type="button" class="btn btn-ghost-primary btn-tiny"><i class="alt_icon-calendar"></i>More</button>
+                  <button type="button" class="btn btn-ghost-primary btn-tiny active">
+                    <i class="air ai-suitcase"></i>
+                    Jobs
+                  </button>
+                  <button type="button" class="btn btn-ghost-primary btn-tiny">
+                    <i class="air ai-building"></i>
+                    My Jobs
+                  </button>
+                  <button type="button" class="btn btn-ghost-primary btn-tiny">
+                    <i class="air ai-user-tie"></i>
+                    My Profile
+                  </button>
+                  <button type="button" class="btn btn-ghost-primary btn-tiny">
+                    <i class="air ai-ellipsis-h"></i>
+                    More
+                  </button>
                 </div>
               </nav>
             </div>
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>...</span>"&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ nav }}
+            </ngx-prism>
           </div>
         </div>
       </div>

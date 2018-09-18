@@ -2,8 +2,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// prism
+import { ApPrismModule } from '@angular-package/prism';
+
+// routing
+import { AppRoutingModule } from './app-routing.module';
+
+// plugins
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+
+// app
+import { AppComponent } from './app.component';
 
 // ngx
 import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
@@ -17,9 +28,6 @@ import { Daterangepicker } from 'ng2-daterangepicker';
 import { TagInputModule } from 'ngx-chips';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { StarRatingModule } from 'angular-star-rating';
-
-// app
-import { AppComponent } from './app.component';
 
 
 
@@ -81,74 +89,12 @@ import { AccordionComponent } from './components/accordion/accordion.component';
 import { FiltersComponent } from './components/filters/filters.component';
 
 
-// simple routes
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'colors', pathMatch: 'full' },
-
-
-
-  // components --------------------
-
-  // components: colors
-  { path: 'colors', component: ColorsComponent },
-
-  // components: typography
-  { path: 'typography', component: TypographyComponent },
-
-  // components: typography
-  { path: 'buttons', component: ButtonsComponent },
-
-  // components: forms
-  { path: 'forms', component: FieldsComponent },
-  { path: 'ngx-select', component: NgxSelectComponent },
-  { path: 'ng2-daterangepicker', component: Ng2DaterangepickerComponent },
-  { path: 'ngx-search', component: NgxSearchComponent },
-  { path: 'forms-textarea', component: FormsTextareaComponent },
-  { path: 'forms-checkbox-radio-toggle', component: FormsCheckboxRadioToggleComponent },
-  { path: 'ngx-chips', component: NgxChipsComponent },
-
-  // components: grid
-  { path: 'grid', component: GridComponent },
-
-  // components: notifications
-  { path: 'notifications', component: NotificationsComponent },
-
-  // components: modals
-  { path: 'modals', component: ModalsComponent },
-
-  // components: nav
-  { path: 'nav', component: NavComponent },
-
-  // components: sidebar
-  { path: 'sidebar', component: SidebarComponent },
-
-  // components: panels
-  { path: 'panels', component: PanelsComponent },
-
-  // components: accordion
-  { path: 'accordion', component: AccordionComponent },
-
-  // components: footer
-  { path: 'footer', component: FooterComponent },
-
-  // components: filters
-  { path: 'filters', component: FiltersComponent },
-
-
-
-  // page-components --------------------
-
-  // page-components: job
-  { path: 'job', component: JobComponent },
-
-  // page-components: avatar
-  { path: 'avatar', component: AvatarComponent },
-];
-
-
 @NgModule({
   declarations: [
+    // app
     AppComponent,
+
+
 
     // page-components --------------------
 
@@ -218,33 +164,22 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     AppBootstrapModule,
+    ScrollToModule.forRoot(),
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     PopoverModule.forRoot(),
     AccordionModule.forRoot(),
     StarRatingModule.forRoot(),
     TagInputModule,
-    BrowserAnimationsModule,
     NgxSelectModule,
     Daterangepicker,
-
-    // routes
-    RouterModule.forRoot(
-      appRoutes,
-      // { enableTracing: true }
-    )
+    ApPrismModule,
   ],
-  // exports: [
-  //   BsDropdownModule,
-  //   TooltipModule,
-  //   ModalModule,
-  //   AlertModule,
-  //   AccordionModule,
-  //   StarRatingModule.forRoot()
-  // ],
   providers: [],
   bootstrap: [AppComponent]
 })

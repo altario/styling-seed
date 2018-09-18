@@ -1,0 +1,274 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+// --------------------------------------------------
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// $flags --------------------
+
+// $flags: grid
+$grid__vertical-gutters: false;
+
+
+
+// $body --------------------
+
+// $body: defaults
+$body__color__background:             $color__white--1;
+$body__color__text:                   $color__black--2;
+$body__color__highlight--background:  $color__brand--1;
+$body__color__highlight--text:        $color__white--1;
+
+
+
+// $breakpoints --------------------
+
+// $breakpoints: points
+$alt_breakpoints: (
+  xl: 1280px,
+  lg: 1024px,
+  md: 768px,
+  sm: 568px,
+
+  // ios
+  iphone8plus: 414px,
+  iphone8: 375px,
+) !default;
+
+
+
+// $grid --------------------
+
+$navbar__default--height: 60px;
+
+
+
+// $grid --------------------
+
+// $grid: defaults
+$grid__default--columns:              12 !default;
+$grid__default--gutter-width:         30px !default;
+
+
+
+// $paths --------------------
+
+// $paths: paths
+$path__assets:                        '/assets/' !default;
+$path__images:                        $path__assets + 'images/' !default;
+$path__fonts:                         $path__assets + 'fonts/' !default;
+
+
+
+// $fonts --------------------
+
+// $fonts: font-family
+$font-family--primary:                'Montserrat', sans-serif;
+$font-family--code:                   monospace, monospace;
+$font-family--icon:                   'altaricons';
+$font-family--fontawesome:            'Font Awesome 5 Pro';
+
+// $fonts: letter-spacing
+$letter-spacing--1:                   1px;
+$letter-spacing--2:                   1.5px;
+$letter-spacing--3:                   3px;
+
+// $fonts: sizes
+$font-size--default:                  16px; // base default for 'rem' and 'em'
+
+$font-size--jumbo:                    rem(48px); // 3rem
+$font-size--head-1:                   rem(30px); // 1.875rem
+$font-size--lead:                     rem(28px); // 1.75rem
+$font-size--head-2:                   rem(24px); // 1.5rem
+$font-size--head-3:                   rem(20px); // 1.25rem
+$font-size--normal:                   rem(16px); // 1rem
+$font-size--small:                    rem(14px); // 0.83em
+$font-size--head-4:                   rem(12px); // 0.75rem
+$font-size--tiny:                     rem(10px); // 0.625rem
+$font-size--nano:                     rem(8px);  // 0.5rem
+
+// $fonts: line-height
+$line-height__base:                   1.5;
+$line-height--1:                      1.2;
+$line-height--2:                      1.8;
+$line-height--3:                      2;
+$line-height--4:                      2.4;
+
+// $fonts: font-weight
+$font-weight--light:                  300;
+$font-weight--normal:                 400;
+$font-weight--bold:                   700;
+
+$font-weight__default:                $font-weight--light;
+
+
+// $fonts: margins
+$header__margin-top:                  0;
+$header__margin-bottom:               1rem;
+
+
+
+// $border --------------------
+
+// $border: border
+$border-radius__default:              0;
+$border-width__default:               1px;
+$border-width__default--sm:           2px;
+$border-width__default--lg:           4px;
+
+
+
+
+// $buttons --------------------
+
+// $buttons: sizes normal
+$button__height:                      40px;
+$button__icon-size:                   16px;
+$button__line-height:                 $button__height - ($border-width__default*2);
+$button__font-size:                   $font-size--head-4;
+$button__border-width:                $border-width__default;
+$button__font-weight:                 $font-weight--bold;
+$button__padding-x:                   32px;
+$button__padding-y:                   0px;
+$button__letter-spacing:              $letter-spacing--2;
+
+// $buttons: sizes tiny
+$button__height-tiny:                 20px;
+$button__icon-size-tiny:              8px;
+$button__line-height-tiny:            $button__height-tiny - ($border-width__default*2);
+$button__font-size-tiny:              $font-size--nano;
+$button__border-width-tiny:           $border-width__default;
+$button__font-weight-tiny:            $font-weight--normal;
+$button__padding-x-tiny:              12px;
+$button__padding-y-tiny:              0px;
+$button__letter-spacing-tiny:         $letter-spacing--2;
+
+// $buttons: sizes small
+$button__height-small:                26px;
+$button__icon-size-small:             12px;
+$button__line-height-small:           $button__height-small - ($border-width__default*2);
+$button__font-size-small:             $font-size--tiny;
+$button__border-width-small:          $border-width__default;
+$button__font-weight-small:           $font-weight--normal;
+$button__padding-x-small:             24px;
+$button__padding-y-small:             0px;
+$button__letter-spacing-small:        $letter-spacing--2;
+
+// $buttons: sizes big
+$button__height-big:                  60px;
+$button__icon-size-big:               20px;
+$button__line-height-big:             $button__height-big - ($border-width__default*2);
+$button__font-size-big:               $font-size--default;
+$button__border-width-big:            $border-width__default;
+$button__font-weight-big:             $font-weight--bold;
+$button__padding-x-big:               40px;
+$button__padding-y-big:               0px;
+$button__letter-spacing-big:          $letter-spacing--2;
+
+// $buttons: sizes huge
+$button__height-huge:                 140px;
+$button__icon-size-huge:              40px;
+$button__line-height-huge:            $button__height-huge - ($border-width__default*2);
+$button__font-size-huge:              $font-size--default;
+$button__border-width-huge:           $border-width__default;
+$button__font-weight-huge:            $font-weight--bold;
+$button__padding-x-huge:              70px;
+$button__padding-y-huge:              0px;
+$button__letter-spacing-huge:         $letter-spacing--2;
+
+
+
+// $forms --------------------
+
+$input__group--margin-bottom:         1.6rem;
+
+// $forms: input
+$input__height:                       40px;
+$input__padding-x:                    15px;
+$input__padding-y:                    0;
+$input__line-height:                  $line-height__base;
+$input__font-size:                    $font-size--small;
+$input__border-radius:                0px;
+
+// $forms: input small
+$input__height-sm:                    20px;
+$input__padding-x-sm:                 8px;
+$input__padding-y-sm:                 0;
+$input__line-height-sm:               $line-height__base;
+$input__font-size-sm:                 $font-size--tiny;
+$input__border-radius-sm:             0px;
+
+// $forms: input large
+$input__height-lg:                    60px;
+$input__padding-x-lg:                 20px;
+$input__padding-y-lg:                 0;
+$input__line-height-lg:               $line-height__base;
+$input__font-size-lg:                 $font-size--default;
+$input__border-radius-lg:             0px;
+
+// $forms: base
+$input__bg:                           $color__white--1;
+$input__color:                        $color__dark-blue-gray--2;
+$input__border-color:                 $color__dark-blue-gray--4;
+$input__border-width:                 1px;
+$input__box-shadow:                   none;
+$input__placeholder--color:           $color__dark-blue-gray--5;
+
+// $forms: disabled
+$input__disabled__bg:                 $color__light-yellow-gray--2; // $color__dark-blue-gray--6;
+$input__disabled__color:              $color__dark-blue-gray--4;
+$input__disabled__border-color:       $input__border-color;
+
+// $forms: focus
+$input__focus-border-color:           $color__afternoon;
+$input__focus-color:                  $color__dark-blue-gray--2;
+$input__focus-width:                  $input__border-width;
+$input__focus-box-shadow:             $input__box-shadow;
+
+// $forms: group
+// $form-group__margin-bottom:           8px;
+
+// $forms: checkbox
+$input__checkbox__size:               18px;
+$input__checkbox__size--inner:        10px;
+$input__checkbox__gutter:             25px; // left gutter fix
+$input__checkbox__margin--y:          .3rem;
+$input__checkbox__margin--x:          .25rem;
+$input__checkbox__color:              $color__dark-blue-gray--2;
+
+
+
+// $links --------------------
+
+// $links: colors
+$link__color:                         $color__brand--3;
+
+
+
+// $transition --------------------
+
+// $transition: base
+$transition__base:                    all .25s ease-in-out;
+$transition__base--noprop:            .25s;
+
+
+
+// $shadows --------------------
+
+// $shadows: topdown
+$shadow--topdown--1:                  0px 1px 6px rgba($color__black--1, .02);
+$shadow--topdown--2:                  0px 2px 6px rgba($color__black--1, .18);
+$shadow--topdown--3:                  0px 4px 12px rgba($color__black--1, .18);
+
+// $shadows: downtop
+$shadow--downtop--2:                  0px -2px 6px rgba($color__black--1, .18);
+
+// $shadows: wide
+$shadow--wide--1:                     0px 0px 160px rgba($color__light-yellow-gray--2, 1);
+$shadow--wide--2:                     0px 0px 160px rgba($color__light-yellow-gray--2, 1), 0px 4px 4px rgba($color--black--1, .05);

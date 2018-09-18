@@ -9,9 +9,9 @@
     <div class="row">
       <div class="col">
         <div class="doc-code-block">
-          <div class="doc-code-block__inner doc-code-block__inner--center">
+          <div class="doc-code-block__inner">
 
-            <div class="alert-holder" style="width: 100%;">
+            <div class="alert-holder">
               <alert type="info" [dismissible]="dismissible">
                 <div class="alert-body">
                   <strong>Well done!</strong> You successfully read this important alert message.
@@ -46,38 +46,9 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="alert-holder" style="width: 100%;"&gt;</pre>
-            <pre>  &lt;alert type="<span>info</span>" [dismissible]="<span>dismissible</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>alert-body</span>"&gt;</pre>
-            <pre>      &lt;strong&gt;Well done!&lt;/strong&gt; You successfully read this important alert message.</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>    &lt;div class="<span>alert-button</span>"&gt;</pre>
-            <pre>      &lt;button class="<span>btn btn-outline-primary btn-tiny</span>" type="<span>button</span>"&gt;Rate now&lt;/button&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/alert&gt;</pre>
-
-            <pre>  &lt;alert type="<span>info</span>" [dismissible]="<span>dismissible</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>alert-body</span>"&gt;</pre>
-            <pre>      &lt;strong&gt;Well done!&lt;/strong&gt; You successfully read this important alert message.</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/alert&gt;</pre>
-
-            <pre>  &lt;alert type="<span>warning</span>" [dismissible]="<span>dismissible</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>alert-body</span>"&gt;</pre>
-            <pre>      &lt;strong&gt;Warning!&lt;/strong&gt; Better check yourself, you're not looking too good.</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>    &lt;div class="<span>alert-button</span>"&gt;</pre>
-            <pre>      &lt;button class="<span>btn btn-outline-primary btn-tiny</span>" type="<span>button</span>"&gt;Rate now&lt;/button&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/alert&gt;</pre>
-
-            <pre>  &lt;alert type="<span>danger</span>" [dismissible]="<span>dismissible</span>"&gt;</pre>
-            <pre>    &lt;div class="<span>alert-body</span>"&gt;</pre>
-            <pre>      &lt;div class="<span>title</span>"&gt;job Creation failed!&lt;/div&gt;</pre>
-            <pre>      The Job creation failed because the filleds were not submited correctly. Please verify the fileds higlighted in red and try again. Thank you.</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/alert&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ notifications }}
+            </ngx-prism>
           </div>
         </div>
       </div>

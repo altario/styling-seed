@@ -19,7 +19,9 @@
                 <div class="input-group">
                   <input type="text" class="form-control form-control-daterangepicker" id="exampleInputEmail14" name="daterangeInput" daterangepicker [options]="singlePickerOptions" (selected)="singleSelect($event)" readonly/>
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="alt_icon-calendar"></i></span>
+                    <span class="input-group-text">
+                      <i class="air ai-calendar"></i>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -27,19 +29,10 @@
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group form-group-lg</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail14"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="text" class="<span>form-control form-control-daterangepicker</span>" id="exampleInputEmail14" name="daterangeInput" <span>daterangepicker [options]="singlePickerOptions" (selected)="singleSelect($event)" readonly</span>/&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-prepend</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;&lt;i class="<span>alt_icon-calendar</span>"&gt;&lt;/i&gt;&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formSinglePicker }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -60,30 +53,20 @@
                 <div class="input-group">
                   <input type="text" class="form-control form-control-daterangepicker" id="exampleInputEmail15" name="daterangeInput" daterangepicker [options]="datePickerOptions" (selected)="selectedDate($event, daterange)" readonly/>
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="alt_icon-calendar"></i></span>
+                    <span class="input-group-text">
+                      <i class="air ai-calendar"></i>
+                    </span>
                   </div>
-                  <!-- <div class="input-group-append">
-                    <span class="input-group-text">TO</span>
-                  </div> -->
                 </div>
               </div>
             </form>
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group form-group-lg</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail15"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="<span>text</span>" class="<span>form-control form-control-daterangepicker</span>" id="exampleInputEmail15" name="daterangeInput" <span>daterangepicker [options]="datePickerOptions" (selected)="selectedDate($event, daterange)" readonly</span>/&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-prepend</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;&lt;i class="<span>alt_icon-calendar</span>"&gt;&lt;/i&gt;&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formDaterangePicker }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>
@@ -104,30 +87,20 @@
                 <div class="input-group">
                   <input type="text" class="form-control form-control-daterangepicker" id="exampleInputEmail15" name="daterangeInput" daterangepicker [options]="datePickerOptions" (selected)="selectedDate($event, daterange)" readonly disabled/>
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="alt_icon-calendar"></i></span>
+                    <span class="input-group-text">
+                      <i class="air ai-calendar"></i>
+                    </span>
                   </div>
-                  <!-- <div class="input-group-append">
-                    <span class="input-group-text">TO</span>
-                  </div> -->
                 </div>
               </div>
             </form>
 
           </div>
           <div class="doc-code-block__inner doc-code-block__inner--code">
-            <pre>&lt;div class="<span>form-group form-group-lg</span>"&gt;</pre>
-            <pre>  &lt;div class="<span>label-group</span>"&gt;</pre>
-            <pre>    &lt;label for="exampleInputEmail15"&gt;Input Name&lt;/label&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>  &lt;div class="<span>input-group</span>"&gt;</pre>
-            <pre>    &lt;input type="<span>text</span>" class="<span>form-control form-control-daterangepicker</span>" id="exampleInputEmail15" name="daterangeInput" <span>daterangepicker [options]="datePickerOptions" (selected)="selectedDate($event, daterange)" readonly disabled</span>/&gt;</pre>
-            <pre>    &lt;div class="<span>input-group-prepend</span>"&gt;</pre>
-            <pre>      &lt;span class="<span>input-group-text</span>"&gt;&lt;i class="<span>alt_icon-calendar</span>"&gt;&lt;/i&gt;&lt;/span&gt;</pre>
-            <pre>    &lt;/div&gt;</pre>
-            <pre>  &lt;/div&gt;</pre>
-            <pre>&lt;/div&gt;</pre>
+            <ngx-prism [language]="'html'">
+              {{ formDaterangePickerDisabled }}
+            </ngx-prism>
           </div>
-
         </div>
       </div>
     </div>

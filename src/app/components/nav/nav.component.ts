@@ -1,6 +1,5 @@
 // angular
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
 @Component({
@@ -8,21 +7,68 @@ import { Router, NavigationEnd } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, OnDestroy {
 
-  constructor(router: Router) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector('#' + tree.fragment);
-          if (element) { element.scrollIntoView(true); }
-        }
-      }
-    });
-  }
+  nav = `
+<div class="nav-container fixed-top nav--color--agency">
+  <nav class="navbar">
+    <a class="navbar-brand">
+      <svg width="70px" height="18px" viewBox="0 0 70 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M12,3.3 L9.2,5.5 C8.8,4.9 8.4,4.5 7.9,4.2 C7.4,3.9 7,3.8 6.4,3.8 C5.4,3.8 4.9,4.1 4.9,4.8 C4.9,5.1 5,5.3 5.2,5.5 C5.5,5.8 5.9,6 6.4,6.2 L8.3,7 C9.7,7.6 10.8,8.3 11.5,9.1 C12.2,9.9 12.5,10.8 12.5,12 C12.5,13.6 11.9,14.8 10.8,15.8 C9.7,16.7 8.2,17.2 6.5,17.2 C5,17.2 3.7,16.9 2.6,16.2 C1.5,15.5 0.6,14.6 1.4901218e-09,13.5 L2.9,11.3 C3.9,12.7 5.2,13.4 6.6,13.4 C7.7,13.4 8.3,13 8.3,12.2 C8.3,11.8 8.2,11.6 8,11.4 C7.8,11.2 7.3,11 6.7,10.7 L4.8,9.8 C2,8.6 0.6,7 0.6,4.9 C0.6,3.4 1.1,2.3 2.2,1.4 C3.3,0.5 4.7,0 6.4,0 C9,0 10.9,1.1 12,3.3 Z M32.1,0.3 L32.1,17.1 L30.7,17.1 L21.8,8.4 L21.8,16.8 L17.5000004,16.8 L17.5000004,0 L18.9,0 L27.8,8.5 L27.8,0.3 L32.1,0.3 Z M47.4008,15.4 L41.5008,15.4 L40.9008,16.8 L36.3008015,16.8 L43.8008,0 L45.2008,0 L52.7008,16.8 L48.1008,16.8 L47.4008,15.4 Z M44.5008,8.1 L43.0008,12 L45.9008,12 L44.5008,8.1 Z M67.9004,1.799805 C69.1004,2.799805 69.7004,4.199805 69.7004,5.899805 C69.7004,7.599805 69.1004,8.999805 67.9004,9.999805 C66.7004,11.099805 65.2004,11.599805 63.3004,11.599805 L61.1004,11.599805 L61.1004,16.699805 L56.9004,16.699805 L56.9004,0.299805012 L63.4004,0.299805012 C65.2004,0.299805012 66.7004,0.799805 67.9004,1.799805 Z M61.2004,3.999805 L61.2004,7.899805 L63.4004,7.899805 C64.0004,7.899805 64.5004,7.699805 64.8004,7.399805 C65.2004,6.999805 65.3004,6.599805 65.3004,5.999805 C65.3004,5.399805 65.1004,4.999805 64.8004,4.599805 C64.5004,4.199805 64.0004,3.999805 63.4004,3.999805 L61.2004,3.999805 Z" id="logo_snap" fill="#FA0D60" fill-rule="nonzero"></path></g></svg>
+      <svg width="50px" height="18px" viewBox="0 0 50 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M8.0996094,11.999805 C8.0996094,13.699805 7.5996094,14.899805 6.6996094,15.799805 C5.7996094,16.699805 4.3996094,17.099805 2.5996094,17.099805 C1.7996094,17.099805 0.8996064,16.999805 0.0996063482,16.799805 L0.0996063482,13.199805 C0.9996064,13.199805 1.4996094,13.299805 1.6996094,13.299805 C2.4996094,13.299805 2.9996094,13.199805 3.3996094,12.899805 C3.7996094,12.599805 3.8996094,12.199805 3.8996094,11.599805 L3.8996094,0.299805012 L8.1996094,0.299805012 L8.1996094,11.999805 L8.0996094,11.999805 Z M28.2,2.5 C29.9,4.1 30.8,6.2 30.8,8.6 C30.8,11 29.9,13 28.2,14.7 C26.5,16.4 24.4,17.2 21.9,17.2 C19.4,17.2 17.3,16.4 15.6,14.7 C13.899997,13 12.9999985,11 12.9999985,8.6 C12.9999985,6.2 13.899997,4.2 15.6,2.5 C17.3,0.8 19.4,0 21.9,0 C24.4,0 26.5,0.8 28.2,2.5 Z M18.7,5.2 C17.9,6 17.5,7.2 17.5,8.5 C17.5,9.9 17.9,11 18.7,11.8 C19.5,12.6 20.6,13.1 21.9,13.1 C23.2,13.1 24.3,12.7 25.1,11.8 C25.9,11 26.4,9.8 26.4,8.5 C26.4,7.1 26,6 25.1,5.2 C24.2,4.4 23.2,3.9 21.9,3.9 C20.6,3.9 19.5,4.4 18.7,5.2 Z M49.0988,11.899805 C49.0988,13.299805 48.5988,14.499805 47.4988,15.399805 C46.3988,16.299805 45.0988,16.799805 43.4988,16.799805 L35.7988015,16.799805 L35.7988015,0.299805012 L41.6988,0.299805012 C43.2988,0.299805012 44.5988,0.799805 45.6988,1.599805 C46.7988,2.499805 47.2988,3.699805 47.2988,5.099805 C47.2988,6.199805 46.9988,7.099805 46.2988,7.899805 C48.1988,8.699805 49.0988,9.999805 49.0988,11.899805 Z M39.8988,3.899805 L39.8988,6.799805 L41.3988,6.799805 C41.8988,6.799805 42.2988,6.699805 42.5988,6.399805 C42.8988,6.099805 42.9988,5.799805 42.9988,5.399805 C42.9988,4.999805 42.8988,4.599805 42.5988,4.399805 C42.2988,4.099805 41.8988,3.999805 41.3988,3.999805 L39.8988,3.999805 L39.8988,3.899805 Z M44.8988,11.699805 C44.8988,10.699805 44.3988,10.299805 43.2988,10.299805 L39.8988,10.299805 L39.8988,13.199805 L43.1988,13.199805 C44.2988,13.199805 44.8988,12.699805 44.8988,11.699805 Z" id="logo_job" fill="#4F4F4F" fill-rule="nonzero"></path></g></svg>
+    </a>
+    <div class="navbar-btns">
+      <button type="button" class="btn btn-ghost-primary btn-small">JobSeekers</button>
+      <button type="button" class="btn btn-ghost-primary btn-small">+ New Campaign</button>
+      <button type="button" class="btn btn-outline-primary btn-small">My Campaigns</button>
+      <button type="button" class="btn btn-small btn-ghost-success">Get in</button>
+    </div>
+  </nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" aria-current="page"><a href="">Crumb 01</a></li>
+    <li class="breadcrumb-item" aria-current="page"><a href="">Crumb 02</a></li>
+    <li class="breadcrumb-item" aria-current="page"><a href="">Crumb 03</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="">Crumb 04</a></li>
+  </ol>
+</div>
+
+<div class="nav-container fixed-bottom nav--color--agency">
+  <nav class="navbar navbar-mobile">
+    <div class="navbar-btns">
+      <button type="button" class="btn btn-ghost-primary btn-tiny active">
+        <i class="air ai-suitcase"></i>
+        Jobs
+      </button>
+      <button type="button" class="btn btn-ghost-primary btn-tiny">
+        <i class="air ai-building"></i>
+        My Jobs
+      </button>
+      <button type="button" class="btn btn-ghost-primary btn-tiny">
+        <i class="air ai-user-tie"></i>
+        My Profile
+      </button>
+      <button type="button" class="btn btn-ghost-primary btn-tiny">
+        <i class="air ai-ellipsis-h"></i>
+        More
+      </button>
+    </div>
+  </nav>
+</div>
+  `;
+
+  constructor() { }
 
   ngOnInit() {
+    const appWrapper = <HTMLElement>document.querySelector('.app-wrapper');
+    const appSidebar = <HTMLElement>document.querySelector('.doc-sidebar');
+    appWrapper.style.paddingTop = '100px';
+    appSidebar.style.cssText = 'top: 100px !important';
+    // console.log(appWrapper);
   }
 
+  ngOnDestroy() {
+    const appWrapper = <HTMLElement>document.querySelector('.app-wrapper');
+    const appSidebar = <HTMLElement>document.querySelector('.doc-sidebar');
+    appWrapper.style.removeProperty('padding-top');
+    appSidebar.style.removeProperty('top');
+  }
 }

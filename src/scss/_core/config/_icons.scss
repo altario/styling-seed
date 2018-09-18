@@ -1,0 +1,79 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MAPS
+//    $ai_icons-map
+//
+// --------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+// $ai_icons-map (ex: key = calendar: value = 'calendar')
+// for buttons and alt_icon usage
+$ai_icons-map: (
+  calendar:   'calendar',
+  suitcase:   'suitcase',
+  building:   'building',
+  user-tie:   'user-tie',
+  ellipsis-h: 'ellipsis-h',
+);
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// light
+.ail {
+  @each $key, $value in $ai_icons-map {
+
+    // icon
+    &.ai-#{$key} {
+      @include icon($value);
+
+      &:before,
+      &:after {
+        font-weight: $font-weight--light;
+      }
+    }
+  }
+}
+
+// regular
+.air {
+  @each $key, $value in $ai_icons-map {
+
+    // icon
+    &.ai-#{$key} {
+      @include icon($value);
+
+      &:before,
+      &:after {
+        font-weight: $font-weight--normal;
+      }
+    }
+  }
+}
+
+// solid
+.ais {
+  @each $key, $value in $ai_icons-map {
+
+    // icon
+    &.ai-#{$key} {
+      @include icon($value);
+
+      &:before,
+      &:after {
+        font-weight: $font-weight--bold; // 900
+      }
+    }
+  }
+}

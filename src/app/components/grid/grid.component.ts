@@ -1,6 +1,5 @@
 // angular
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -10,19 +9,136 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class GridComponent implements OnInit {
 
-  constructor(router: Router) {
-    router.events.subscribe(s => {
-      if (s instanceof NavigationEnd) {
-        const tree = router.parseUrl(router.url);
-        if (tree.fragment) {
-          const element = document.querySelector('#' + tree.fragment);
-          if (element) { element.scrollIntoView(true); }
-        }
-      }
-    });
-  }
+  // grid bootstrap example
+  gridBootstrapExample = `
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
 
-  ngOnInit() {
-  }
+  // grid with no gutters
+  gridWithNoGutters = `
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
+
+  // grid with gutters nano
+  gridWithGuttersNano = `
+<div class="container-fluid">
+  <div class="row gutter-nano">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row gutter-nano">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
+
+  // grid with gutters tiny
+  gridWithGuttersTiny = `
+<div class="container-fluid">
+  <div class="row gutter-tiny">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row gutter-tiny">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
+
+  // grid with gutters small
+  gridWithGuttersSmall = `
+<div class="container-fluid">
+  <div class="row gutter-small">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row gutter-small">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
+
+  // grid with gutters normal
+  gridWithGuttersNormal = `
+<div class="container-fluid">
+  <div class="row gutter-normal">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row gutter-normal">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
+
+  // grid with gutters big
+  gridWithGuttersBig = `
+<div class="container-fluid">
+  <div class="row gutter-big">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row gutter-big">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
+
+  // grid with gutters huge
+  gridWithGuttersHuge = `
+<div class="container-fluid">
+  <div class="row gutter-huge">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+  <div class="row gutter-huge">
+    <div class="col">...</div>
+    <div class="col">...</div>
+    <div class="col">...</div>
+  </div>
+</div>
+  `;
+
+  constructor() { }
+
+  ngOnInit() { }
 
 }
