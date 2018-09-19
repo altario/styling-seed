@@ -151,17 +151,18 @@ $job-card__actions__height: 60px;
         &.job-card__content__type__info--date,
         &.job-card__content__type__info--time,
         &.job-card__content__type__info--gender {
-          span {
-            margin-right: 10px;
-            &:last-child {
-              margin-right: 0;
-            }
+          & > span {
+            @include align(column between);
+          //   margin-right: 10px;
+          //   &:last-child {
+          //     margin-right: 0;
+          //   }
           }
         }
 
         &.job-card__content__type__info--date {
           span {
-            @include icon(calendar-check-o);
+            @include icon(calendar-check);
           }
         }
         &.job-card__content__type__info--time {
@@ -173,7 +174,7 @@ $job-card__actions__height: 60px;
               @include icon(sun);
             }
             &.night {
-              @include icon(moon-o);
+              @include icon(moon);
             }
           }
         }
@@ -194,6 +195,7 @@ $job-card__actions__height: 60px;
       @include align(row center middle);
       .action {
         height: $job-card__actions__height;
+        margin: 0;
         line-height: $job-card__actions__height;
         text-align: center;
         flex: 1;
@@ -530,10 +532,10 @@ $job-card__actions__height: 60px;
       max-width: 150px;
     }
     .job-card__content__info {
-      @include calc-col(9);
+      // @include calc-col(9);
     }
     .job-card__content__action-big {
-      @include calc-col(3);
+      // @include calc-col(3);
     }
   }
 
@@ -576,6 +578,21 @@ $job-card__actions__height: 60px;
 
         height: 320px;
         padding-top: 120px;
+
+        & + .job-card__content__info {
+          height: 530px;
+          position: absolute;
+          padding: 0;
+          padding-top: 54px;
+          padding-right: 30px;
+          align-items: flex-end;
+          z-index: 10;
+          background: transparent !important;
+        }
+
+        .job-card__content__info__description {
+          @include line-clamp(3);
+        }
       }
       .job-card__content__action-big {
         @include calc-col(12, 60px);
@@ -634,6 +651,16 @@ $job-card__actions__height: 60px;
       .job-card__content__info {
         height: 150px;
         padding-top: 20px;
+
+        .job-card__content__info__description {
+          @include line-clamp(2);
+        }
+
+        & + .job-card__content__info {
+          height: 290px;
+          padding-top: 0;
+          padding-bottom: 42px;
+        }
       }
       .job-card__content__action-big {
         @include calc-col(12);

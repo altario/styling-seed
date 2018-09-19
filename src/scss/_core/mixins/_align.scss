@@ -1,4 +1,4 @@
-// --------------------------------------------------
+// ------------------------------------------------------------------
 //
 // INDEX
 //
@@ -6,19 +6,27 @@
 //    =align
 //
 //  #EXAMPLES
-//    [+1] align only with margin between alements
-//    [+2] align with margin and arguments (use with space)
+//    [+1] align with arguments
+//    [+2] align with arguments and margin between elements
+//    [+3] align with arguments and margin between elements declaring side
 //
-// --------------------------------------------------
+// ------------------------------------------------------------------
 
 
-// --------------------------------------------------
+// ------------------------------------------------------------------
 // #MIXINS
-// --------------------------------------------------
+// ------------------------------------------------------------------
 
 // =align
-@mixin align-gutter($_gutter: 0px, $_args: 0) {
-  $_map: $_args;
+@mixin align($_args: 0, $_gutter: 0px, $_gutter-side: right) {
+
+  $child: last;
+
+  @if $_gutter-side == left {
+    $child: first;
+  }
+
+  $map: $_args;
 
   $_gutter: ($_gutter / 1px) * 1px;
 
@@ -28,30 +36,37 @@
 
   @if $_gutter != 0px {
     > * {
-      margin-right: $_gutter;
-      &:last-child {
-        margin-right: 0;
+      margin-#{$_gutter-side}: $_gutter !important;
+      &:#{$child}-child {
+        margin-#{$_gutter-side}: 0 !important;
       }
     }
   }
 
 
-  // align horizintal --------------------
+  // wrap --------------------
 
-  // left
-  @if(index($_map, left)) {
-    justify-content: flex-start;
-    align-self: flex-start;
-    margin-right: auto;
+  // wrap
+  @if(index($map, wrap)) {
+    flex-wrap: wrap;
   }
 
+  // wrap-reverse
+  @if(index($map, wrap-reverse)) {
+    flex-wrap: wrap-reverse;
+  }
+
+
+
+  // align horizontal --------------------
+
   // center
-  @if(index($_map, center)) {
+  @if(index($map, center)) {
     justify-content: center;
   }
 
   // right
-  @if(index($_map, right)) {
+  @if(index($map, right)) {
     justify-content: flex-end;
     align-self: flex-end;
     margin-left: auto;
@@ -61,30 +76,40 @@
   // align vertical --------------------
 
   // top
-  @if(index($_map, top)) {
+  @if(index($map, top)) {
     align-items: flex-start;
   }
 
   // middle
-  @if(index($_map, middle)) {
+  @if(index($map, middle)) {
     align-items: center;
   }
 
   // bottom
-  @if(index($_map, bottom)) {
+  @if(index($map, bottom)) {
     align-items: flex-end;
   }
+
+
+
+  // stretch --------------------
+
+  // stretch
+  @if(index($map, stretch)) {
+    align-items: stretch;
+  }
+
 
 
   // direction --------------------
 
   // reverse
-  @if(index($_map, reverse)) {
+  @if(index($map, reverse)) {
     flex-direction: row-reverse;
   }
 
   // column
-  @if(index($_map, column)) {
+  @if(index($map, column)) {
     flex-direction: column;
      > * {
       flex-basis: auto;
@@ -92,7 +117,7 @@
   }
 
   // column-reverse
-  @if(index($_map, column-reverse)) {
+  @if(index($map, column-reverse)) {
     flex-direction: column-reverse;
   }
 
@@ -100,12 +125,12 @@
   // space --------------------
 
   // between
-  @if(index($_map, between)) {
+  @if(index($map, between)) {
     justify-content: space-between;
   }
 
   // around
-  @if(index($_map, around)) {
+  @if(index($map, around)) {
     justify-content: space-around;
   }
 
@@ -115,7 +140,7 @@
     box-sizing: border-box;
 
     // centered
-    @if(index($_map, centered)) {
+    @if(index($map, centered)) {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -124,20 +149,19 @@
   }
 }
 
-@mixin align($_args) {
-  @include align-gutter(0, $_args);
-}
 
 
 
 
-
-// --------------------------------------------------
+// ------------------------------------------------------------------
 // #EXAMPLES
-// --------------------------------------------------
+// ------------------------------------------------------------------
 
-// [+1] align only with margin between alements
-// @include align(20px);
+// [+1] align with arguments
+// @include align(center middle reverse); // center | right | top | middle | bottom | reverse | column | column-reverse | between | around | centered
 
-// [+2] align with margin and arguments (use with space)
-// @include align(20px, center middle reverse); // center | right | top | middle | bottom | reverse | column | column-reverse | between | around | centered
+// [+2] align with arguments and margin between elements
+// @include align(center middle reverse, 20px);
+
+// [+3] align with arguments and margin between elements declaring side
+// @include align(center middle reverse, 20px, left);

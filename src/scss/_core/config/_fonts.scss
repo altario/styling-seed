@@ -3,7 +3,10 @@
 // INDEX
 //
 //  #STYLES
-//    +font-face
+//    google fonts
+//    custom fonts
+//    font-awesome pro family
+//    custom icon fonts
 //
 // --------------------------------------------------
 
@@ -12,10 +15,32 @@
 // #STYLES
 // --------------------------------------------------
 
-// '../fonts/Font/FontRegular.eot'
+// google fonts --------------------
 
-// +font-face
-@include font-face('Montserrat', 'MontserratLight', $font-weight--light);
-@include font-face('Montserrat', 'MontserratRegular', $font-weight--normal);
-@include font-face('Montserrat', 'MontserratBold', $font-weight--bold);
-@include font-face('altaricons', 'altaricons');
+// google fonts: montserrat
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+
+
+// custom fonts --------------------
+
+// +font-face (path: 'assets/fonts/fontname/fontname.ttf')
+// @include font-face('Montserrat', 'MontserratLight', $font-weight--light);
+// @include font-face('Montserrat', 'MontserratRegular', $font-weight--normal);
+// @include font-face('Montserrat', 'MontserratBold', $font-weight--bold);
+
+
+
+// font-awesome pro family --------------------
+
+// +font-awesome
+@if $font-awesome-fallback {
+  @include font-face-fontawesome;
+}
+
+
+
+// custom icon fonts --------------------
+
+// +font-face-icons
+@include font-face-icons($font-family--icon, $font-family--icon);

@@ -12,6 +12,9 @@
 
 // $flags --------------------
 
+// $flags: fontawesome fallback for icons
+$font-awesome-fallback: true;
+
 // $flags: grid
 $grid__vertical-gutters: false;
 
@@ -73,6 +76,7 @@ $font-family--primary:                'Montserrat', sans-serif;
 $font-family--code:                   monospace, monospace;
 $font-family--icon:                   'altaricons';
 $font-family--fontawesome:            'Font Awesome 5 Pro';
+$font-family--fontawesome--brands:    'Font Awesome 5 Brands';
 
 // $fonts: letter-spacing
 $letter-spacing--1:                   1px;

@@ -1,0 +1,34 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =text-truncate
+//
+//  #EXAMPLES
+//    [+1] text-truncate one line only
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =text-truncate
+@mixin text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] text-truncate one line only
+// @include text-truncate;

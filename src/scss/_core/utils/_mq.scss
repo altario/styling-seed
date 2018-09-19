@@ -31,15 +31,23 @@
 // --------------------------------------------------
 
 // =mq
-@mixin mq($bp, $rule: max-width) {
-  $bp-in-map: map-has-key($alt_breakpoints, $bp);
+@mixin mq($_bp, $_rule: max-width, $_compensation: false) {
+  $bp-in-map: map-has-key($alt_breakpoints, $_bp);
   @if $bp-in-map == true {
-    @media screen and (#{$rule}: map-get($alt_breakpoints, $bp)) {
-      @content;
+    @if $_compensation == true {
+      $_compensation: 1px;
+      @media screen and (#{$_rule}: (map-get($alt_breakpoints, $_bp) + $_compensation)) {
+        @content;
+      }
+    }
+    @else {
+      @media screen and (#{$_rule}: map-get($alt_breakpoints, $_bp)) {
+        @content;
+      }
     }
   }
   @else {
-    @media screen and (#{$rule}: $bp) {
+    @media screen and (#{$_rule}: $_bp) {
       @content;
     }
   }

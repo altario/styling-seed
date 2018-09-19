@@ -18,10 +18,10 @@
 // #IMPORTS
 // --------------------------------------------------
 
-
 // +/functions
 @import 'functions/is-direction';
 @import 'functions/opposite-direction';
+@import 'functions/map-deep-get';
 // @import 'functions/paths';
 @import 'functions/rem';
 // @import 'functions/shade';
@@ -41,6 +41,7 @@
 @import 'mixins/icon';
 @import 'mixins/input-placeholder';
 @import 'mixins/line-clamp';
+@import 'mixins/text-truncate';
 @import 'mixins/linear-gradient';
 @import 'mixins/on-event';
 @import 'mixins/outline';

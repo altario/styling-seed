@@ -25,7 +25,7 @@
     @include on-event(true) {
       transition:
       background $transition__base--noprop ease-in-out,
-      color $transition__base--noprop ease-in-out,
+      color $transition__base--noprop/2 ease-in-out,
       border $transition__base--noprop ease-in-out,
       transform $transition__base--noprop ease-in-out,
       ;
