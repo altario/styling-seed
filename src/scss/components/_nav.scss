@@ -151,7 +151,7 @@ $alt_nav__navbar--height: $navbar__default--height;
           }
         }
       }
-      @include mq($alt_nav__mq, min-width) {
+      @include mq($alt_nav__mq, min-width, true) {
         display: none;
       }
     }
