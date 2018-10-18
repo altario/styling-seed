@@ -206,6 +206,10 @@ $alt_nav__navbar--height: $navbar__default--height;
 // =alt_nav-container__navbar__theme--agency
 @mixin alt_nav-container__navbar__theme--agency {
   &.nav--color--agency {
+    .active {
+      color: $color__brand--1 !important;
+    }
+
     .navbar-brand {
       .svg-color {
         fill: $color__brand--1 !important;
@@ -225,20 +229,23 @@ $alt_nav__navbar--height: $navbar__default--height;
         }
       }
     }
-    .navbar-mobile {
-      .active {
-        color: $color__brand--1 !important;
-      }
-    }
+    // .navbar-mobile {
+    //   .active {
+    //     color: $color__brand--1 !important;
+    //   }
+    // }
   }
 }
 
 // =alt_nav-container__navbar__theme--jobseeker
 @mixin alt_nav-container__navbar__theme--jobseeker {
   &.nav--color--jobseeker {
+    .active {
+      color: $color__brand--3 !important;
+    }
     .navbar-brand {
       .svg-color {
-        fill: yellow;
+        fill: $color__brand--3 !important;
       }
     }
     @include mq($alt_nav__mq) {
@@ -255,11 +262,11 @@ $alt_nav__navbar--height: $navbar__default--height;
         }
       }
     }
-    .navbar-mobile {
-      .active {
-        color: $color__brand--3;
-      }
-    }
+    // .navbar-mobile {
+    //   .active {
+    //     color: $color__brand--3;
+    //   }
+    // }
   }
 }
 
