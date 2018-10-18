@@ -207,8 +207,8 @@ $alt_nav__navbar--height: $navbar__default--height;
 @mixin alt_nav-container__navbar__theme--agency {
   &.nav--color--agency {
     .navbar-brand {
-      #logo_snap {
-        fill: $color__brand--1;
+      .svg-color {
+        fill: $color__brand--1 !important;
       }
     }
     @include mq($alt_nav__mq) {
@@ -227,7 +227,7 @@ $alt_nav__navbar--height: $navbar__default--height;
     }
     .navbar-mobile {
       .active {
-        color: $color__brand--1;
+        color: $color__brand--1 !important;
       }
     }
   }
@@ -237,8 +237,8 @@ $alt_nav__navbar--height: $navbar__default--height;
 @mixin alt_nav-container__navbar__theme--jobseeker {
   &.nav--color--jobseeker {
     .navbar-brand {
-      #logo_snap {
-        fill: $color__brand--3;
+      .svg-color {
+        fill: yellow;
       }
     }
     @include mq($alt_nav__mq) {
